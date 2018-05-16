@@ -2,31 +2,46 @@ package com.bu.webscraping.scrapers;
 
 import com.bu.forum.ForumPost;
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 
 import java.io.IOException;
-import java.util.Set;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
  */
-public abstract class AbstractScraper implements Scraper{
-    private static Pattern THREAD_PATTERN;
-    private static Pattern CONTENT_PATTERN;
+public abstract class AbstractScraper {
+    private static Pattern POST_PATTERN;
+    String pageFormat = "";
 
-    private void setThreadPattern(String threadPatternString) {
-        THREAD_PATTERN = Pattern.compile(threadPatternString);
+    String forumUrl;
+
+    void setPostPattern(String postRegex) {
+        POST_PATTERN = Pattern.compile(postRegex);
     }
 
-    private void setContentPattern(String contentPatternString) {
-        THREAD_PATTERN = Pattern.compile(contentPatternString);
-    }
+    List<ForumPost> retrievePosts(String forumUrl) throws IOException {
+        List<ForumPost> forumPosts = new LinkedList<>();
 
-    public Set<ForumPost> retrieveForumPosts(String forumUrl) throws IOException {
-        Document document = Jsoup.connect(forumUrl).get();
+        String rawHtml = Jsoup.connect(forumUrl).get().toString();
 
-        return null;
+        Matcher postMatcher = POST_PATTERN.matcher(rawHtml);
+
+        while (postMatcher.find())
+            forumPosts.add(
+                    new ForumPost(
+                            //group one should always be post content
+                            postMatcher.group(1),
+                            //group two should always be username
+                            postMatcher.group(2),
+                            //group three should always be date
+                            postMatcher.group(3)
+                    )
+            );
+
+        return forumPosts;
     }
 }

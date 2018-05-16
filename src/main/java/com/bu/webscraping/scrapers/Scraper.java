@@ -1,5 +1,6 @@
 package com.bu.webscraping.scrapers;
 
+import com.bu.forum.Club;
 import com.bu.forum.ForumPost;
 
 import java.io.IOException;
@@ -10,5 +11,6 @@ import java.util.Set;
  * gregoryamitten@gmail.com
  */
 public interface Scraper {
-    Set<ForumPost> retrieveForumPosts(String forumUrl) throws IOException;
+    Set<ForumPost> retrievePosts(String forumUrl, Club club) throws IOException;
+    void setCurrentForumUrl(String forumUrl);
 }

@@ -1,38 +1,41 @@
 package com.bu.forum;
 
-import java.util.LinkedList;
-import java.util.List;
-
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
  */
-public class ForumPosts {
-    private Club club;
-    private List<String> posts;
+public class ForumPost {
+    private String postContent;
+    private String username;
+    private String time;
 
-    public ForumPosts(Club club) {
-        this.club = club;
-        this.posts = new LinkedList<>();
+    public ForumPost(String postContent, String username, String time) {
+        this.postContent = postContent;
+        this.username = username;
+        this.time = time;
     }
 
-    public Club getClub() {
-        return club;
+    public String getPostContent() {
+        return postContent;
     }
 
-    public void setClub(Club club) {
-        this.club = club;
+    public void setPostContent(String postContent) {
+        this.postContent = postContent;
     }
 
-    public List<String> getPosts() {
-        return posts;
+    public String getUsername() {
+        return username;
     }
 
-    public void setPosts(List<String> posts) {
-        this.posts = posts;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public void addAll(List<String> post) {
-        posts.addAll(post);
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }
