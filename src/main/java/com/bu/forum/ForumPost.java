@@ -1,31 +1,38 @@
 package com.bu.forum;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
  */
-public class ForumPost {
-    private String threadName;
-    private String content;
+public class ForumPosts {
+    private Club club;
+    private List<String> posts;
 
-    public ForumPost(String threadName, String content) {
-        this.threadName = threadName;
-        this.content = content;
+    public ForumPosts(Club club) {
+        this.club = club;
+        this.posts = new LinkedList<>();
     }
 
-    public String getThreadName() {
-        return threadName;
+    public Club getClub() {
+        return club;
     }
 
-    public void setThreadName(String threadName) {
-        this.threadName = threadName;
+    public void setClub(Club club) {
+        this.club = club;
     }
 
-    public String getContent() {
-        return content;
+    public List<String> getPosts() {
+        return posts;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setPosts(List<String> posts) {
+        this.posts = posts;
+    }
+
+    public void addAll(List<String> post) {
+        posts.addAll(post);
     }
 }
