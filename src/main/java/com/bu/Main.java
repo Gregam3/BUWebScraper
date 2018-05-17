@@ -3,6 +3,7 @@ package com.bu;
 import com.bu.forum.Club;
 import com.bu.forum.ForumPost;
 import com.bu.result.ResultWriter;
+import com.bu.webscraping.scrapers.RedAndWhiteScraper;
 import com.bu.webscraping.scrapers.TalkChelseaScraper;
 import com.bu.webscraping.scrapers.BlueMoonMCFCScraper;
 
@@ -19,9 +20,12 @@ public class Main {
     public static void main(String[] args) throws IOException {
         Map<Club, List<ForumPost>> resultsMap = new LinkedHashMap<>();
 
-        resultsMap.put(Club.CHELSEA, new TalkChelseaScraper().retrieveAllPosts("http://forum.talkchelsea.net/topic/18530-how-to-watch-hd-streams/"));
-        resultsMap.put(Club.LIVERPOOL, new RedAndWhiteScraper().retrieveAllPosts("http://www.redandwhitekop.com/forum/index.php?board=9.0"));
-        resultsMap.put(Club.MAN_CITY, new BlueMoonMCFCScraper().retrieveAllPosts("https://forums.bluemoon-mcfc.co.uk/threads/fabian-delph-2017-18.330191/"));
+        resultsMap.put(Club.LIVERPOOL_RED_AND_WHITE,
+                new RedAndWhiteScraper().retrieveAllPosts("https://www.redandwhitekop.com/forum/index.php?topic=315580"));
+        resultsMap.put(Club.CHELSEA_TALK_CHELSEA,
+                new TalkChelseaScraper().retrieveAllPosts("http://forum.talkchelsea.net/topic/18530-how-to-watch-hd-streams/"));
+        resultsMap.put(Club.MAN_CITY_BLUE_MOON_MCFC,
+                new BlueMoonMCFCScraper().retrieveAllPosts("https://forums.bluemoon-mcfc.co.uk/threads/fabian-delph-2017-18.330191/"));
 
         ResultWriter resultWriter = new ResultWriter();
 

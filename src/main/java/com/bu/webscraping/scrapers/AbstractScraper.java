@@ -18,6 +18,8 @@ public abstract class AbstractScraper implements Scraper {
     private Pattern postPattern;
     Pattern lastPagePattern;
     String pageUrlFormat = "";
+    int pagePathVariableIncrement = 1;
+    int pagePathVariableStart = 1;
 
     //0 represents post content, 1 represents user and 2 represents time
     int[] groupIndexes = new int[]{1, 2, 3};
@@ -40,9 +42,12 @@ public abstract class AbstractScraper implements Scraper {
 
         int threadLength = getLastPage(threadUrl);
 
-        for (int pageIterator = 1; pageIterator < threadLength + 1; pageIterator++) {
-            System.out.println("Site " + Main.siteNumber + ": Scraped " + pageIterator + " pages. - Total pages scraped: " + Main.cumulativePageCount);
-            forumPosts.addAll(retrievePosts(threadUrl + pageUrlFormat + pageIterator));
+        for (int pagePathVariableIterator = pagePathVariableStart;
+             //threadLength * by increment because some path variables use post number rather than page number
+             pagePathVariableIterator < (threadLength * pagePathVariableIncrement) + pagePathVariableIncrement;
+             pagePathVariableIterator += pagePathVariableIncrement) {
+            System.out.println("Site " + Main.siteNumber + " - Total pages scraped: " + Main.cumulativePageCount);
+            forumPosts.addAll(retrievePosts(threadUrl + pageUrlFormat + pagePathVariableIterator));
 
             Main.cumulativePageCount++;
         }
@@ -79,7 +84,7 @@ public abstract class AbstractScraper implements Scraper {
             matcher.find();
             return Integer.valueOf(matcher.group(1));
         } catch (Exception e) {
-            System.err.print("Could not retrieve page count:" + e);
+            System.err.println("Could not retrieve page count:" + e);
             return 1;
         }
     }
