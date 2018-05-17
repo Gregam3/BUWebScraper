@@ -36,7 +36,7 @@ public abstract class AbstractScraper implements Scraper {
         this.pageUrlFormat = pageUrlFormat;
     }
 
-    public void setGroupIndexes(int[] groupIndexes) {
+    void setGroupIndexes(int[] groupIndexes) {
         this.groupIndexes = groupIndexes;
     }
 

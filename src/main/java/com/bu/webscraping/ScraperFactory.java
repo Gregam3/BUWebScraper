@@ -37,6 +37,8 @@ public class ScraperFactory {
                 addResults(ForumType.CRYSTAL_PALACE_CPFC, CPFCScraper.class, threadUrl);
             else if (threadUrl.contains("www.foxestalk.co.uk"))
                 addResults(ForumType.LEICESTER_CITY_FOXES_TALK, FoxesTalkScraper.class, threadUrl);
+            else if (threadUrl.contains("www.grandoldteam.com"))
+                addResults(ForumType.EVERTON_GRAND_OLD_TEAM, GrandOldTeamScraper.class, threadUrl);
             else
                 System.err.println("Site: \"" + threadUrl + "\" could not be found, if this is blank please remove any trailing spaces or commas after the last thread link");
         }
