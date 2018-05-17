@@ -5,5 +5,5 @@ package com.bu.forum;
  * gregoryamitten@gmail.com
  */
 public enum Club {
-    MAN_CITY
+    MAN_CITY, CHELSEA, LIVERPOOL
 }

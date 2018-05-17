@@ -4,6 +4,7 @@ import com.bu.forum.Club;
 import com.bu.forum.ForumPost;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -11,6 +12,6 @@ import java.util.Set;
  * gregoryamitten@gmail.com
  */
 public interface Scraper {
-    Set<ForumPost> retrievePosts(String forumUrl, Club club) throws IOException;
-    void setCurrentForumUrl(String forumUrl);
+    List<ForumPost> retrievePosts(String forumUrl) throws IOException;
+    List<ForumPost> retrieveAllPosts(String forumUrl) throws IOException;
 }

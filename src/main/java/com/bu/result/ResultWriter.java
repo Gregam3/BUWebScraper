@@ -19,7 +19,7 @@ public class ResultWriter {
 
     public ResultWriter() throws IOException {
         csvWriter = new CSVWriter(
-                new FileWriter("results.csv"),
+                new FileWriter("results.txt"),
                 '|',
                 CSVWriter.NO_QUOTE_CHARACTER,
                 CSVWriter.DEFAULT_ESCAPE_CHARACTER,
