@@ -16,28 +16,31 @@ import java.util.regex.Pattern;
  */
 public abstract class AbstractScraper implements Scraper {
     private Pattern postPattern;
-    Pattern lastPagePattern;
-    String pageUrlFormat = "";
+    private Pattern lastPagePattern = Pattern.compile("Page 1 of ([0-9]*)");
+    private String pageUrlFormat = "";
     int pagePathVariableIncrement = 1;
     int pagePathVariableStart = 1;
 
     //0 represents post content, 1 represents user and 2 represents time
-    int[] groupIndexes = new int[]{1, 2, 3};
+    private int[] groupIndexes = new int[]{1, 2, 3};
 
     void setPostPattern(String postRegex) {
         postPattern = Pattern.compile(postRegex);
     }
 
-    public void setLastPagePattern(String lastPageRegex) {
+    void setLastPagePattern(String lastPageRegex) {
         this.lastPagePattern = Pattern.compile(lastPageRegex);
     }
 
-    public void setPageUrlFormat(String pageUrlFormat) {
+    void setPageUrlFormat(String pageUrlFormat) {
         this.pageUrlFormat = pageUrlFormat;
     }
 
+    public void setGroupIndexes(int[] groupIndexes) {
+        this.groupIndexes = groupIndexes;
+    }
 
-    public List<ForumPost> retrieveAllPosts(String threadUrl) throws IOException {
+    public List<ForumPost> retrievePostsForForum(String threadUrl) throws IOException {
         List<ForumPost> forumPosts = new LinkedList<>();
 
         int threadLength = getLastPage(threadUrl);
@@ -47,7 +50,7 @@ public abstract class AbstractScraper implements Scraper {
              pagePathVariableIterator < (threadLength * pagePathVariableIncrement) + pagePathVariableIncrement;
              pagePathVariableIterator += pagePathVariableIncrement) {
             System.out.println("Site " + Main.siteNumber + " - Total pages scraped: " + Main.cumulativePageCount);
-            forumPosts.addAll(retrievePosts(threadUrl + pageUrlFormat + pagePathVariableIterator));
+            forumPosts.addAll(retrievePostsForPage(threadUrl + pageUrlFormat + pagePathVariableIterator));
 
             Main.cumulativePageCount++;
         }
@@ -56,7 +59,7 @@ public abstract class AbstractScraper implements Scraper {
         return forumPosts;
     }
 
-    public List<ForumPost> retrievePosts(String forumUrl) throws IOException {
+    public List<ForumPost> retrievePostsForPage(String forumUrl) throws IOException {
         List<ForumPost> forumPosts = new LinkedList<>();
 
         String rawHtml = Jsoup.connect(forumUrl).get().toString();

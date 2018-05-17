@@ -12,8 +12,8 @@ public class RedAndWhiteScraper extends AbstractScraper {
                 "<strong>.*</strong> ([A-Za-z]+ [0-9]+, [0-9]{4}, [0-9]+:[0-9]+:[0-9]+ [AM|PM]{2})" +
                 "[\\S\\s]*?msg_[0-9]+\">([\\S\\s]*?)</div>");
         setLastPagePattern("([0-9]+)</a> &nbsp;&nbsp;\n");
-        this.pageUrlFormat = ".";
+        setPageUrlFormat(".");
 
-        this.groupIndexes = new int[] {3,1,2};
+        setGroupIndexes(new int[] {3,1,2});
     }
 }

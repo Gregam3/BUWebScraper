@@ -10,7 +10,6 @@ public class BlueMoonMCFCScraper extends AbstractScraper {
         setPostPattern("<blockquote.*>([\\S\\s]*?)<div class=\\\"messageTextEndMarker\\\">" +
                 "[\\S\\s]*?dir=\"auto\">([^<]+)[\\S\\s]*?" +
                 "<span class=\"DateTime\" title=\"([^\"]+)");
-        setLastPagePattern("Page 1 of ([0-9]*)");
-        this.pageUrlFormat = "page-";
+        setPageUrlFormat("page-");
     }
 }

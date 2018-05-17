@@ -1,6 +1,6 @@
 package com.bu.result;
 
-import com.bu.forum.Club;
+import com.bu.forum.ForumType;
 import com.bu.forum.ForumPost;
 import com.opencsv.CSVWriter;
 
@@ -27,11 +27,12 @@ public class ResultWriter {
         );
     }
 
-    public void writeToCSV(Map<Club, List<ForumPost>> resultsMap) {
-        for (Club club : resultsMap.keySet())
-            for (ForumPost forumPost : resultsMap.get(club))
+    public void writeToCSV(Map<ForumType, List<ForumPost>> resultsMap) {
+        System.out.println("Writing results to results.txt");
+        for (ForumType forumType : resultsMap.keySet())
+            for (ForumPost forumPost : resultsMap.get(forumType))
                 csvWriter.writeNext(new String[]{
-                        club.toString(),
+                        forumType.toString(),
                         forumPost.getPostContent().replace("\n", ""),
                         forumPost.getUsername(),
                         forumPost.getTime()
