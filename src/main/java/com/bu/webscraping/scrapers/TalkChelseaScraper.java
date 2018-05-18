@@ -1,10 +1,5 @@
 package com.bu.webscraping.scrapers;
 
-import com.bu.forum.ForumPost;
-
-import java.io.IOException;
-import java.util.List;
-
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com

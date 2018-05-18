@@ -57,7 +57,8 @@ public class ResultWriter {
             System.out.println("No forum URLs could be found in forums.txt.");
         else {
             for (ForumType forumType : forumSizeMap.keySet())
-               fileWriter.write(forumType.toString() +" total posts - " + String.valueOf(forumSizeMap.get(forumType)) +"\n");
+                fileWriter.write(forumType.toString() + " total posts - " + String.valueOf(forumSizeMap.get(forumType)) +","
+                        + System.getProperty("line.separator"));
         }
 
         fileWriter.flush();

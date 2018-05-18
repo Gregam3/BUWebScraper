@@ -5,6 +5,7 @@ import com.bu.webscraping.ScraperFactory;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
 
@@ -18,9 +19,12 @@ public class Main {
         ResultWriter resultWriter = new ResultWriter();
 
         try {
-//            resultWriter.writePostsToCSV(ScraperFactory.retrievePostsForAllForums());
+            resultWriter.writePostsToCSV(ScraperFactory.retrievePostsForAllForums());
             resultWriter.writeForumSizeToTxt(ScraperFactory.retrieveTotalForumPostsForAllForums());
             System.out.println("in " + convertUnixDifferenceToStringRunTime(startTime, new Date().getTime()));
+
+            System.out.println("\nPress enter to close.");
+            new Scanner(System.in).nextLine();
         } catch (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         }
