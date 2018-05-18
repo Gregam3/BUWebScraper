@@ -12,3 +12,6 @@ gen
 src/main/resources/
 src/test/
 results.txt
+forum-sizes.txt
+posts.txt
+forums.txt

@@ -15,6 +15,7 @@ import java.util.regex.Pattern;
  * gregoryamitten@gmail.com
  */
 public abstract class AbstractScraper implements Scraper {
+    private Pattern forumSizePattern;
     private Pattern postPattern;
     private Pattern lastPagePattern = Pattern.compile("Page 1 of ([0-9]*)");
     private String pageUrlFormat = "";
@@ -23,6 +24,10 @@ public abstract class AbstractScraper implements Scraper {
 
     //0 represents post content, 1 represents user and 2 represents time
     private int[] groupIndexes = new int[]{1, 2, 3};
+
+    public void setForumSizePattern(String forumSizeRegex) {
+        this.forumSizePattern = Pattern.compile(forumSizeRegex);
+    }
 
     void setPostPattern(String postRegex) {
         postPattern = Pattern.compile(postRegex);
@@ -40,18 +45,35 @@ public abstract class AbstractScraper implements Scraper {
         this.groupIndexes = groupIndexes;
     }
 
+    public long retrieveForumSize(String forumUrl) throws IOException {
+        long totalPostCount = 0;
+
+        String rawHtml = Jsoup.connect(forumUrl).get().toString();
+
+        Matcher forumSizeMatcher = forumSizePattern.matcher(rawHtml);
+
+        while (forumSizeMatcher.find())
+            totalPostCount += Long.valueOf(forumSizeMatcher.group(1).replace(",", ""));
+
+        return totalPostCount;
+    }
+
     public List<ForumPost> retrievePostsForForum(String threadUrl) throws IOException {
         List<ForumPost> forumPosts = new LinkedList<>();
 
-        int threadLength = getLastPage(threadUrl);
+        double threadLength = getLastPage(threadUrl);
 
-        int currentPageCount = 1;
+        double currentPageCount = 1;
 
         for (int pagePathVariableIterator = pagePathVariableStart;
-             //threadLength * by increment because some path variables use post number rather than page number
+            //threadLength * by increment because some path variables use post number rather than page number
              pagePathVariableIterator < (threadLength * pagePathVariableIncrement) + pagePathVariableIncrement;
              pagePathVariableIterator += pagePathVariableIncrement) {
-            System.out.println("Thread: " + threadUrl + " - Pages scraped for current site: "+ currentPageCount+" out of "+threadLength+". Total pages scraped: " + Main.cumulativePageCount);
+            //Clears console
+            //Casting purely for text formatting
+            System.out.println("Thread: " + threadUrl + " - Pages scraped for current site: " + (int) currentPageCount + "/" + (int) threadLength
+                    + " (" + (int) (((currentPageCount / threadLength) * 100)) + "%)" + ". Total pages scraped: " + Main.cumulativePageCount);
+
             forumPosts.addAll(retrievePostsForPage(threadUrl + pageUrlFormat + pagePathVariableIterator));
             currentPageCount++;
             Main.cumulativePageCount++;
