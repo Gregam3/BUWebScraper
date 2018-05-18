@@ -11,5 +11,7 @@ public class BlueMoonMCFCScraper extends AbstractScraper {
                 "[\\S\\s]*?dir=\"auto\">([^<]+)[\\S\\s]*?" +
                 "<span class=\"DateTime\" title=\"([^\"]+)");
         setPageUrlFormat("page-");
+
+        setForumSizePattern("Messages:[\\S\\s]*?</dt>[\\S\\s]*?<dd>[\\S\\s]*?([0-9,]+)");
     }
 }

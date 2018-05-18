@@ -14,7 +14,7 @@ import java.util.Map;
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
  */
-public class ResultGenerator {
+public class ResultWriter {
 
     private CSVWriter createCSVWriter(String fileName) throws IOException {
         return new CSVWriter(
@@ -47,7 +47,7 @@ public class ResultGenerator {
         csvWriter.flush();
         csvWriter.close();
 
-        System.out.print("Retrieved and wrote posts.txt a " + (((double) new File("results.txt").length() / 1024) / 1024 + "MB file "));
+        System.out.print("Retrieved and wrote posts.txt");// a " + getFileSizeAsString("posts.txt"));
     }
 
     public void writeForumSizeToTxt(Map<ForumType, Long> forumSizeMap) throws IOException {
@@ -57,12 +57,22 @@ public class ResultGenerator {
             System.out.println("No forum URLs could be found in forums.txt.");
         else {
             for (ForumType forumType : forumSizeMap.keySet())
-               fileWriter.write(forumType.toString() +" total posts - " + String.valueOf(forumSizeMap.get(forumType)));
+               fileWriter.write(forumType.toString() +" total posts - " + String.valueOf(forumSizeMap.get(forumType)) +"\n");
         }
 
         fileWriter.flush();
         fileWriter.close();
 
-        System.out.print("Retrieved and wrote forum-sizes.txt a " + (((double) new File("results.txt").length() / 1024) / 1024 + "MB file "));
+        System.out.print("Retrieved and wrote forum-sizes.txt");// a " + getFileSizeAsString("forum-size.txt"));
     }
+
+//    private String getFileSizeAsString(String fileName) {
+//        File file = new File(fileName);
+//
+//        if(file.length() > (1024 * 1024))
+//            return (((double) file.length() / 1024) / 1024 + "MB file ");
+//        if(file.length() > 1024)
+//            return (((double) file.length() / 1024) / 1024 + "KB file ");
+//        return file.length() + "Byte file ";
+//    }
 }

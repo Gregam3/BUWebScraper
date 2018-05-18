@@ -11,5 +11,7 @@ public class FootyMadScraper extends AbstractScraper {
                 "[\\S\\s]*?<blockquote class=\"postcontent.*?>([\\S\\s]*?)</blockquote>");
         setPageUrlFormat("&page=");
         setGroupIndexes(new int[]{3,2,1});
+
+        setForumSizePattern("<li>Posts: ([0-9,]+)</li>");
     }
 }

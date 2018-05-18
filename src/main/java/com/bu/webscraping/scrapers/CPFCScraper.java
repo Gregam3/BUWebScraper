@@ -10,5 +10,7 @@ public class CPFCScraper extends AbstractScraper {
                 "[\\S\\s]*?<div id=\"post_message_[0-9]+\">([\\S\\s])*?</div>" +
                 "[\\S\\s]*?Find all posts by ([\\S\\s])*?</a>");
         setPageUrlFormat("&page=2");
+
+        setForumSizePattern("<td class=\"alt2\">([0-9,]+)</td>");
     }
 }

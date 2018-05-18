@@ -13,7 +13,8 @@ public class RedAndWhiteScraper extends AbstractScraper {
                 "[\\S\\s]*?msg_[0-9]+\">([\\S\\s]*?)</div>");
         setLastPagePattern("([0-9]+)</a> &nbsp;&nbsp;\n");
         setPageUrlFormat(".");
-
         setGroupIndexes(new int[] {3,1,2});
+
+        setForumSizePattern("<td class=\"stats windowbg\"> <p>([0-9,]+) Posts <br>");
     }
 }

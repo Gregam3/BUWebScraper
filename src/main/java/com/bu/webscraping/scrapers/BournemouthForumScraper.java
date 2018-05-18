@@ -10,6 +10,7 @@ public class BournemouthForumScraper extends AbstractScraper {
                 "[\\S\\s]*?<article class=\"message-body.*([\\S\\s]*?)<footer class=\"message-footer\">");
         setLastPagePattern("aria-expanded=\"[true|false]+\" aria-haspopup=\"[true|false]+\"> 1 of ([0-9]+) </a>");
         setPageUrlFormat("page-");
+        setForumSizePattern("<dl class=\"pairs pairs--inline\">[\\S\\s]*?<dt>[\\S\\s]*?Messages[\\S\\s]*?</dt>[\\S\\s]*?<dd>[\\S\\s]*?([0-9,]+)[\\S\\s]*?</dd>");
 
         setGroupIndexes(new int[]{3,1,2});
     }

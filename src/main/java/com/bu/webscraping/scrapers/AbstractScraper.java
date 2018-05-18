@@ -55,6 +55,8 @@ public abstract class AbstractScraper implements Scraper {
         while (forumSizeMatcher.find())
             totalPostCount += Long.valueOf(forumSizeMatcher.group(1).replace(",", ""));
 
+        System.out.println("Retrieved forum size for:" +forumUrl +" it had " +totalPostCount + " posts, written to forum-sizes.txt.");
+
         return totalPostCount;
     }
 

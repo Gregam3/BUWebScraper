@@ -18,5 +18,7 @@ public class TalkChelseaScraper extends AbstractScraper {
         setLastPagePattern("Page 1 of ([0-9]*)");
         setPageUrlFormat("?page=");
         setGroupIndexes(new int[]{3, 1, 2});
+
+        setForumSizePattern("3px;\">[\\S\\s]*?([0-9,]+)");
     }
 }

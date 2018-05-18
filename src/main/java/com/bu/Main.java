@@ -1,6 +1,6 @@
 package com.bu;
 
-import com.bu.result.ResultGenerator;
+import com.bu.result.ResultWriter;
 import com.bu.webscraping.ScraperFactory;
 
 import java.io.IOException;
@@ -15,11 +15,11 @@ public class Main {
     public static void main(String[] args) throws IOException {
         long startTime = new Date().getTime();
 
-        ResultGenerator resultGenerator = new ResultGenerator();
+        ResultWriter resultWriter = new ResultWriter();
 
         try {
-//            resultGenerator.writePostsToCSV(ScraperFactory.retrievePostsForAllForums());
-            resultGenerator.writeForumSizeToTxt(ScraperFactory.retrieveTotalForumPostsForAllForums());
+//            resultWriter.writePostsToCSV(ScraperFactory.retrievePostsForAllForums());
+            resultWriter.writeForumSizeToTxt(ScraperFactory.retrieveTotalForumPostsForAllForums());
             System.out.println("in " + convertUnixDifferenceToStringRunTime(startTime, new Date().getTime()));
         } catch (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
