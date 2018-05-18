@@ -45,13 +45,15 @@ public abstract class AbstractScraper implements Scraper {
 
         int threadLength = getLastPage(threadUrl);
 
+        int currentPageCount = 1;
+
         for (int pagePathVariableIterator = pagePathVariableStart;
              //threadLength * by increment because some path variables use post number rather than page number
              pagePathVariableIterator < (threadLength * pagePathVariableIncrement) + pagePathVariableIncrement;
              pagePathVariableIterator += pagePathVariableIncrement) {
-            System.out.println("Site " + Main.siteNumber + " - Total pages scraped: " + Main.cumulativePageCount);
+            System.out.println("Thread: " + threadUrl + " - Pages scraped for current site: "+ currentPageCount+" out of "+threadLength+". Total pages scraped: " + Main.cumulativePageCount);
             forumPosts.addAll(retrievePostsForPage(threadUrl + pageUrlFormat + pagePathVariableIterator));
-
+            currentPageCount++;
             Main.cumulativePageCount++;
         }
 
@@ -69,12 +71,9 @@ public abstract class AbstractScraper implements Scraper {
         while (postMatcher.find())
             forumPosts.add(
                     new ForumPost(
-                            //group one should always be post content
                             Jsoup.parse(postMatcher.group(groupIndexes[0])).text(),
-                            //group two should always be username
                             postMatcher.group(groupIndexes[1]),
-                            //group three should always be date
-                            postMatcher.group(groupIndexes[2])
+                            Jsoup.parse(postMatcher.group(groupIndexes[2])).text()
                     )
             );
 
@@ -87,7 +86,7 @@ public abstract class AbstractScraper implements Scraper {
             matcher.find();
             return Integer.valueOf(matcher.group(1));
         } catch (Exception e) {
-            System.err.println("Could not retrieve page count:" + e);
+            System.err.println("Could not retrieve page count, this may be due to the thread being fewer than 5 pages. If so this is not an issue.");
             return 1;
         }
     }

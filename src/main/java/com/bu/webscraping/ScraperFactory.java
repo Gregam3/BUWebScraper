@@ -41,6 +41,8 @@ public class ScraperFactory {
                 addResults(ForumType.EVERTON_GRAND_OLD_TEAM, GrandOldTeamScraper.class, threadUrl);
             else if (threadUrl.contains("bournemouth-forum.vitalfootball.co.uk"))
                 addResults(ForumType.BOURNEMOUTH_BOURNEMOUTH_FORUM, BournemouthForumScraper.class, threadUrl);
+            else if (threadUrl.contains("boards.footymad.net"))
+                addResults(ForumType.BURNLEY_FOOTY_MAD, FootyMadScraper.class, threadUrl);
             else
                 System.err.println("Site: \"" + threadUrl + "\" could not be found, if this is blank please remove any trailing spaces or commas after the last thread link");
         }
