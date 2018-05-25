@@ -47,7 +47,7 @@ public class ResultWriter {
         csvWriter.flush();
         csvWriter.close();
 
-        System.out.print("Retrieved and wrote posts.txt");// a " + getFileSizeAsString("posts.txt"));
+        System.out.println("Retrieved and wrote posts.txt");// a " + getFileSizeAsString("posts.txt"));
     }
 
     public void writeForumSizeToTxt(Map<ForumType, Long> forumSizeMap) throws IOException {
@@ -57,14 +57,14 @@ public class ResultWriter {
             System.out.println("No forum URLs could be found in forums.txt.");
         else {
             for (ForumType forumType : forumSizeMap.keySet())
-                fileWriter.write(forumType.toString() + " total posts - " + String.valueOf(forumSizeMap.get(forumType)) +","
+                fileWriter.write(forumType.toString() + " total posts - " + String.valueOf(forumSizeMap.get(forumType)) + ","
                         + System.getProperty("line.separator"));
+
+            fileWriter.flush();
+            fileWriter.close();
+
+            System.out.println("Retrieved and wrote forum-sizes.txt ");// a " + getFileSizeAsString("forum-size.txt"));
         }
-
-        fileWriter.flush();
-        fileWriter.close();
-
-        System.out.print("Retrieved and wrote forum-sizes.txt");// a " + getFileSizeAsString("forum-size.txt"));
     }
 
 //    private String getFileSizeAsString(String fileName) {

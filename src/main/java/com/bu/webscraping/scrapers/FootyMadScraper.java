@@ -9,7 +9,7 @@ public class FootyMadScraper extends AbstractScraper {
         setPostPattern("<span class=\"date\">(13-05-2018.*?<span class=\"time\">[0-9]+:[0-9]+ [PM|AM]+)" +
                 "[\\S\\s]*?line.png\" alt=\"([\\S\\s]*?) is offline" +
                 "[\\S\\s]*?<blockquote class=\"postcontent.*?>([\\S\\s]*?)</blockquote>");
-        setPageUrlFormat("&page=");
+        setPageUrlPrefix("&page=");
         setGroupIndexes(new int[]{3,2,1});
 
         setForumSizePattern("<li>Posts: ([0-9,]+)</li>");

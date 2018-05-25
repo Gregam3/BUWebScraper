@@ -17,8 +17,9 @@ import java.util.regex.Pattern;
 public abstract class AbstractScraper implements Scraper {
     private Pattern forumSizePattern;
     private Pattern postPattern;
-    private Pattern lastPagePattern = Pattern.compile("Page 1 of ([0-9]*)");
-    private String pageUrlFormat = "";
+    Pattern lastPagePattern = Pattern.compile("Page 1 of ([0-9]*)");
+    private String pageUrlPrefix = "";
+    private String pageUrlSuffix = "";
     int pagePathVariableIncrement = 1;
     int pagePathVariableStart = 1;
 
@@ -37,8 +38,12 @@ public abstract class AbstractScraper implements Scraper {
         this.lastPagePattern = Pattern.compile(lastPageRegex);
     }
 
-    void setPageUrlFormat(String pageUrlFormat) {
-        this.pageUrlFormat = pageUrlFormat;
+    void setPageUrlPrefix(String pageUrlPrefix) {
+        this.pageUrlPrefix = pageUrlPrefix;
+    }
+
+    public void setPageUrlSuffix(String pageUrlSuffix) {
+        this.pageUrlSuffix = pageUrlSuffix;
     }
 
     void setGroupIndexes(int[] groupIndexes) {
@@ -55,7 +60,7 @@ public abstract class AbstractScraper implements Scraper {
         while (forumSizeMatcher.find())
             totalPostCount += Long.valueOf(forumSizeMatcher.group(1).replace(",", ""));
 
-        System.out.println("Retrieved forum size for:" +forumUrl +" it had " +totalPostCount + " posts, written to forum-sizes.txt.");
+        System.out.println("Retrieved forum size for:" + forumUrl + " it had " + totalPostCount + " posts, written to forum-sizes.txt.");
 
         return totalPostCount;
     }
@@ -63,20 +68,20 @@ public abstract class AbstractScraper implements Scraper {
     public List<ForumPost> retrievePostsForForum(String threadUrl) throws IOException {
         List<ForumPost> forumPosts = new LinkedList<>();
 
-        double threadLength = getLastPage(threadUrl);
+        double threadLength = getPageCountForThread(threadUrl);
 
         double currentPageCount = 1;
 
         for (int pagePathVariableIterator = pagePathVariableStart;
             //threadLength * by increment because some path variables use post number rather than page number
-             pagePathVariableIterator < (threadLength * pagePathVariableIncrement) + pagePathVariableIncrement;
+             pagePathVariableIterator <= (threadLength * pagePathVariableIncrement);
              pagePathVariableIterator += pagePathVariableIncrement) {
             //Clears console
             //Casting purely for text formatting
             System.out.println("Thread: " + threadUrl + " - Pages scraped for current site: " + (int) currentPageCount + "/" + (int) threadLength
                     + " (" + (int) (((currentPageCount / threadLength) * 100)) + "%)" + ". Total pages scraped: " + Main.cumulativePageCount);
 
-            forumPosts.addAll(retrievePostsForPage(threadUrl + pageUrlFormat + pagePathVariableIterator));
+            forumPosts.addAll(retrievePostsForPage(threadUrl + pageUrlPrefix + pagePathVariableIterator + pageUrlSuffix));
             currentPageCount++;
             Main.cumulativePageCount++;
         }
@@ -92,19 +97,22 @@ public abstract class AbstractScraper implements Scraper {
 
         Matcher postMatcher = postPattern.matcher(rawHtml);
 
-        while (postMatcher.find())
-            forumPosts.add(
-                    new ForumPost(
-                            Jsoup.parse(postMatcher.group(groupIndexes[0])).text(),
-                            postMatcher.group(groupIndexes[1]),
-                            Jsoup.parse(postMatcher.group(groupIndexes[2])).text()
-                    )
+        while (postMatcher.find()) {
+            ForumPost forumPost = new ForumPost(
+                    Jsoup.parse(postMatcher.group(groupIndexes[0])).text(),
+                    Jsoup.parse(postMatcher.group(groupIndexes[1])).text(),
+                    Jsoup.parse(postMatcher.group(groupIndexes[2])).text()
             );
 
+            if (!forumPosts.contains(forumPost))
+                forumPosts.add(
+                        forumPost
+                );
+        }
         return forumPosts;
     }
 
-    private int getLastPage(String threadUrl) throws IOException {
+    private int getPageCountForThread(String threadUrl) throws IOException {
         try {
             Matcher matcher = lastPagePattern.matcher(Jsoup.connect(threadUrl).get().toString());
             matcher.find();

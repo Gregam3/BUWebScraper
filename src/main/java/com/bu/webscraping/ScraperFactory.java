@@ -82,9 +82,30 @@ public class ScraperFactory {
                 addPostsToMap(ForumType.BOURNEMOUTH_BOURNEMOUTH_FORUM, BournemouthForumScraper.class, threadUrl);
             else if (threadUrl.contains("boards.footymad.net"))
                 addPostsToMap(ForumType.BURNLEY_FOOTY_MAD, FootyMadScraper.class, threadUrl);
+            else if (threadUrl.contains("lfcreds.com"))
+                addPostsToMap(ForumType.LIVERPOOL_LFC_REDS, LFCRedsScraper.class, threadUrl);
+            else if (threadUrl.contains("www.redcafe.net"))
+                addPostsToMap(ForumType.MANCHESTER_UNITED_RED_CAFE, RedCafeScraper.class, threadUrl);
+            else if (threadUrl.contains("www.spurscommunity.co.uk"))
+                addPostsToMap(ForumType.TOTTENHAM_HOTSPURS_SPURS_COMMUNITY, SpursCommunityScraper.class, threadUrl);
+            else if (threadUrl.contains("www.toontastic.net"))
+                addPostsToMap(ForumType.NEWCASTLE_TOONTASTIC, ToontasticScraper.class, threadUrl);
+            else if (threadUrl.contains("westbrom.com"))
+                addPostsToMap(ForumType.WEST_BROMICH_ALBION_WEST_BROM, WestBromScraper.class, threadUrl);
+            else if (threadUrl.contains("www.westhamonline.net"))
+                addPostsToMap(ForumType.WEST_HAM_WEST_HAM_ONLINE, WestHamOnlineScraper.class, threadUrl);
+            else if (threadUrl.contains("oatcakefanzine.proboards.com"))
+                addPostsToMap(ForumType.STOKE_CITY_OAKCAKE_FANZINE, OatcakeFanzineScraper.class, threadUrl);
+            else if (threadUrl.contains("www.holmesdale.net"))
+                addPostsToMap(ForumType.CRYSTAL_PALACE_HOLMES_DALES, HolmesDaleScraper.class, threadUrl);
+            else if (threadUrl.contains("www.saintsweb.co.uk"))
+                addPostsToMap(ForumType.SOUTHAMPTON_SAINTS_WEBB, SaintsWebScraper.class, threadUrl);
+            else if (threadUrl.contains("wfcforums.com"))
+                addPostsToMap(ForumType.WATFORD_WFC_FORUMS, WFCForumsScraper.class, threadUrl);
+            else if (threadUrl.contains("www.fansnetwork.co.uk"))
+                addPostsToMap(ForumType.SWANSEA_CITY_FANS_NETWORK, FansNetworkScraper.class, threadUrl);
             else
                 System.err.println("Site: \"" + threadUrl + "\" could not be found, if this is blank please remove any trailing spaces or commas after the last thread link");
-
 
         return postMap;
     }
@@ -107,7 +128,7 @@ public class ScraperFactory {
         if (urls == null)
             return null;
 
-        return urls.split(",");
+        return urls.split(";");
     }
 
     private static Scraper getScraper(Class<?> scraperClass) throws IllegalAccessException, InstantiationException {

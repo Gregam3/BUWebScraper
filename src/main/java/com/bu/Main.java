@@ -21,29 +21,28 @@ public class Main {
         try {
             resultWriter.writePostsToCSV(ScraperFactory.retrievePostsForAllForums());
             resultWriter.writeForumSizeToTxt(ScraperFactory.retrieveTotalForumPostsForAllForums());
-            System.out.println("in " + convertUnixDifferenceToStringRunTime(startTime, new Date().getTime()));
 
-            System.out.println("\nPress enter to close.");
+            System.out.println("\nPress Enter key to close.");
             new Scanner(System.in).nextLine();
         } catch (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         }
     }
 
-    private static String convertUnixDifferenceToStringRunTime(long startTime, long endTime) {
-        int seconds = (int) (endTime - startTime)/1000;
-        int minutes = 0;
-        int hours = 0;
-
-        for (;seconds > 60; seconds -= 60) {
-            minutes++;
-            if(minutes > 60) {
-                minutes -= 60;
-                hours++;
-            }
-        }
-
-        return hours +"hrs, " + minutes + " mins and " + seconds + " seconds";
-
-    }
+//    private static String convertUnixDifferenceToStringRunTime(long startTime, long endTime) {
+//        int seconds = (int) (endTime - startTime)/1000;
+//        int minutes = 0;
+//        int hours = 0;
+//
+//        for (;seconds > 60; seconds -= 60) {
+//            minutes++;
+//            if(minutes > 60) {
+//                minutes -= 60;
+//                hours++;
+//            }
+//        }
+//
+//        return hours +"hrs, " + minutes + " mins and " + seconds + " seconds";
+//
+//    }
 }
