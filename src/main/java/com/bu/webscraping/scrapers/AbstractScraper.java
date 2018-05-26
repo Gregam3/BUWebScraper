@@ -90,10 +90,10 @@ public abstract class AbstractScraper implements Scraper {
         return forumPosts;
     }
 
-    public List<ForumPost> retrievePostsForPage(String forumUrl) throws IOException {
+    public List<ForumPost> retrievePostsForPage(String threadPageUrl) throws IOException {
         List<ForumPost> forumPosts = new LinkedList<>();
 
-        String rawHtml = Jsoup.connect(forumUrl).get().toString();
+        String rawHtml = Jsoup.connect(threadPageUrl).get().toString();
 
         Matcher postMatcher = postPattern.matcher(rawHtml);
 
