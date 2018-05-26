@@ -11,7 +11,7 @@ public class RedAndWhiteScraper extends AbstractScraper {
         setPostPattern("title=\"View the profile of ([^\"]+)[\\S\\s]*?<strong>.*</strong> ([A-Za-z]+ [0-9]+, [0-9]{4}, [0-9]+:[0-9]+:[0-9]+ [AM|PM]{2})[\\S\\s]*?msg_[0-9]+\">([\\S\\s]*?)<div class=\"moderatorbar\"> ");
         setLastPagePattern("([0-9]+)</a> &nbsp;&nbsp;\n");
         setPageUrlPrefix(".");
-        setGroupIndexes(new int[] {3,1,2});
+        setPostGroupIndexes(new int[] {3,1,2});
 
         setForumSizePattern("<td class=\"stats windowbg\"> <p>([0-9,]+) Posts <br>");
     }

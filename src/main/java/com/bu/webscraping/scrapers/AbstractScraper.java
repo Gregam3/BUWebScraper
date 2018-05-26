@@ -5,8 +5,10 @@ import com.bu.forum.ForumPost;
 import org.jsoup.Jsoup;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -15,16 +17,29 @@ import java.util.regex.Pattern;
  * gregoryamitten@gmail.com
  */
 public abstract class AbstractScraper implements Scraper {
+    /**Used to group each of the post counts for each category on the root forum url*/
     private Pattern forumSizePattern;
+    /**Used to fetch each post on a thread page*/
     private Pattern postPattern;
+    /**Finds the last page of the thread, used on first page only.*/
     Pattern lastPagePattern = Pattern.compile("Page 1 of ([0-9]*)");
+    /**Anything that occurs after the base threadUrl that allows for path variable page navigation e.g. "page-"*/
     private String pageUrlPrefix = "";
+    /**Anything that occurs after the page number that allows for path variable page navigation e.g. "||" in the case of WestHamOnlineScraper*/
     private String pageUrlSuffix = "";
+    /**Custom increment as many PHP pages use the path variable to declare how many posts are shown e.g. "40"*/
     int pagePathVariableIncrement = 1;
+    /**Many of the afore mentioned PHP pages start at 0 rather than 1*/
     int pagePathVariableStart = 1;
 
-    //0 represents post content, 1 represents user and 2 represents time
-    private int[] groupIndexes = new int[]{1, 2, 3};
+    Map<Integer, List<String>> textToRemoveMap = new HashMap<>();
+
+    /**Used to direct the matcher to the correct group,
+     * index 0 always refers to the position of the post content group
+     * index 1 always refers to the position of the username group
+     * index 2 always refers to the position of the date and time group
+     * */
+    private int[] postGroupIndexes = new int[]{1, 2, 3};
 
     public void setForumSizePattern(String forumSizeRegex) {
         this.forumSizePattern = Pattern.compile(forumSizeRegex);
@@ -46,8 +61,8 @@ public abstract class AbstractScraper implements Scraper {
         this.pageUrlSuffix = pageUrlSuffix;
     }
 
-    void setGroupIndexes(int[] groupIndexes) {
-        this.groupIndexes = groupIndexes;
+    void setPostGroupIndexes(int[] postGroupIndexes) {
+        this.postGroupIndexes = postGroupIndexes;
     }
 
     public long retrieveForumSize(String forumUrl) throws IOException {
@@ -78,7 +93,7 @@ public abstract class AbstractScraper implements Scraper {
              pagePathVariableIterator += pagePathVariableIncrement) {
             //Clears console
             //Casting purely for text formatting
-            System.out.println("Thread: " + threadUrl + " - Pages scraped for current site: " + (int) currentPageCount + "/" + (int) threadLength
+            System.out.println("Thread: " + threadUrl + " - Pages scraped for current thread: " + (int) currentPageCount + "/" + (int) threadLength
                     + " (" + (int) (((currentPageCount / threadLength) * 100)) + "%)" + ". Total pages scraped: " + Main.cumulativePageCount);
 
             forumPosts.addAll(retrievePostsForPage(threadUrl + pageUrlPrefix + pagePathVariableIterator + pageUrlSuffix));
@@ -99,9 +114,9 @@ public abstract class AbstractScraper implements Scraper {
 
         while (postMatcher.find()) {
             ForumPost forumPost = new ForumPost(
-                    Jsoup.parse(postMatcher.group(groupIndexes[0])).text(),
-                    Jsoup.parse(postMatcher.group(groupIndexes[1])).text(),
-                    Jsoup.parse(postMatcher.group(groupIndexes[2])).text()
+                    Jsoup.parse(postMatcher.group(postGroupIndexes[0])).text(),
+                    Jsoup.parse(postMatcher.group(postGroupIndexes[1])).text(),
+                    Jsoup.parse(postMatcher.group(postGroupIndexes[2])).text()
             );
 
             if (!forumPosts.contains(forumPost))
@@ -118,7 +133,7 @@ public abstract class AbstractScraper implements Scraper {
             matcher.find();
             return Integer.valueOf(matcher.group(1));
         } catch (Exception e) {
-            System.err.println("Could not retrieve page count, this may be due to the thread being fewer than 5 pages. If so this is not an issue.");
+            System.err.println("Could not retrieve page count, this may be due to the thread being fewer than 5 pages. If so, this is not an issue.");
             return 1;
         }
     }

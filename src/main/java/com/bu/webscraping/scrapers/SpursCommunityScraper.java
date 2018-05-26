@@ -11,6 +11,6 @@ public class SpursCommunityScraper extends AbstractScraper {
         setLastPagePattern("ria-expanded=\"false\" aria-haspopup=\"true\"> 1 of ([0-9]+)");
         setPageUrlPrefix("page-");
 
-        setGroupIndexes(new int[]{3,1,2});
+        setPostGroupIndexes(new int[]{3,1,2});
     }
 }

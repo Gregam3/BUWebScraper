@@ -18,7 +18,7 @@ public class WestHamOnlineScraper extends AbstractScraper {
         setPostPattern("<a href=\"profile.php\\?[0-9]+\"><b>([\\S\\s]*?)</b></a> ([0-9]+:[0-9]{2} [A-Z][a-z]+ [A-Z][a-z]{2} [0-9]+)" +
                 "[\\S\\s]*?bgcolor=\"#FFFFFF\" valign=\"top\">[\\S\\s]*?<div class=\"mediumtext\">([\\S\\s]*?)</div> </td> ");
         setLastPagePattern("Page ([0-9]+) -[\\S\\s]*?<a ");
-        setGroupIndexes(new int[]{3,1,2});
+        setPostGroupIndexes(new int[]{3, 1, 2});
     }
 
     @Override
@@ -28,27 +28,21 @@ public class WestHamOnlineScraper extends AbstractScraper {
 
         double currentPageCount = 1;
         int pagePathVariableIterator = 0;
-        int previousScrapedPageNumber = 0;
 
         while (true) {
-            Matcher currentPageMatcher = lastPagePattern.matcher(Jsoup.connect(threadUrl + "||" + pagePathVariableIterator + "||").get().toString());
+            Matcher currentPageMatcher = lastPagePattern.matcher(Jsoup.connect(threadUrl + "|n|1|" + pagePathVariableIterator).get().toString());
 
-            currentPageMatcher.find();
-            int currentPageNumber = Integer.valueOf(currentPageMatcher.group(1));
+            if (!currentPageMatcher.find())
+                return forumPosts;
 
-            System.out.println("Thread: " + threadUrl + " - Pages scraped for current site: " + (int) currentPageCount +
+            System.out.println("Thread: " + threadUrl + " - Pages scraped for current thread: " + (int) currentPageCount +
                     ", unavailable total for WestHamOnline. This is normal don't worry. Total pages scraped: " + Main.cumulativePageCount);
 
-            forumPosts.addAll(retrievePostsForPage(threadUrl + "||" + pagePathVariableIterator + "||"));
+            forumPosts.addAll(retrievePostsForPage(threadUrl + "|n|1|" + pagePathVariableIterator));
+
+            pagePathVariableIterator++;
             currentPageCount++;
             Main.cumulativePageCount++;
-
-            if(currentPageNumber == previousScrapedPageNumber) {
-                Main.siteNumber++;
-                return forumPosts;
-            }
-
-            previousScrapedPageNumber = currentPageNumber;
         }
     }
 

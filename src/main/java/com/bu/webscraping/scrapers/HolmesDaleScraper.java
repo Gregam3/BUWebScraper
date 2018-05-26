@@ -10,6 +10,6 @@ public class HolmesDaleScraper extends AbstractScraper {
                 "[\\S\\s]*?Add ([\\S\\s]*?) as a friend" +
                 "[\\S\\s]*?<td colspan=\"2\"> <p>([\\S\\s]*?)</td>");
         setPageUrlPrefix("&page=");
-        setGroupIndexes(new int[]{3,2,1});
+        setPostGroupIndexes(new int[]{3,2,1});
     }
 }

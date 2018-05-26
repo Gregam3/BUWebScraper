@@ -11,6 +11,6 @@ public class SaintsWebScraper extends AbstractScraper {
                 "[\\S\\s]*?<div id=\"post_message_[0-9]+\">([\\S\\s]*?)<div class=\"postfoot\">");
         setPageUrlPrefix("page");
 
-        setGroupIndexes(new int[]{3,2,1});
+        setPostGroupIndexes(new int[]{3,2,1});
     }
 }

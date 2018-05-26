@@ -12,6 +12,6 @@ public class OatcakeFanzineScraper extends AbstractScraper {
         setLastPagePattern("<div onclick=\"var page=prompt[\\S\\s]*?\">([0-9]+)</a></li>");
         setPageUrlPrefix("?page=");
 
-        setGroupIndexes(new int[]{3,1,2});
+        setPostGroupIndexes(new int[]{3,1,2});
     }
 }

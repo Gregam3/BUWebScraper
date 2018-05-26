@@ -10,6 +10,6 @@ public class WFCForumsScraper extends AbstractScraper {
                 "[\\S\\s]*?<div class=\"messageContent\">([\\S\\s]*?)<div class=\"messageMeta" +
                 "[\\S\\s]*?<span class=\"DateTime\" title=\"([A-Z][a-z]{2} [0-9]+, [0-9]{4} at [0-9]+:[0-9]+ [AM|PM]+)\"");
         setPageUrlPrefix("page-");
-        setGroupIndexes(new int[]{2,1,3});
+        setPostGroupIndexes(new int[]{2,1,3});
     }
 }

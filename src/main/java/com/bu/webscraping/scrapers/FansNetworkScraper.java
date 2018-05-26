@@ -10,6 +10,6 @@ public class FansNetworkScraper extends AbstractScraper {
         setPageUrlPrefix("page:");
         setLastPagePattern("</li> \\.\\.\\.[\\S\\s]*?li><a href=\"/[\\S\\s]*?/[\\S\\s]*?/[\\S\\s]*?/[\\S\\s]*?/page:([0-9]+)\">");
 
-        setGroupIndexes(new int[]{2,3,1});
+        setPostGroupIndexes(new int[]{2,3,1});
     }
 }
