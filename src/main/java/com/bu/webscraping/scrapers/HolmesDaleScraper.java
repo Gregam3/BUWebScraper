@@ -11,5 +11,7 @@ public class HolmesDaleScraper extends AbstractScraper {
                 "[\\S\\s]*?<td colspan=\"2\"> <p>([\\S\\s]*?)</td>");
         setPageUrlPrefix("&page=");
         setPostGroupIndexes(new int[]{3,2,1});
+
+        setForumSizePattern("<td width=\"7%\" class=\"c\">([0-9,]+)</td> ");
     }
 }

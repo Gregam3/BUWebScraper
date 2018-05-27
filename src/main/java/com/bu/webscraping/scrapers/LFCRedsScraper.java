@@ -11,8 +11,10 @@ public class LFCRedsScraper extends AbstractScraper {
 
         setPostPattern("title=\"View the profile of ([\\S\\s]*?)\"[\\S\\s]*?</a>: ([A-Z][a-z]{2} [0-9]+, [0-9]{4} [0-9]{2}:[0-9]{2}:[0-9]{2} [am|pm]+)[\\S\\s]*?<div class=\"post\">([\\S\\s]*?)<div class=\"moderatorbar");
         setPageUrlPrefix(".");
-        setLastPagePattern("([0-9]+)</a> &nbsp;[\\S\\s]*?<a href=\"#lastPost\" class=\"navPages gouptotop\" style=\"text-decoration: none;\"><strong>Go</strong> <i class=\"fa fa-arrow-circle-down\"></i></a>");
+        setLastPagePatternLong("([0-9]+)</a> &nbsp;[\\S\\s]*?<a href=\"#lastPost\" class=\"navPages gouptotop\" style=\"text-decoration: none;\"><strong>Go</strong> <i class=\"fa fa-arrow-circle-down\"></i></a>");
 
         setPostGroupIndexes(new int[]{3, 1, 2});
+
+        setForumSizePattern("<td class=\"stats windowbg\"> <p>([0-9,]+) Posts <br> [0-9,]+ Topics </p> </td>");
     }
 }

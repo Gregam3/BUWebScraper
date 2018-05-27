@@ -44,6 +44,28 @@ public class ScraperFactory {
                 addThreadSizeToMap(ForumType.BOURNEMOUTH_BOURNEMOUTH_FORUM, BournemouthForumScraper.class, forumUrl);
             else if (forumUrl.contains("boards.footymad.net"))
                 addThreadSizeToMap(ForumType.BURNLEY_FOOTY_MAD, FootyMadScraper.class, forumUrl);
+            else if (forumUrl.contains("lfcreds.com"))
+                addThreadSizeToMap(ForumType.LIVERPOOL_LFC_REDS, LFCRedsScraper.class, forumUrl);
+            else if (forumUrl.contains("www.redcafe.net"))
+                addThreadSizeToMap(ForumType.MANCHESTER_UNITED_RED_CAFE, RedCafeScraper.class, forumUrl);
+            else if (forumUrl.contains("www.spurscommunity.co.uk"))
+                addThreadSizeToMap(ForumType.TOTTENHAM_HOTSPURS_SPURS_COMMUNITY, SpursCommunityScraper.class, forumUrl);
+            else if (forumUrl.contains("www.toontastic.net"))
+                addThreadSizeToMap(ForumType.NEWCASTLE_TOONTASTIC, ToontasticScraper.class, forumUrl);
+            else if (forumUrl.contains("westbrom.com"))
+                addThreadSizeToMap(ForumType.WEST_BROMICH_ALBION_WEST_BROM, WestBromScraper.class, forumUrl);
+            else if (forumUrl.contains("www.westhamonline.net"))
+                addThreadSizeToMap(ForumType.WEST_HAM_WEST_HAM_ONLINE, WestHamOnlineScraper.class, forumUrl);
+            else if (forumUrl.contains("oatcakefanzine.proboards.com"))
+                addThreadSizeToMap(ForumType.STOKE_CITY_OAKCAKE_FANZINE, OatcakeFanzineScraper.class, forumUrl);
+            else if (forumUrl.contains("www.holmesdale.net"))
+                addThreadSizeToMap(ForumType.CRYSTAL_PALACE_HOLMES_DALES, HolmesDaleScraper.class, forumUrl);
+            else if (forumUrl.contains("www.saintsweb.co.uk"))
+                addThreadSizeToMap(ForumType.SOUTHAMPTON_SAINTS_WEBB, SaintsWebScraper.class, forumUrl);
+            else if (forumUrl.contains("wfcforums.com"))
+                addThreadSizeToMap(ForumType.WATFORD_WFC_FORUMS, WFCForumsScraper.class, forumUrl);
+            else if (forumUrl.contains("www.fansnetwork.co.uk"))
+                addThreadSizeToMap(ForumType.SWANSEA_CITY_FANS_NETWORK, FansNetworkScraper.class, forumUrl);
             else
                 System.err.println("Site: \"" + forumUrl + "\" could not be found, if this is blank please remove any trailing spaces or commas after the last thread link");
         }

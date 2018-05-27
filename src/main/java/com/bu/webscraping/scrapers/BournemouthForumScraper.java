@@ -8,7 +8,7 @@ public class BournemouthForumScraper extends AbstractScraper {
     public BournemouthForumScraper() {
         setPostPattern("data-lb-caption-desc=\"(.*?)· ([A-Z][a-z]{2} [0-9]+, [0-9]{4} at [0-9]+:[0-9]{2} [PM|AM]{2})" +
                 "[\\S\\s]*?<article class=\"message-body.*([\\S\\s]*?)<footer class=\"message-footer\">");
-        setLastPagePattern("aria-expanded=\"[true|false]+\" aria-haspopup=\"[true|false]+\"> 1 of ([0-9]+) </a>");
+        setLastPagePatternLong("aria-expanded=\"[true|false]+\" aria-haspopup=\"[true|false]+\"> 1 of ([0-9]+) </a>");
         setPageUrlPrefix("page-");
         setForumSizePattern("<dl class=\"pairs pairs--inline\">[\\S\\s]*?<dt>[\\S\\s]*?Messages[\\S\\s]*?</dt>[\\S\\s]*?<dd>[\\S\\s]*?([0-9,]+)[\\S\\s]*?</dd>");
 

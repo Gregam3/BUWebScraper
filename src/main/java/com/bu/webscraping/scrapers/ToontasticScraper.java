@@ -11,5 +11,7 @@ public class ToontasticScraper extends AbstractScraper {
                 "[\\S\\s]*?<div data-role=\"commentContent\" class=\"ipsType_normal ipsType_richText ipsContained\" data-controller=\"core.front.core.lightboxedImages\">([\\S\\s]*?)<div class=\"ipsItemControls\">");
         setPageUrlPrefix("?page=");
         setPostGroupIndexes(new int[]{3,1,2});
+
+        setForumSizePattern("<dt class=\"ipsDataItem_stats_number\">[\\S\\s]*?([0-9,]+)[\\S\\s]*?</dt>");
     }
 }

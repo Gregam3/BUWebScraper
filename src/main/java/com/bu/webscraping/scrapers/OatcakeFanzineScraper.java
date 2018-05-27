@@ -9,9 +9,12 @@ public class OatcakeFanzineScraper extends AbstractScraper {
         setPostPattern("Post by ([\\S\\s]*?) on <abbr" +
                 "[\\S\\s]*?title=\"([A-Z][a-z]{2} [0-9]+, [0-9]{4} [0-9]+:[0-9]+:[0-9]+ [GMT|BST]+)" +
                 "[\\S\\s]*?<div class=\"message\">([\\S\\s]*?)</tr>");
-        setLastPagePattern("<div onclick=\"var page=prompt[\\S\\s]*?\">([0-9]+)</a></li>");
+        setLastPagePatternLong("<div onclick=\"var page=prompt[\\S\\s]*?\">([0-9]+)</a></li>");
+        setLastPagePatternShort("<li><a href=\"/thread/[0-9]+/.*page=([0-9]+)\">[0-9]+</a></li>");
         setPageUrlPrefix("?page=");
 
         setPostGroupIndexes(new int[]{3,1,2});
+
+        setForumSizePattern("<td class=\"posts\">([0-9,]+)</td> ");
     }
 }

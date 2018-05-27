@@ -5,10 +5,8 @@ import com.bu.forum.ForumPost;
 import org.jsoup.Jsoup;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,20 +17,26 @@ import java.util.regex.Pattern;
 public abstract class AbstractScraper implements Scraper {
     /**Used to group each of the post counts for each category on the root forum url*/
     private Pattern forumSizePattern;
+
     /**Used to fetch each post on a thread page*/
     private Pattern postPattern;
+
     /**Finds the last page of the thread, used on first page only.*/
-    Pattern lastPagePattern = Pattern.compile("Page 1 of ([0-9]*)");
+    Pattern lastPagePatternLong = Pattern.compile("Page 1 of ([0-9]*)");
+
+    private Pattern lastPagePatternShort;
+
     /**Anything that occurs after the base threadUrl that allows for path variable page navigation e.g. "page-"*/
     private String pageUrlPrefix = "";
+
     /**Anything that occurs after the page number that allows for path variable page navigation e.g. "||" in the case of WestHamOnlineScraper*/
     private String pageUrlSuffix = "";
+
     /**Custom increment as many PHP pages use the path variable to declare how many posts are shown e.g. "40"*/
     int pagePathVariableIncrement = 1;
+
     /**Many of the afore mentioned PHP pages start at 0 rather than 1*/
     int pagePathVariableStart = 1;
-
-    Map<Integer, List<String>> textToRemoveMap = new HashMap<>();
 
     /**Used to direct the matcher to the correct group,
      * index 0 always refers to the position of the post content group
@@ -49,8 +53,12 @@ public abstract class AbstractScraper implements Scraper {
         postPattern = Pattern.compile(postRegex);
     }
 
-    void setLastPagePattern(String lastPageRegex) {
-        this.lastPagePattern = Pattern.compile(lastPageRegex);
+    void setLastPagePatternLong(String lastPageRegex) {
+        this.lastPagePatternLong = Pattern.compile(lastPageRegex);
+    }
+
+    void setLastPagePatternShort(String lastPagePatternShortRegex) {
+        this.lastPagePatternShort = Pattern.compile(lastPagePatternShortRegex);
     }
 
     void setPageUrlPrefix(String pageUrlPrefix) {
@@ -129,12 +137,29 @@ public abstract class AbstractScraper implements Scraper {
 
     private int getPageCountForThread(String threadUrl) throws IOException {
         try {
-            Matcher matcher = lastPagePattern.matcher(Jsoup.connect(threadUrl).get().toString());
-            matcher.find();
-            return Integer.valueOf(matcher.group(1));
+            String rawHtml = Jsoup.connect(threadUrl).get().toString();
+
+            Matcher matcher = lastPagePatternLong.matcher(rawHtml);
+            if(matcher.find())
+                return Integer.valueOf(matcher.group(1));
+            else
+                return getShortPageCount(rawHtml);
+
         } catch (Exception e) {
             System.err.println("Could not retrieve page count, this may be due to the thread being fewer than 5 pages. If so, this is not an issue.");
             return 1;
         }
+    }
+
+    private int getShortPageCount(String rawHtml) {
+        int lastPage = 0;
+
+        Matcher matcher = lastPagePatternShort.matcher(rawHtml);
+
+        while (matcher.find())
+            lastPage = Integer.valueOf(matcher.group(1));
+
+        return lastPage;
+
     }
 }

@@ -17,7 +17,7 @@ public class WestHamOnlineScraper extends AbstractScraper {
     public WestHamOnlineScraper() {
         setPostPattern("<a href=\"profile.php\\?[0-9]+\"><b>([\\S\\s]*?)</b></a> ([0-9]+:[0-9]{2} [A-Z][a-z]+ [A-Z][a-z]{2} [0-9]+)" +
                 "[\\S\\s]*?bgcolor=\"#FFFFFF\" valign=\"top\">[\\S\\s]*?<div class=\"mediumtext\">([\\S\\s]*?)</div> </td> ");
-        setLastPagePattern("Page ([0-9]+) -[\\S\\s]*?<a ");
+        setLastPagePatternLong("Page ([0-9]+) -[\\S\\s]*?<a ");
         setPostGroupIndexes(new int[]{3, 1, 2});
     }
 
@@ -30,7 +30,7 @@ public class WestHamOnlineScraper extends AbstractScraper {
         int pagePathVariableIterator = 0;
 
         while (true) {
-            Matcher currentPageMatcher = lastPagePattern.matcher(Jsoup.connect(threadUrl + "|n|1|" + pagePathVariableIterator).get().toString());
+            Matcher currentPageMatcher = lastPagePatternLong.matcher(Jsoup.connect(threadUrl + "|n|1|" + pagePathVariableIterator).get().toString());
 
             if (!currentPageMatcher.find())
                 return forumPosts;

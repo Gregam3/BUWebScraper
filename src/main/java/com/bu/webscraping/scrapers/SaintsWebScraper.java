@@ -12,5 +12,7 @@ public class SaintsWebScraper extends AbstractScraper {
         setPageUrlPrefix("page");
 
         setPostGroupIndexes(new int[]{3,2,1});
+
+        setForumSizePattern("<li>Posts: ([0-9,]+)</li> ");
     }
 }
