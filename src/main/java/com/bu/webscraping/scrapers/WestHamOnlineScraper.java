@@ -32,9 +32,6 @@ public class WestHamOnlineScraper extends AbstractScraper {
         while (true) {
             Matcher currentPageMatcher = lastPagePatternLong.matcher(Jsoup.connect(threadUrl + "|n|1|" + pagePathVariableIterator).get().toString());
 
-            if (!currentPageMatcher.find())
-                return forumPosts;
-
             System.out.println("Thread: " + threadUrl + " - Pages scraped for current thread: " + (int) currentPageCount +
                     ", unavailable total for WestHamOnline. This is normal don't worry. Total pages scraped: " + Main.cumulativePageCount);
 
@@ -43,6 +40,9 @@ public class WestHamOnlineScraper extends AbstractScraper {
             pagePathVariableIterator++;
             currentPageCount++;
             Main.cumulativePageCount++;
+
+            if (!currentPageMatcher.find())
+                return forumPosts;
         }
     }
 
