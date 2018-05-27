@@ -47,7 +47,7 @@ public class ScraperFactory {
             else if (forumUrl.contains("lfcreds.com"))
                 addThreadSizeToMap(ForumType.LIVERPOOL_LFC_REDS, LFCRedsScraper.class, forumUrl);
             else if (forumUrl.contains("www.redcafe.net"))
-                addThreadSizeToMap(ForumType.MANCHESTER_UNITED_RED_CAFE, RedCafeScraper.class, forumUrl);
+                throw new AssertionError("www.redcafe.net is not compatible with forum size functionality, please remove it from forums.txt.");
             else if (forumUrl.contains("www.spurscommunity.co.uk"))
                 addThreadSizeToMap(ForumType.TOTTENHAM_HOTSPURS_SPURS_COMMUNITY, SpursCommunityScraper.class, forumUrl);
             else if (forumUrl.contains("www.toontastic.net"))
@@ -55,7 +55,7 @@ public class ScraperFactory {
             else if (forumUrl.contains("westbrom.com"))
                 addThreadSizeToMap(ForumType.WEST_BROMICH_ALBION_WEST_BROM, WestBromScraper.class, forumUrl);
             else if (forumUrl.contains("www.westhamonline.net"))
-                addThreadSizeToMap(ForumType.WEST_HAM_WEST_HAM_ONLINE, WestHamOnlineScraper.class, forumUrl);
+                throw new AssertionError("www.westhamonline.net is not compatible with forum size functionality, please remove it from forums.txt.");
             else if (forumUrl.contains("oatcakefanzine.proboards.com"))
                 addThreadSizeToMap(ForumType.STOKE_CITY_OAKCAKE_FANZINE, OatcakeFanzineScraper.class, forumUrl);
             else if (forumUrl.contains("www.holmesdale.net"))

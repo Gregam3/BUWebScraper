@@ -136,9 +136,13 @@ public abstract class AbstractScraper implements Scraper {
 
         Matcher postMatcher = postPattern.matcher(rawHtml);
 
+        String content;
+
         while (postMatcher.find()) {
+            content = Jsoup.parse(postMatcher.group(postGroupIndexes[0])).text();
+
             ForumPost forumPost = new ForumPost(
-                    Jsoup.parse(postMatcher.group(postGroupIndexes[0])).text(),
+                    (content.isEmpty()) ? "[IMAGE OR VIDEO]": content,
                     Jsoup.parse(postMatcher.group(postGroupIndexes[1])).text(),
                     Jsoup.parse(postMatcher.group(postGroupIndexes[2])).text()
             );
