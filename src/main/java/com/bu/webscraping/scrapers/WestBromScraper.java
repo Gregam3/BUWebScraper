@@ -14,6 +14,7 @@ public class WestBromScraper extends AbstractScraper {
         setPostGroupIndexes(new int[] {3,1,2});
 
         setLastPagePatternLong("topic=[0-9]+.[0-9]+\">([0-9]+)</a> \\|");
+        setLastPagePatternShort(";topic=[0-9]+\\.[0-9]+\">([0-9]+)</a> ");
 
         setForumSizePattern("<td class=\"stats windowbg\"> <p>([0-9]+) Posts <br> [0-9]+ Topics </p> </td> ");
     }

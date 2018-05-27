@@ -10,7 +10,7 @@ public class TalkChelseaScraper extends AbstractScraper {
         setPostPattern("'s profile\" class=\"ipsType_break\">([^<]+)</a>[\\S\\s]*?title=\"([0-9]{2}\\/[0-9]{2}\\/[0-9]{4} [0-9]{2}:[0-9]{2}  [PM|AM]{2})\"" +
                 "[\\S\\s]*?<div data-role=\"commentContent\".*>([\\S\\s]*?)<ul class=\"ipsComment_controls ipsClearfix\" data-role=\"commentControls\"> ");
         setLastPagePatternLong("Page 1 of ([0-9]*)");
-        setPageUrlPrefix("?page=");
+        setPageUrlPrefix("/?page=");
         setPostGroupIndexes(new int[]{3, 1, 2});
 
         setForumSizePattern("3px;\">[\\S\\s]*?([0-9,]+)");

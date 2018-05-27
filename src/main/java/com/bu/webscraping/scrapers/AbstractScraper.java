@@ -15,34 +15,49 @@ import java.util.regex.Pattern;
  * gregoryamitten@gmail.com
  */
 public abstract class AbstractScraper implements Scraper {
-    /**Used to group each of the post counts for each category on the root forum url*/
+    /**
+     * Used to group each of the post counts for each category on the root forum url
+     */
     private Pattern forumSizePattern;
 
-    /**Used to fetch each post on a thread page*/
+    /**
+     * Used to fetch each post on a thread page
+     */
     private Pattern postPattern;
 
-    /**Finds the last page of the thread, used on first page only.*/
+    /**
+     * Finds the last page of the thread, used on first page only.
+     */
     Pattern lastPagePatternLong = Pattern.compile("Page 1 of ([0-9]*)");
 
     private Pattern lastPagePatternShort;
 
-    /**Anything that occurs after the base threadUrl that allows for path variable page navigation e.g. "page-"*/
+    /**
+     * Anything that occurs after the base threadUrl that allows for path variable page navigation e.g. "page-"
+     */
     private String pageUrlPrefix = "";
 
-    /**Anything that occurs after the page number that allows for path variable page navigation e.g. "||" in the case of WestHamOnlineScraper*/
+    /**
+     * Anything that occurs after the page number that allows for path variable page navigation e.g. "||" in the case of WestHamOnlineScraper
+     */
     private String pageUrlSuffix = "";
 
-    /**Custom increment as many PHP pages use the path variable to declare how many posts are shown e.g. "40"*/
+    /**
+     * Custom increment as many PHP pages use the path variable to declare how many posts are shown e.g. "40"
+     */
     int pagePathVariableIncrement = 1;
 
-    /**Many of the afore mentioned PHP pages start at 0 rather than 1*/
+    /**
+     * Many of the afore mentioned PHP pages start at 0 rather than 1
+     */
     int pagePathVariableStart = 1;
 
-    /**Used to direct the matcher to the correct group,
+    /**
+     * Used to direct the matcher to the correct group,
      * index 0 always refers to the position of the post content group
      * index 1 always refers to the position of the username group
      * index 2 always refers to the position of the date and time group
-     * */
+     */
     private int[] postGroupIndexes = new int[]{1, 2, 3};
 
     public void setForumSizePattern(String forumSizeRegex) {
@@ -99,10 +114,11 @@ public abstract class AbstractScraper implements Scraper {
             //threadLength * by increment because some path variables use post number rather than page number
              pagePathVariableIterator <= (threadLength * pagePathVariableIncrement);
              pagePathVariableIterator += pagePathVariableIncrement) {
-            //Clears console
-            //Casting purely for text formatting
-            System.out.println("Thread: " + threadUrl + " - Pages scraped for current thread: " + (int) currentPageCount + "/" + (int) threadLength
-                    + " (" + (int) (((currentPageCount / threadLength) * 100)) + "%)" + ". Total pages scraped: " + Main.cumulativePageCount);
+
+            if (currentPageCount <= threadLength)
+                //Casting purely for text formatting
+                System.out.println("Thread: " + threadUrl + " - Pages scraped for current thread: " + (int) currentPageCount + "/" + (int) threadLength
+                        + " (" + (int) (((currentPageCount / threadLength) * 100)) + "%)" + ". Total pages scraped: " + Main.cumulativePageCount);
 
             forumPosts.addAll(retrievePostsForPage(threadUrl + pageUrlPrefix + pagePathVariableIterator + pageUrlSuffix));
             currentPageCount++;
@@ -140,7 +156,7 @@ public abstract class AbstractScraper implements Scraper {
             String rawHtml = Jsoup.connect(threadUrl).get().toString();
 
             Matcher matcher = lastPagePatternLong.matcher(rawHtml);
-            if(matcher.find())
+            if (matcher.find())
                 return Integer.valueOf(matcher.group(1));
             else
                 return getShortPageCount(rawHtml);

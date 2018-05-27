@@ -9,7 +9,7 @@ public class WFCForumsScraper extends AbstractScraper {
         setPostPattern("itemprop=\"name\">([\\S\\s]*?)</a>" +
                 "[\\S\\s]*?<div class=\"messageContent\">([\\S\\s]*?)<div class=\"messageMeta" +
                 "[\\S\\s]*?<span class=\"DateTime\" title=\"([A-Z][a-z]{2} [0-9]+, [0-9]{4} at [0-9]+:[0-9]+ [AM|PM]+)\"");
-        setPageUrlPrefix("page-");
+        setPageUrlPrefix("/page-");
         setPostGroupIndexes(new int[]{2,1,3});
 
         setForumSizePattern("<dt>[\\S\\s]*?Messages:[\\S\\s]*?</dt>[\\S\\s]*?<dd>[\\S\\s]*?([0-9,]+)[\\S\\s]*?</dd>");

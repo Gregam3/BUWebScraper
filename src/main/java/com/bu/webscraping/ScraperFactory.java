@@ -85,7 +85,10 @@ public class ScraperFactory {
         if (threadUrls == null)
             return null;
 
-        for (String threadUrl : threadUrls)
+        for (String threadUrl : threadUrls) {
+            if(threadUrl.charAt(threadUrl.length() - 1) == '/')
+                threadUrl = threadUrl.substring(0 , threadUrl.length() - 2);
+
             if (threadUrl.contains("www.redandwhitekop.com"))
                 addPostsToMap(ForumType.LIVERPOOL_RED_AND_WHITE, RedAndWhiteScraper.class, threadUrl);
             else if (threadUrl.contains("forum.talkchelsea.net"))
@@ -128,6 +131,7 @@ public class ScraperFactory {
                 addPostsToMap(ForumType.SWANSEA_CITY_FANS_NETWORK, FansNetworkScraper.class, threadUrl);
             else
                 System.err.println("Site: \"" + threadUrl + "\" could not be found, if this is blank please remove any trailing spaces or commas after the last thread link");
+        }
 
         return postMap;
     }

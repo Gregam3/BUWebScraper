@@ -9,7 +9,7 @@ public class RedCafeScraper extends AbstractScraper {
         setPostPattern("<span class=\"item\"><span class=\"DateTime\"[\\S\\s]*?([A-Z][a-z]{2} [0-9]+, [0-9]{4} at [0-9]+:[0-9]{2})\"" +
                 "[\\S\\s]*?members/([\\S\\s]*?)\\.[0-9]+/\" class=\"username" +
                 "[\\S\\s]*?<div class=\"messageContent\">([\\S\\s]*?)</div> </li>");
-        setPageUrlPrefix("page-");
+        setPageUrlPrefix("/page-");
         setPostGroupIndexes(new int[]{3,2,1});
     }
 }
