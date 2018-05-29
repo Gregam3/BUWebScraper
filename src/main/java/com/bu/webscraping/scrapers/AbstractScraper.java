@@ -5,6 +5,7 @@ import com.bu.forum.ForumPost;
 import org.jsoup.Jsoup;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -59,6 +60,16 @@ public abstract class AbstractScraper implements Scraper {
      * index 2 always refers to the position of the date and time group
      */
     private int[] postGroupIndexes = new int[]{1, 2, 3};
+
+    private List<String> wordsToRemoveForQuote = new LinkedList<>();
+
+    private Pattern quotePattern;
+
+    private boolean includeQuotes = false;
+
+    public void setQuotePattern(String quotePatternRegex) {
+        this.quotePattern = Pattern.compile(quotePatternRegex);
+    }
 
     public void setForumSizePattern(String forumSizeRegex) {
         this.forumSizePattern = Pattern.compile(forumSizeRegex);
@@ -139,10 +150,10 @@ public abstract class AbstractScraper implements Scraper {
         String content;
 
         while (postMatcher.find()) {
-            content = Jsoup.parse(postMatcher.group(postGroupIndexes[0])).text();
+            content = formatContent(postMatcher.group(postGroupIndexes[0]));
 
             ForumPost forumPost = new ForumPost(
-                    (content.isEmpty()) ? "[IMAGE OR VIDEO]": content,
+                    content,
                     Jsoup.parse(postMatcher.group(postGroupIndexes[1])).text(),
                     Jsoup.parse(postMatcher.group(postGroupIndexes[2])).text()
             );
@@ -153,6 +164,17 @@ public abstract class AbstractScraper implements Scraper {
                 );
         }
         return forumPosts;
+    }
+
+    private String formatContent(String rawContent) {
+        Matcher quoteMatcher = quotePattern.matcher(rawContent);
+
+        if (quoteMatcher.find())
+            rawContent = "Quoted: '" + quoteMatcher.group(1) + "' -  " + quoteMatcher.group(2);
+        if (rawContent.isEmpty())
+            rawContent += " [IMAGE OR VIDEO]";
+
+        return Jsoup.parse(rawContent).text();
     }
 
     private int getPageCountForThread(String threadUrl) throws IOException {
@@ -180,6 +202,5 @@ public abstract class AbstractScraper implements Scraper {
             lastPage = Integer.valueOf(matcher.group(1));
 
         return lastPage;
-
     }
 }

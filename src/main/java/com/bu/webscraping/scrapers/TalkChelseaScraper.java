@@ -14,5 +14,7 @@ public class TalkChelseaScraper extends AbstractScraper {
         setPostGroupIndexes(new int[]{3, 1, 2});
 
         setForumSizePattern("3px;\">[\\S\\s]*?([0-9,]+)");
+
+        setQuotePattern("<div class=\"ipsQuote_contents\">([\\S\\s]*?)</div>([\\S\\s]*)");
     }
 }

@@ -13,5 +13,8 @@ public class ArsenalManiaScraper extends AbstractScraper {
         setForumSizePattern("<h3>Forum Statistics</h3>[\\S\\s]*?Messages:[\\S\\s]*?</dt>[\\S\\s]*?<dd>[\\S\\s]*?([0-9,]+)");
 
         setPostGroupIndexes(new int[]{2, 1, 3});
+
+        setQuotePattern("<blockquote class=\"quoteContainer\">([\\S\\s]*?)<div class=\"quoteExpand\">" +
+                "[\\S\\s]*?</blockquote>[\\S\\s]*?</div>([\\S\\s]*)");
     }
 }

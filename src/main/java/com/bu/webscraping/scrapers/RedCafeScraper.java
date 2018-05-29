@@ -11,5 +11,8 @@ public class RedCafeScraper extends AbstractScraper {
                 "[\\S\\s]*?<div class=\"messageContent\">([\\S\\s]*?)</div> </li>");
         setPageUrlPrefix("/page-");
         setPostGroupIndexes(new int[]{3,2,1});
+
+        setQuotePattern("<blockquote class=\"quoteContainer\">([\\S\\s]*?)<div class=\"quoteExpand\">" +
+                "[\\S\\s]*?</blockquote>([\\S\\s]*)");
     }
 }

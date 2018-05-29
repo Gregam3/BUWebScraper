@@ -87,7 +87,7 @@ public class ScraperFactory {
 
         for (String threadUrl : threadUrls) {
             if(threadUrl.charAt(threadUrl.length() - 1) == '/')
-                threadUrl = threadUrl.substring(0 , threadUrl.length() - 2);
+                threadUrl = threadUrl.substring(0 , threadUrl.length() - 1);
 
             if (threadUrl.contains("www.redandwhitekop.com"))
                 addPostsToMap(ForumType.LIVERPOOL_RED_AND_WHITE, RedAndWhiteScraper.class, threadUrl);

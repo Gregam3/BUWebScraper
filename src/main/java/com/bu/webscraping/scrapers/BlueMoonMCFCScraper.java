@@ -11,5 +11,7 @@ public class BlueMoonMCFCScraper extends AbstractScraper {
         setPageUrlPrefix("/page-");
 
         setForumSizePattern("Messages:[\\S\\s]*?</dt>[\\S\\s]*?<dd>[\\S\\s]*?([0-9,]+)");
+
+        setQuotePattern("<blockquote class=\"quoteContainer\">([\\S\\s]*?)<div class=\"quoteExpand\">([\\S\\s]*)");
     }
 }

@@ -20,7 +20,7 @@ public class Main {
 
         try {
             resultWriter.writePostsToCSV(ScraperFactory.retrievePostsForAllForums());
-            resultWriter.writeForumSizeToTxt(ScraperFactory.retrieveTotalForumPostsForAllForums());
+//            resultWriter.writeForumSizeToTxt(ScraperFactory.retrieveTotalForumPostsForAllForums());
 
             System.out.println("\nPress Enter key to close.");
             new Scanner(System.in).nextLine();
