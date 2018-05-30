@@ -65,7 +65,7 @@ public abstract class AbstractScraper implements Scraper {
 
     private Pattern quotePattern;
 
-    private boolean includeQuotes = false;
+    private final Pattern notEmptyAfterQuotePattern = Pattern.compile("Quoted: '[\\S\\s]*? ' -.");
 
     public void setQuotePattern(String quotePatternRegex) {
         this.quotePattern = Pattern.compile(quotePatternRegex);
@@ -153,7 +153,7 @@ public abstract class AbstractScraper implements Scraper {
             content = formatContent(postMatcher.group(postGroupIndexes[0]));
 
             ForumPost forumPost = new ForumPost(
-                    content,
+                    (content.isEmpty()) ? "[IMAGE/VIDEO/EMOJI]" : content,
                     Jsoup.parse(postMatcher.group(postGroupIndexes[1])).text(),
                     Jsoup.parse(postMatcher.group(postGroupIndexes[2])).text()
             );
@@ -166,15 +166,25 @@ public abstract class AbstractScraper implements Scraper {
         return forumPosts;
     }
 
-    private String formatContent(String rawContent) {
-        Matcher quoteMatcher = quotePattern.matcher(rawContent);
+    private String formatContent(String rawContentHtml) {
+        Matcher quoteMatcher = quotePattern.matcher(rawContentHtml);
 
         if (quoteMatcher.find())
-            rawContent = "Quoted: '" + quoteMatcher.group(1) + "' -  " + quoteMatcher.group(2);
-        if (rawContent.isEmpty())
-            rawContent += " [IMAGE OR VIDEO]";
+            rawContentHtml = "Quote: '"
+                    +((Jsoup.parse(quoteMatcher.group(1)).text().isEmpty()) ? "[IMAGE/VIDEO/EMOJI]" : quoteMatcher.group(1))
+                    + "' -  " + quoteMatcher.group(2);
 
-        return Jsoup.parse(rawContent).text();
+        String content = Jsoup.parse(rawContentHtml).text();
+
+        Matcher notEmptyAfterQuoteMatcher = notEmptyAfterQuotePattern.matcher(content);
+
+        if(content.contains("Possibly the best thing I have seen on the internet for a long time"))
+            System.out.println();
+
+        if(content.contains("Quote: '") && !notEmptyAfterQuoteMatcher.find())
+            content += "[IMAGE/VIDEO/EMOJI]";
+
+        return content;
     }
 
     private int getPageCountForThread(String threadUrl) throws IOException {
