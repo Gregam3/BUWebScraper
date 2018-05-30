@@ -13,5 +13,7 @@ public class HolmesDaleScraper extends AbstractScraper {
         setPostGroupIndexes(new int[]{3,2,1});
 
         setForumSizePattern("<td width=\"7%\" class=\"c\">([0-9,]+)</td> ");
+
+        setQuotePattern("<div class=\"quote\">([\\S\\s]*?)</div>([\\S\\s]*)");
     }
 }

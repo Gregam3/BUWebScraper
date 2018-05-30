@@ -14,5 +14,8 @@ public class SpursCommunityScraper extends AbstractScraper {
         setPostGroupIndexes(new int[]{3,1,2});
 
         setForumSizePattern("<dt>[\\S\\s]*? Messages[\\S\\s]*?</dt>[\\S\\s]*?<dd>[\\S\\s]*?([0-9,]+)[\\S\\s]*?</dd> ");
+
+        setQuotePattern("<div class=\"bbCodeBlock-expandContent\">([\\S\\s]*?)</div>" +
+                "[\\S\\s]*?</a>([\\S\\s]*?) <div class=\"js-selectToQuoteEnd\">");
     }
 }

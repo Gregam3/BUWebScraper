@@ -13,5 +13,8 @@ public class BournemouthForumScraper extends AbstractScraper {
         setForumSizePattern("<dl class=\"pairs pairs--inline\">[\\S\\s]*?<dt>[\\S\\s]*?Messages[\\S\\s]*?</dt>[\\S\\s]*?<dd>[\\S\\s]*?([0-9,]+)[\\S\\s]*?</dd>");
 
         setPostGroupIndexes(new int[]{3,1,2});
+
+        setQuotePattern("<div class=\"bbCodeBlock-content\"> ([\\S\\s]*?)<div class=\"bbCodeBlock-expandLink\">" +
+                "[\\S\\s]*</a>([\\S\\s]*)");
     }
 }

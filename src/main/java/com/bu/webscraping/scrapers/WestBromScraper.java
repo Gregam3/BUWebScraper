@@ -17,5 +17,7 @@ public class WestBromScraper extends AbstractScraper {
         setLastPagePatternShort(";topic=[0-9]+\\.[0-9]+\">([0-9]+)</a> ");
 
         setForumSizePattern("<td class=\"stats windowbg\"> <p>([0-9]+) Posts <br> [0-9]+ Topics </p> </td> ");
+
+        setQuotePattern("<blockquote class=\"bbc_standard_quote\">([\\S\\s]*?)</blockquote>([\\S\\s]*)");
     }
 }

@@ -11,5 +11,7 @@ public class FoxesTalkScraper extends AbstractScraper {
         setPostGroupIndexes(new int[]{3, 1, 2});
 
         setForumSizePattern("<dt class=\"ipsDataItem_stats_number\">[\\S\\s]*?([0-9,]+)[\\S\\s]*?</dt>");
+
+        setQuotePattern("<div class=\"ipsQuote_contents\">([\\S\\s]*?)</blockquote>([\\S\\s]*)");
     }
 }

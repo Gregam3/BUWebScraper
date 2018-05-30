@@ -29,7 +29,6 @@ public class ResultWriter {
     public void writePostsToCSV(Map<ForumType, List<ForumPost>> postMap) throws IOException {
         System.out.println("Writing posts to posts.txt");
 
-
         CSVWriter csvWriter = createCSVWriter("posts.txt");
 
         csvWriter.writeNext(new String[]{"Forum Name", "Post Content", "Username", "Time posted"});

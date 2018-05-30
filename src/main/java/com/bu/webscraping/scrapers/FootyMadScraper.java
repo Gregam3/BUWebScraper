@@ -11,5 +11,7 @@ public class FootyMadScraper extends AbstractScraper {
         setPostGroupIndexes(new int[]{3,2,1});
 
         setForumSizePattern("<li>Posts: ([0-9,]+)</li>");
+
+        setQuotePattern("<div class=\"message\">([\\S\\s]*?)</div>([\\S\\s]*)");
     }
 }

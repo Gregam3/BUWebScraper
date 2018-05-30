@@ -10,11 +10,13 @@ public class OatcakeFanzineScraper extends AbstractScraper {
                 "[\\S\\s]*?title=\"([A-Z][a-z]{2} [0-9]+, [0-9]{4} [0-9]+:[0-9]+:[0-9]+ [GMT|BST]+)" +
                 "[\\S\\s]*?<div class=\"message\">([\\S\\s]*?)</tr>");
         setLastPagePatternLong("<div onclick=\"var page=prompt[\\S\\s]*?\">([0-9]+)</a></li>");
-        setLastPagePatternShort("<li><a href=\"/thread/[0-9]+/.*page=([0-9]+)\">[0-9]+</a></li>");
+        setLastPagePatternShort("<li class=\"state-selected\"><a>[0-9]+</a></li>");
         setPageUrlPrefix("?page=");
 
         setPostGroupIndexes(new int[]{3,1,2});
 
         setForumSizePattern("<td class=\"posts\">([0-9,]+)</td> ");
+
+        setQuotePattern("<div class=\"quote_header\">([\\S\\s]*?)<div class=\"quote_clear\">([\\S\\s]*)");
     }
 }

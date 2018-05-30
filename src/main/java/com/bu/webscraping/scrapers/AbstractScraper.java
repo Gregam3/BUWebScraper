@@ -63,11 +63,12 @@ public abstract class AbstractScraper implements Scraper {
 
     private List<String> wordsToRemoveForQuote = new LinkedList<>();
 
-    private Pattern quotePattern;
+    /** Unmatchable Pattern */
+    private Pattern quotePattern = Pattern.compile("\\^{4000}");
 
-    private final Pattern notEmptyAfterQuotePattern = Pattern.compile("Quoted: '[\\S\\s]*? ' -.");
+    private final Pattern notEmptyAfterQuotePattern = Pattern.compile("Quote: '[\\S\\s]*?' -.");
 
-    public void setQuotePattern(String quotePatternRegex) {
+    void setQuotePattern(String quotePatternRegex) {
         this.quotePattern = Pattern.compile(quotePatternRegex);
     }
 
@@ -177,9 +178,6 @@ public abstract class AbstractScraper implements Scraper {
         String content = Jsoup.parse(rawContentHtml).text();
 
         Matcher notEmptyAfterQuoteMatcher = notEmptyAfterQuotePattern.matcher(content);
-
-        if(content.contains("Possibly the best thing I have seen on the internet for a long time"))
-            System.out.println();
 
         if(content.contains("Quote: '") && !notEmptyAfterQuoteMatcher.find())
             content += "[IMAGE/VIDEO/EMOJI]";
