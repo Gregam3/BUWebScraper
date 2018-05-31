@@ -182,7 +182,7 @@ public abstract class AbstractScraper implements Scraper {
         if(content.contains("Quote: '") && !notEmptyAfterQuoteMatcher.find())
             content += "[IMAGE/VIDEO/EMOJI]";
 
-        return content;
+        return content.replace("â€™", "'").replace("\"\"", "\"");
     }
 
     private int getPageCountForThread(String threadUrl) throws IOException {
