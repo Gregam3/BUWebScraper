@@ -155,6 +155,7 @@ public abstract class AbstractScraper implements Scraper {
             content = formatContent(postMatcher.group(postGroupIndexes[0]));
 
             ForumPost forumPost = new ForumPost(
+                    threadPageUrl,
                     (content.isEmpty()) ? MULTIMEDIA_REPLACEMENT_TEXT : content,
                     Jsoup.parse(postMatcher.group(postGroupIndexes[1])).text(),
                     Jsoup.parse(postMatcher.group(postGroupIndexes[2])).text()

@@ -31,7 +31,7 @@ public class ResultWriter {
 
         CSVWriter csvWriter = createCSVWriter("posts.txt");
 
-        csvWriter.writeNext(new String[]{"Forum Name", "Post Content", "Username", "Time posted"});
+        csvWriter.writeNext(new String[]{"Forum Name", "Thread URL", "Post Content", "Username", "Time posted"});
 
         if (postMap == null)
             System.out.println("No thread URLs could be found in threads.txt.");
@@ -40,6 +40,7 @@ public class ResultWriter {
                 for (ForumPost forumPost : postMap.get(forumType))
                     csvWriter.writeNext(new String[]{
                             forumType.toString(),
+                            forumPost.getThreadUrl(),
                             forumPost.getPostContent().replace("\n", ""),
                             forumPost.getUsername(),
                             forumPost.getTime()

@@ -5,14 +5,24 @@ package com.bu.forum;
  * gregoryamitten@gmail.com
  */
 public class ForumPost {
+    private String threadUrl;
     private String postContent;
     private String username;
     private String time;
 
-    public ForumPost(String postContent, String username, String time) {
+    public ForumPost(String threadUrl, String postContent, String username, String time) {
+        this.threadUrl = threadUrl;
         this.postContent = postContent;
         this.username = username;
         this.time = time;
+    }
+
+    public String getThreadUrl() {
+        return threadUrl;
+    }
+
+    public void setThreadUrl(String threadUrl) {
+        this.threadUrl = threadUrl;
     }
 
     public String getPostContent() {

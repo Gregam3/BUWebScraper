@@ -47,7 +47,7 @@ public class ScraperFactory {
             else if (forumUrl.contains("lfcreds.com"))
                 addThreadSizeToMap(ForumType.LIVERPOOL_LFC_REDS, LFCRedsScraper.class, forumUrl);
             else if (forumUrl.contains("www.redcafe.net"))
-                throw new AssertionError("www.redcafe.net is not compatible with forum size functionality, please remove it from forums.txt.");
+                System.err.println("www.redcafe.net is not compatible with the forum size functionality, as such it will be omitted.");
             else if (forumUrl.contains("www.spurscommunity.co.uk"))
                 addThreadSizeToMap(ForumType.TOTTENHAM_HOTSPURS_SPURS_COMMUNITY, SpursCommunityScraper.class, forumUrl);
             else if (forumUrl.contains("www.toontastic.net"))

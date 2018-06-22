@@ -10,7 +10,6 @@ import java.util.Scanner;
 public class Main {
 
     public static int siteNumber = 1;
-    public static String siteName = "";
     public static int cumulativePageCount = 1;
 
     public static void main(String[] args) throws IOException {
@@ -20,7 +19,7 @@ public class Main {
         try {
             resultWriter.writePostsToCSV(ScraperFactory.retrievePostsForAllForums());
             resultWriter.writeForumSizeToTxt(ScraperFactory.retrieveTotalForumPostsForAllForums());
-            System.out.println("\nPress Enter key to close.");
+            System.out.println("\nPress Enter key twice to close.");
             new Scanner(System.in).nextLine();
         } catch (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
