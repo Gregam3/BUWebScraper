@@ -40,7 +40,7 @@ public class ResultWriter {
                 for (ForumPost forumPost : postMap.get(forumType))
                     csvWriter.writeNext(new String[]{
                             forumType.toString(),
-                            forumPost.getThreadUrl(),
+                            forumPost.getThreadUrl().replace("|", ""),
                             forumPost.getPostContent().replace("\n", ""),
                             forumPost.getUsername(),
                             forumPost.getTime()
