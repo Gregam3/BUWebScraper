@@ -139,7 +139,7 @@ public class ScraperFactory {
     private static void addPostsToMap(ForumType forumType,Class<?> scraperClass, String threadUrl) throws IllegalAccessException, InstantiationException, IOException {
         Scraper scraper = getScraper(scraperClass);
 
-        List<ForumPost> forumPosts = scraper.retrievePostsForForum(threadUrl);
+        List<ForumPost> forumPosts = scraper.retrievePostsForThread(threadUrl);
 
         postMap.computeIfAbsent(forumType, k -> new LinkedList<>());
 

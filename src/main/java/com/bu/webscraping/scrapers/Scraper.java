@@ -11,6 +11,6 @@ import java.util.List;
  */
 public interface Scraper {
     List<ForumPost> retrievePostsForPage(String forumUrl) throws IOException;
-    List<ForumPost> retrievePostsForForum(String forumUrl) throws IOException;
+    List<ForumPost> retrievePostsForThread(String forumUrl) throws IOException;
     long retrieveForumSize(String forumUrl) throws IOException;
 }

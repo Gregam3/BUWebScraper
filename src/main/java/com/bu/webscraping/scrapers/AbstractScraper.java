@@ -5,7 +5,6 @@ import com.bu.forum.ForumPost;
 import org.jsoup.Jsoup;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -60,6 +59,8 @@ public abstract class AbstractScraper implements Scraper {
      * index 2 always refers to the position of the date and time group
      */
     private int[] postGroupIndexes = new int[]{1, 2, 3};
+    
+    private static final String MULTIMEDIA_REPLACEMENT_TEXT = "[IMAGE/VIDEO/EMOJI] only";
 
     private List<String> wordsToRemoveForQuote = new LinkedList<>();
 
@@ -115,7 +116,7 @@ public abstract class AbstractScraper implements Scraper {
         return totalPostCount;
     }
 
-    public List<ForumPost> retrievePostsForForum(String threadUrl) throws IOException {
+    public List<ForumPost> retrievePostsForThread(String threadUrl) throws IOException {
         List<ForumPost> forumPosts = new LinkedList<>();
 
         double threadLength = getPageCountForThread(threadUrl);
@@ -154,7 +155,7 @@ public abstract class AbstractScraper implements Scraper {
             content = formatContent(postMatcher.group(postGroupIndexes[0]));
 
             ForumPost forumPost = new ForumPost(
-                    (content.isEmpty()) ? "[IMAGE/VIDEO/EMOJI]" : content,
+                    (content.isEmpty()) ? MULTIMEDIA_REPLACEMENT_TEXT : content,
                     Jsoup.parse(postMatcher.group(postGroupIndexes[1])).text(),
                     Jsoup.parse(postMatcher.group(postGroupIndexes[2])).text()
             );
@@ -172,7 +173,7 @@ public abstract class AbstractScraper implements Scraper {
 
         if (quoteMatcher.find())
             rawContentHtml = "Quote: '"
-                    +((Jsoup.parse(quoteMatcher.group(1)).text().isEmpty()) ? "[IMAGE/VIDEO/EMOJI]" : quoteMatcher.group(1))
+                    +((Jsoup.parse(quoteMatcher.group(1)).text().isEmpty()) ? MULTIMEDIA_REPLACEMENT_TEXT : quoteMatcher.group(1))
                     + "' -  " + quoteMatcher.group(2);
 
         String content = Jsoup.parse(rawContentHtml).text();
@@ -180,7 +181,7 @@ public abstract class AbstractScraper implements Scraper {
         Matcher notEmptyAfterQuoteMatcher = notEmptyAfterQuotePattern.matcher(content);
 
         if(content.contains("Quote: '") && !notEmptyAfterQuoteMatcher.find())
-            content += "[IMAGE/VIDEO/EMOJI]";
+            content += MULTIMEDIA_REPLACEMENT_TEXT;
 
         return content.replace("â€™", "'").replace("\"\"", "\"");
     }

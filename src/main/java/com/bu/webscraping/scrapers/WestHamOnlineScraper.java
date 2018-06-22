@@ -22,7 +22,7 @@ public class WestHamOnlineScraper extends AbstractScraper {
     }
 
     @Override
-    public List<ForumPost> retrievePostsForForum(String threadUrl) throws IOException {
+    public List<ForumPost> retrievePostsForThread(String threadUrl) throws IOException {
         List<ForumPost> forumPosts = new LinkedList<>();
 
 
