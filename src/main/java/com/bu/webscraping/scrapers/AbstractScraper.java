@@ -60,7 +60,7 @@ public abstract class AbstractScraper implements Scraper {
      */
     private int[] postGroupIndexes = new int[]{1, 2, 3};
     
-    private static final String MULTIMEDIA_REPLACEMENT_TEXT = "[IMAGE/VIDEO/EMOJI] only";
+    private static final String MULTIMEDIA_REPLACEMENT_TEXT = "[IMAGE/VIDEO/EMOJI only]";
 
     private List<String> wordsToRemoveForQuote = new LinkedList<>();
 
