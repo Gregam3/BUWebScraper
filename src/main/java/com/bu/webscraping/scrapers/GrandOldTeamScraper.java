@@ -1,10 +1,15 @@
 package com.bu.webscraping.scrapers;
 
+import com.bu.webscraping.Login;
+
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
  */
 public class GrandOldTeamScraper extends AbstractScraper {
+    //email: onerous3@gmail.com
+    //password: password
+
     public GrandOldTeamScraper() {
         setPostPattern("data-lb-caption-desc=\"([\\S\\s]*?)·([\\S\\s]*?)\">" +
                 "[\\S\\s]*?<div class=\"bbWrapper\">([\\S\\s]*?)<div class=\"js-selectToQuoteEnd\">");
@@ -17,5 +22,7 @@ public class GrandOldTeamScraper extends AbstractScraper {
 
         setQuotePattern("<div class=\"bbCodeBlock-expandContent\">([\\S\\s]*?)<div class=\"bbCodeBlock-expandLink\">" +
                 "[\\S\\s]*?</a>([\\S\\s]*)");
+
+        setLogin(new Login("onerous3@gmail.com", "password", "https://www.grandoldteam.com/forum/login/login"));
     }
 }

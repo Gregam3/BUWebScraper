@@ -2,7 +2,10 @@ package com.bu.webscraping.scrapers;
 
 import com.bu.Main;
 import com.bu.forum.ForumPost;
+import com.bu.webscraping.Login;
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 import java.io.IOException;
 import java.util.LinkedList;
@@ -59,12 +62,15 @@ public abstract class AbstractScraper implements Scraper {
      * index 2 always refers to the position of the date and time group
      */
     private int[] postGroupIndexes = new int[]{1, 2, 3};
-    
+
+    /**
+     *
+     */
+    private Login login = null;
+
     private static final String MULTIMEDIA_REPLACEMENT_TEXT = "[IMAGE/VIDEO/EMOJI only]";
 
-    private List<String> wordsToRemoveForQuote = new LinkedList<>();
-
-    /** Unmatchable Pattern */
+    /** Functionally Unmatchable Pattern */
     private Pattern quotePattern = Pattern.compile("\\^{4000}");
 
     private final Pattern notEmptyAfterQuotePattern = Pattern.compile("Quote: '[\\S\\s]*?' -.");
@@ -101,6 +107,10 @@ public abstract class AbstractScraper implements Scraper {
         this.postGroupIndexes = postGroupIndexes;
     }
 
+    public void setLogin(Login login) {
+        this.login = login;
+    }
+
     public long retrieveForumSize(String forumUrl) throws IOException {
         long totalPostCount = 0;
 
@@ -117,6 +127,9 @@ public abstract class AbstractScraper implements Scraper {
     }
 
     public List<ForumPost> retrievePostsForThread(String threadUrl) throws IOException {
+        if(login != null)
+            login(login.getLoginUrl());
+
         List<ForumPost> forumPosts = new LinkedList<>();
 
         double threadLength = getPageCountForThread(threadUrl);
@@ -145,7 +158,13 @@ public abstract class AbstractScraper implements Scraper {
     public List<ForumPost> retrievePostsForPage(String threadPageUrl) throws IOException {
         List<ForumPost> forumPosts = new LinkedList<>();
 
-        String rawHtml = Jsoup.connect(threadPageUrl).get().toString();
+        String rawHtml;
+
+        if(login != null)
+            rawHtml = login(threadPageUrl);
+        else
+            rawHtml = Jsoup.connect(threadPageUrl).get().toString();
+
 
         Matcher postMatcher = postPattern.matcher(rawHtml);
 
@@ -167,6 +186,19 @@ public abstract class AbstractScraper implements Scraper {
                 );
         }
         return forumPosts;
+    }
+
+    private String login(String threadUrl) throws IOException {
+        Connection.Response loginForm = Jsoup.connect(threadUrl)
+                .method(Connection.Method.GET)
+                .execute();
+
+        return Jsoup.connect(threadUrl)
+                .data("cookieexists", "false")
+                .data("login", login.getUsername())
+                .data("password", login.getPassword())
+                .cookies(loginForm.cookies())
+                .post().toString();
     }
 
     private String formatContent(String rawContentHtml) {
