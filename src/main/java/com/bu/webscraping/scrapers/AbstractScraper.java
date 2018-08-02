@@ -5,11 +5,11 @@ import com.bu.forum.ForumPost;
 import com.bu.webscraping.Login;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -68,9 +68,13 @@ public abstract class AbstractScraper implements Scraper {
      */
     private Login login = null;
 
+    private String sessionId = "";
+
     private static final String MULTIMEDIA_REPLACEMENT_TEXT = "[IMAGE/VIDEO/EMOJI only]";
 
-    /** Functionally Unmatchable Pattern */
+    /**
+     * Functionally Unmatchable Pattern
+     */
     private Pattern quotePattern = Pattern.compile("\\^{4000}");
 
     private final Pattern notEmptyAfterQuotePattern = Pattern.compile("Quote: '[\\S\\s]*?' -.");
@@ -127,12 +131,12 @@ public abstract class AbstractScraper implements Scraper {
     }
 
     public List<ForumPost> retrievePostsForThread(String threadUrl) throws IOException {
-        if(login != null)
-            login(login.getLoginUrl());
-
         List<ForumPost> forumPosts = new LinkedList<>();
 
-        double threadLength = getPageCountForThread(threadUrl);
+        if (login != null)
+            login();
+
+        double threadLength = getLongPageCount(threadUrl);
 
         double currentPageCount = 1;
 
@@ -160,11 +164,9 @@ public abstract class AbstractScraper implements Scraper {
 
         String rawHtml;
 
-        if(login != null)
-            rawHtml = login(threadPageUrl);
-        else
-            rawHtml = Jsoup.connect(threadPageUrl).get().toString();
-
+        rawHtml = (login != null) ? Jsoup.connect(threadPageUrl)
+                .cookies(login.getCookies()).get().toString() :
+                Jsoup.connect(threadPageUrl).get().toString();
 
         Matcher postMatcher = postPattern.matcher(rawHtml);
 
@@ -188,17 +190,23 @@ public abstract class AbstractScraper implements Scraper {
         return forumPosts;
     }
 
-    private String login(String threadUrl) throws IOException {
-        Connection.Response loginForm = Jsoup.connect(threadUrl)
+    private void login() throws IOException {
+        Connection.Response loginForm = Jsoup.connect(login.getLoginUrl())
+                .userAgent("Mozilla")
                 .method(Connection.Method.GET)
                 .execute();
 
-        return Jsoup.connect(threadUrl)
-                .data("cookieexists", "false")
+        Connection.Response response = Jsoup.connect(login.getLoginUrl())
                 .data("login", login.getUsername())
                 .data("password", login.getPassword())
                 .cookies(loginForm.cookies())
-                .post().toString();
+                .method(Connection.Method.POST)
+                .execute();
+
+        for (String cookieName : login.getCookies().keySet())
+            login.getCookies().put(cookieName, response.cookie(cookieName));
+
+        System.out.println();
     }
 
     private String formatContent(String rawContentHtml) {
@@ -206,24 +214,27 @@ public abstract class AbstractScraper implements Scraper {
 
         if (quoteMatcher.find())
             rawContentHtml = "Quote: '"
-                    +((Jsoup.parse(quoteMatcher.group(1)).text().isEmpty()) ? MULTIMEDIA_REPLACEMENT_TEXT : quoteMatcher.group(1))
+                    + ((Jsoup.parse(quoteMatcher.group(1)).text().isEmpty()) ? MULTIMEDIA_REPLACEMENT_TEXT : quoteMatcher.group(1))
                     + "' -  " + quoteMatcher.group(2);
 
         String content = Jsoup.parse(rawContentHtml).text();
 
         Matcher notEmptyAfterQuoteMatcher = notEmptyAfterQuotePattern.matcher(content);
 
-        if(content.contains("Quote: '") && !notEmptyAfterQuoteMatcher.find())
+        if (content.contains("Quote: '") && !notEmptyAfterQuoteMatcher.find())
             content += MULTIMEDIA_REPLACEMENT_TEXT;
 
         return content.replace("â€™", "'").replace("\"\"", "\"");
     }
 
-    private int getPageCountForThread(String threadUrl) throws IOException {
+    private int getLongPageCount(String threadUrl) throws IOException {
         try {
-            String rawHtml = Jsoup.connect(threadUrl).get().toString();
+            String rawHtml = (login != null) ?
+                    Jsoup.connect(threadUrl).cookies(login.getCookies()).get().toString() :
+                    Jsoup.connect(threadUrl).get().toString();
 
             Matcher matcher = lastPagePatternLong.matcher(rawHtml);
+
             if (matcher.find())
                 return Integer.valueOf(matcher.group(1));
             else
