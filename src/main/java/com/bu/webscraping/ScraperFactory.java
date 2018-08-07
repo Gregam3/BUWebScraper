@@ -66,6 +66,9 @@ public class ScraperFactory {
                 addThreadSizeToMap(ForumType.WATFORD_WFC_FORUMS, WFCForumsScraper.class, forumUrl);
             else if (forumUrl.contains("www.fansnetwork.co.uk"))
                 addThreadSizeToMap(ForumType.SWANSEA_CITY_FANS_NETWORK, FansNetworkScraper.class, forumUrl);
+            else if (forumUrl.contains("www.goonersworld.co.uk"))
+                throw new AssertionError("Not implemented yet");
+//                addThreadSizeToMap(ForumType.ARSENAL_GOONERS_WORLD, GoonersWorldScraper.class, forumUrl);
             else
                 System.err.println("Site: \"" + forumUrl + "\" could not be found, if this is blank please remove any trailing spaces or commas after the last thread link");
         }
@@ -129,6 +132,8 @@ public class ScraperFactory {
                 addPostsToMap(ForumType.WATFORD_WFC_FORUMS, WFCForumsScraper.class, threadUrl);
             else if (threadUrl.contains("www.fansnetwork.co.uk"))
                 addPostsToMap(ForumType.SWANSEA_CITY_FANS_NETWORK, FansNetworkScraper.class, threadUrl);
+            else if (threadUrl.contains("www.goonersworld.co.uk"))
+                addPostsToMap(ForumType.ARSENAL_GOONERS_WORLD, GoonersWorldScraper.class, threadUrl);
             else
                 System.err.println("Site: \"" + threadUrl + "\" could not be found, if this is blank please remove any trailing spaces or commas after the last thread link");
         }

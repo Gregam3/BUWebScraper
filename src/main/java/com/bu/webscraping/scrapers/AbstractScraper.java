@@ -103,6 +103,14 @@ public abstract class AbstractScraper implements Scraper {
         this.pageUrlPrefix = pageUrlPrefix;
     }
 
+    void setPagePathVariableIncrement(int pagePathVariableIncrement) {
+        this.pagePathVariableIncrement = pagePathVariableIncrement;
+    }
+
+    void setPagePathVariableStart(int pagePathVariableStart) {
+        this.pagePathVariableStart = pagePathVariableStart;
+    }
+
     public void setPageUrlSuffix(String pageUrlSuffix) {
         this.pageUrlSuffix = pageUrlSuffix;
     }
@@ -111,7 +119,7 @@ public abstract class AbstractScraper implements Scraper {
         this.postGroupIndexes = postGroupIndexes;
     }
 
-    public void setLogin(Login login) {
+    void setLogin(Login login) {
         this.login = login;
     }
 

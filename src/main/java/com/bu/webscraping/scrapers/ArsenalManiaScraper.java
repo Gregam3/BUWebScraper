@@ -4,6 +4,7 @@ package com.bu.webscraping.scrapers;
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
  */
+@Deprecated
 public class ArsenalManiaScraper extends AbstractScraper {
     public ArsenalManiaScraper() {
         setPostPattern("class=\"username\" dir=\"auto\" itemprop=\"name\">([\\S\\s]*?)</a>[\\S\\s]*?" +
