@@ -67,10 +67,9 @@ public class ScraperFactory {
             else if (forumUrl.contains("www.fansnetwork.co.uk"))
                 addThreadSizeToMap(ForumType.SWANSEA_CITY_FANS_NETWORK, FansNetworkScraper.class, forumUrl);
             else if (forumUrl.contains("www.goonersworld.co.uk"))
-                throw new AssertionError("Not implemented yet");
-//                addThreadSizeToMap(ForumType.ARSENAL_GOONERS_WORLD, GoonersWorldScraper.class, forumUrl);
+                addThreadSizeToMap(ForumType.ARSENAL_GOONERS_WORLD, GoonersWorldScraper.class, forumUrl);
             else
-                System.err.println("Site: \"" + forumUrl + "\" could not be found, if this is blank please remove any trailing spaces or commas after the last thread link");
+                System.err.println("Site: \"" + forumUrl + "\" could not be found, if this is blank please remove any trailing spaces or semi-colons after the last thread link");
         }
 
         return threadSizeMap;
@@ -135,7 +134,7 @@ public class ScraperFactory {
             else if (threadUrl.contains("www.goonersworld.co.uk"))
                 addPostsToMap(ForumType.ARSENAL_GOONERS_WORLD, GoonersWorldScraper.class, threadUrl);
             else
-                System.err.println("Site: \"" + threadUrl + "\" could not be found, if this is blank please remove any trailing spaces or commas after the last thread link");
+                System.err.println("Site: \"" + threadUrl + "\" could not be found, if this is blank please remove any trailing spaces or semi-colons after the last thread link");
         }
 
         return postMap;

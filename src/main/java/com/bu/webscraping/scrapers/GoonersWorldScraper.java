@@ -8,14 +8,15 @@ import com.bu.webscraping.ScraperFactory;
  */
 public class GoonersWorldScraper extends AbstractScraper {
     public GoonersWorldScraper() {
-        setPostPattern("class=\"username-coloured\">([\\S\\s]*?)</a></strong> » " +
-                "([\\S\\s]*?)</p>[\\S\\s]*?<div class=\"content\">" +
-                "([\\S\\s]*?)<div id=");
+        setPostPattern("class=\"username-coloured\">([\\S\\s]*?)</a>[\\S\\s]*? » ([\\S\\s]*?)</p>[\\S\\s]*?<div class=\"content\">([\\S\\s]*?) <dl class=\"postprofile\"");
+        setQuotePattern("<blockquote class=\".*?\">([\\S\\s]*?)</blockquote>([\\S\\s]*)");
+        setForumSizePattern("<dd class=\"posts\">[\\S\\s]*?([0-9]+)[\\S\\s]*?<dfn>Posts</dfn>");
 
         setPageUrlPrefix("&start=");
 
         setPagePathVariableIncrement(15);
         setPagePathVariableStart(0);
+        setLastPagePatternLong("Page <strong>1</strong> of <strong>([0-9]+)</strong>");
 
         setPostGroupIndexes(new int[]{3,2,1});
     }

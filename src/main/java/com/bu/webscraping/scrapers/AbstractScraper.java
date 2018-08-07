@@ -220,7 +220,7 @@ public abstract class AbstractScraper implements Scraper {
     private String formatContent(String rawContentHtml) {
         Matcher quoteMatcher = quotePattern.matcher(rawContentHtml);
 
-        if (quoteMatcher.find())
+        while (quoteMatcher.find())
             rawContentHtml = "Quote: '"
                     + ((Jsoup.parse(quoteMatcher.group(1)).text().isEmpty()) ? MULTIMEDIA_REPLACEMENT_TEXT : quoteMatcher.group(1))
                     + "' -  " + quoteMatcher.group(2);

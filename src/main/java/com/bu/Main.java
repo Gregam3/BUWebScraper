@@ -19,7 +19,7 @@ public class Main {
         try {
             resultWriter.writePostsToCSV(ScraperFactory.retrievePostsForAllForums());
             resultWriter.writeForumSizeToTxt(ScraperFactory.retrieveTotalForumPostsForAllForums());
-            System.out.println("\nPress Enter key twice to close.");
+            System.out.println("\n Double tap enter key to exit, results are saved to posts.txt and forum-sizes.txt respectively.");
             new Scanner(System.in).nextLine();
         } catch (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();

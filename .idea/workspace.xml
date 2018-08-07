@@ -7,13 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27bc57a4-2650-4e92-804f-d4a091bcbe2c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/GoonersWorldScraper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bu/forum/ForumType.java" afterPath="$PROJECT_DIR$/src/main/java/com/bu/forum/ForumType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forums.txt" afterPath="$PROJECT_DIR$/forums.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bu/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/bu/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/ScraperFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/ScraperFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java" afterPath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/ArsenalManiaScraper.java" afterPath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/ArsenalManiaScraper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/threads.txt" afterPath="$PROJECT_DIR$/threads.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/GoonersWorldScraper.java" afterPath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/GoonersWorldScraper.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -55,7 +53,17 @@
         <entry file="file://$PROJECT_DIR$/forums.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="41" lean-forward="false" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="41" />
+              <caret line="0" column="415" lean-forward="false" selection-start-line="0" selection-start-column="415" selection-end-line="0" selection-end-column="415" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="20" column="55" lean-forward="false" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -64,8 +72,8 @@
       <file leaf-file-name="GoonersWorldScraper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/GoonersWorldScraper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+            <state relative-caret-position="252">
+              <caret line="12" column="96" lean-forward="true" selection-start-line="12" selection-start-column="96" selection-end-line="12" selection-end-column="96" />
               <folding />
             </state>
           </provider>
@@ -74,8 +82,8 @@
       <file leaf-file-name="ScraperFactory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/ScraperFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="136" column="16" lean-forward="true" selection-start-line="136" selection-start-column="16" selection-end-line="136" selection-end-column="16" />
+            <state relative-caret-position="1376">
+              <caret line="140" column="5" lean-forward="true" selection-start-line="140" selection-start-column="5" selection-end-line="140" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -101,11 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractScraper.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AbstractScraper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="222" column="0" lean-forward="false" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
+            <state relative-caret-position="283">
+              <caret line="183" column="0" lean-forward="false" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2999#3000#0" expanded="true" />
@@ -117,11 +125,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="posts.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="posts.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/posts.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="63">
+              <caret line="3" column="282" lean-forward="true" selection-start-line="3" selection-start-column="282" selection-end-line="3" selection-end-column="282" />
               <folding />
             </state>
           </provider>
@@ -139,10 +147,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>|</find>
-      <find>current site</find>
-      <find>LFC</find>
-      <find>title=&quot;&quot;</find>
       <find>Argentina</find>
       <find>Reply Logged</find>
       <find>Uncapped 19-year-old Liverpool defender Trent Alexander-Arnold has been named in Gareth Southgate's 23-man England squad for this summer's World Cup</find>
@@ -161,7 +165,6 @@
       <find>Main</find>
       <find>&quot;[IMAGE/VIDEO/EMOJI].*?&quot;</find>
       <find>&quot;[IMAGE/VIDEO/EMOJI] only&quot;</find>
-      <find>Press</find>
       <find>footymad</find>
       <find>grandol</find>
       <find>new Login</find>
@@ -169,6 +172,11 @@
       <find>Increment</find>
       <find>quote</find>
       <find>could</find>
+      <find>Press</find>
+      <find>Pre</find>
+      <find>commas</find>
+      <find>comma</find>
+      <find>semi-colo</find>
     </findStrings>
     <replaceStrings>
       <replace>forumUrl</replace>
@@ -229,20 +237,20 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/BlueMoonMCFCScraper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/FoxesTalkScraper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bu/forum/ForumPost.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bu/Main.java" />
-        <option value="$PROJECT_DIR$/forums.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/bu/result/ResultWriter.java" />
         <option value="$PROJECT_DIR$/forum-sizes.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/bu/webscraping/Login.java" />
-        <option value="$PROJECT_DIR$/posts.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/ArsenalManiaScraper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/GrandOldTeamScraper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/RedAndWhiteScraper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bu/forum/ForumType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java" />
         <option value="$PROJECT_DIR$/threads.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java" />
+        <option value="$PROJECT_DIR$/forums.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bu/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bu/webscraping/ScraperFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/GoonersWorldScraper.java" />
+        <option value="$PROJECT_DIR$/posts.txt" />
       </list>
     </option>
   </component>
@@ -516,15 +524,16 @@
       <workItem from="1533223350336" duration="61000" />
       <workItem from="1533224026256" duration="16000" />
       <workItem from="1533559015070" duration="723000" />
-      <workItem from="1533635411091" duration="1889000" />
+      <workItem from="1533635411091" duration="6045000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174785000" />
+    <option name="totallyTimeSpent" value="178941000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2747" y="158" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -548,7 +557,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31905782" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3137045" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -597,24 +606,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java</url>
-          <line>222</line>
-          <properties />
-          <option name="timeStamp" value="251" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java</url>
-          <line>130</line>
-          <properties />
-          <option name="timeStamp" value="252" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="253" />
+      <option name="time" value="261" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -826,14 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="48" lean-forward="false" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/WestHamOnlineScraper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -893,14 +880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/posts.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/ArsenalManiaScraper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -935,14 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/net/SocketInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="101" column="26" lean-forward="true" selection-start-line="101" selection-start-column="26" selection-end-line="101" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/threads.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -951,34 +922,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/net/SocketInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="93" column="23" lean-forward="false" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/forums.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="41" lean-forward="false" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="41" />
+          <caret line="0" column="415" lean-forward="false" selection-start-line="0" selection-start-column="415" selection-end-line="0" selection-end-column="415" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="20" column="55" lean-forward="false" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/ScraperFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="136" column="16" lean-forward="true" selection-start-line="136" selection-start-column="16" selection-end-line="136" selection-end-column="16" />
+        <state relative-caret-position="1376">
+          <caret line="140" column="5" lean-forward="true" selection-start-line="140" selection-start-column="5" selection-end-line="140" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/GoonersWorldScraper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+        <state relative-caret-position="252">
+          <caret line="12" column="96" lean-forward="true" selection-start-line="12" selection-start-column="96" selection-end-line="12" selection-end-column="96" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="222" column="0" lean-forward="false" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
+        <state relative-caret-position="283">
+          <caret line="183" column="0" lean-forward="false" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2999#3000#0" expanded="true" />
@@ -986,6 +973,14 @@
             <element signature="e#3259#3260#0" expanded="true" />
             <element signature="e#3325#3326#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/posts.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="282" lean-forward="true" selection-start-line="3" selection-start-column="282" selection-end-line="3" selection-end-column="282" />
+          <folding />
         </state>
       </provider>
     </entry>
