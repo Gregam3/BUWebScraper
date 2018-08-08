@@ -220,12 +220,20 @@ public abstract class AbstractScraper implements Scraper {
     private String formatContent(String rawContentHtml) {
         Matcher quoteMatcher = quotePattern.matcher(rawContentHtml);
 
-        while (quoteMatcher.find())
-            rawContentHtml = "Quote: '"
-                    + ((Jsoup.parse(quoteMatcher.group(1)).text().isEmpty()) ? MULTIMEDIA_REPLACEMENT_TEXT : quoteMatcher.group(1))
-                    + "' -  " + quoteMatcher.group(2);
+        StringBuilder postWithQuotesBuilder = new StringBuilder();
 
-        String content = Jsoup.parse(rawContentHtml).text();
+        while (quoteMatcher.find())
+            postWithQuotesBuilder
+                    .append("Quote: '")
+                    .append((Jsoup.parse(quoteMatcher.group(1)).text().isEmpty()) ? MULTIMEDIA_REPLACEMENT_TEXT : quoteMatcher.group(1))
+                    .append("' -  ")
+                    .append(quoteMatcher.group(2))
+                    .append(" ");
+
+        String content = Jsoup.parse(
+                (postWithQuotesBuilder.toString().isEmpty()) ?
+                        rawContentHtml : postWithQuotesBuilder.toString()
+        ).text();
 
         Matcher notEmptyAfterQuoteMatcher = notEmptyAfterQuotePattern.matcher(content);
 
