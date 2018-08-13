@@ -157,8 +157,8 @@ public abstract class AbstractScraper implements Scraper {
 
             if (currentPageCount <= threadLength)
                 //Casting purely for text formatting
-                System.out.println("Thread: " + threadUrl + " - Pages scraped for current thread: " + (int) currentPageCount + "/" + (int) threadLength
-                        + " (" + (int) (((currentPageCount / threadLength) * 100)) + "%)" + ". Total pages scraped: " + Main.cumulativePageCount);
+                System.out.println("Thread: " + threadUrl + " - Current thread: " + (int) currentPageCount + "/" + (int) threadLength
+                        + " (" + (int) (((currentPageCount / threadLength) * 100)) + "%)" + ". Total: " + Main.cumulativePageCount);
 
             forumPosts.addAll(retrievePostsForPage(threadUrl + pageUrlPrefix + pagePathVariableIterator + pageUrlSuffix));
             currentPageCount++;
@@ -259,7 +259,7 @@ public abstract class AbstractScraper implements Scraper {
                 return getShortPageCount(rawHtml);
 
         } catch (Exception e) {
-            System.err.println("Could not retrieve page count, this may be due to the thread being fewer than 5 pages. If so, this is not an issue.");
+            System.err.println("Could not retrieve page count, only the first page will be scraped.");
             return 1;
         }
     }

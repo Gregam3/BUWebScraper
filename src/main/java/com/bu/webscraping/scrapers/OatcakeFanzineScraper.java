@@ -10,7 +10,7 @@ public class OatcakeFanzineScraper extends AbstractScraper {
                 "[\\S\\s]*?title=\"([A-Z][a-z]{2} [0-9]+, [0-9]{4} [0-9]+:[0-9]+:[0-9]+ [GMT|BST]+)" +
                 "[\\S\\s]*?<div class=\"message\">([\\S\\s]*?)</tr>");
         setLastPagePatternLong("<div onclick=\"var page=prompt[\\S\\s]*?\">([0-9]+)</a></li>");
-        setLastPagePatternShort("<li.*><a.*>[0-9]+</a></li>");
+        setLastPagePatternShort("<li.*><a.*>([0-9]+)</a></li>");
         setPageUrlPrefix("?page=");
 
         setPostGroupIndexes(new int[]{3,1,2});
