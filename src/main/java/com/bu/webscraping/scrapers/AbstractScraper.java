@@ -76,8 +76,10 @@ public abstract class AbstractScraper implements Scraper {
      * Functionally Unmatchable Pattern
      */
     private Pattern quotePattern = Pattern.compile("\\^{4000}");
-
-    private final Pattern notEmptyAfterQuotePattern = Pattern.compile("Quote: '[\\S\\s]*?' -.");
+    /**
+     * Checks if there is any more text after the quote ends, one space is appended hence it checks for another character after.
+     */
+    private final Pattern notEmptyAfterQuotePattern = Pattern.compile("Quote: '[\\S\\s]*?'..");
 
     void setQuotePattern(String quotePatternRegex) {
         this.quotePattern = Pattern.compile(quotePatternRegex);
@@ -226,7 +228,7 @@ public abstract class AbstractScraper implements Scraper {
             postWithQuotesBuilder
                     .append("Quote: '")
                     .append((Jsoup.parse(quoteMatcher.group(1)).text().isEmpty()) ? MULTIMEDIA_REPLACEMENT_TEXT : quoteMatcher.group(1))
-                    .append("' -  ")
+                    .append("'")
                     .append(quoteMatcher.group(2))
                     .append(" ");
 
