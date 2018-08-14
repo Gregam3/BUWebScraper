@@ -259,7 +259,6 @@ public abstract class AbstractScraper implements Scraper {
                 return getShortPageCount(rawHtml);
 
         } catch (Exception e) {
-            System.err.println("Could not retrieve page count, only the first page will be scraped.");
             return 1;
         }
     }
