@@ -4,7 +4,6 @@ import com.bu.result.ResultWriter;
 import com.bu.webscraping.ScraperFactory;
 
 import java.io.IOException;
-import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
@@ -17,8 +16,8 @@ public class Main {
         ResultWriter resultWriter = new ResultWriter();
 
         try {
-            resultWriter.writePostsToCSV(ScraperFactory.retrievePostsForAllForums());
-            resultWriter.writeForumSizeToTxt(ScraperFactory.retrieveTotalForumPostsForAllForums());
+            resultWriter.writePostsToCSV(ScraperFactory.retrievePosts());
+            resultWriter.writeForumSizeToTxt(ScraperFactory.retrieveForumSizes());
             System.out.println("\n Double tap enter key to exit, results are saved to posts.txt and forum-sizes.txt respectively.");
             new Scanner(System.in).nextLine();
         } catch (InstantiationException | IllegalAccessException e) {

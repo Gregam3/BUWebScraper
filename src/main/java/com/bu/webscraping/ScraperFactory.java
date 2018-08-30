@@ -19,7 +19,7 @@ public class ScraperFactory {
     private static Map<ForumType, List<ForumPost>> postMap = new LinkedHashMap<>();
     private static Map<ForumType, Long> threadSizeMap = new LinkedHashMap<>();
 
-    public static Map<ForumType, Long> retrieveTotalForumPostsForAllForums() throws IOException, IllegalAccessException, InstantiationException {
+    public static Map<ForumType, Long> retrieveForumSizes() throws IOException, IllegalAccessException, InstantiationException {
         String[] forumUrls = getURLs("forums.txt");
 
         if(forumUrls == null)
@@ -81,7 +81,7 @@ public class ScraperFactory {
         threadSizeMap.put(forumType, scraper.retrieveForumSize(forumUrl));
     }
 
-    public static Map<ForumType, List<ForumPost>> retrievePostsForAllForums() throws IOException, InstantiationException, IllegalAccessException {
+    public static Map<ForumType, List<ForumPost>> retrievePosts() throws IOException, InstantiationException, IllegalAccessException {
         String[] threadUrls = getURLs("threads.txt");
 
         if (threadUrls == null)
@@ -134,6 +134,11 @@ public class ScraperFactory {
                     addPostsToMap(ForumType.SWANSEA_CITY_FANS_NETWORK, FansNetworkScraper.class, threadUrl);
                 else if (threadUrl.contains("www.goonersworld.co.uk"))
                     addPostsToMap(ForumType.ARSENAL_GOONERS_WORLD, GoonersWorldScraper.class, threadUrl);
+                else if (threadUrl.contains("www.mumsnet.com"))
+                    addPostsToMap(ForumType.MUMS_NET, MumsNetScraper.class, threadUrl);
+                else if(threadUrl.contains("www.netmums.com"))
+                    //Threads must end with .html but in order to navigate pages a page index needs to change before i, a suffix of .html has been added so it is not necessary on the base url
+                    addPostsToMap(ForumType.NET_MUMS, NetMumsScraper.class, threadUrl.replace(".html", ""));
                 else
                     System.err.println("Site: \"" + threadUrl + "\" could not be found, if this is blank please remove any trailing spaces or semi-colons after the last thread link");
 

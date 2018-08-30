@@ -9,7 +9,6 @@ import org.jsoup.Jsoup;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -31,7 +30,7 @@ public abstract class AbstractScraper implements Scraper {
     /**
      * Finds the last page of the thread, used on first page only.
      */
-    Pattern lastPagePatternLong = Pattern.compile("Page 1 of ([0-9]*)");
+    Pattern lastPagePatternLong = Pattern.compile("[Pp]age 1 of ([0-9]*)");
 
     private Pattern lastPagePatternShort;
 
@@ -68,8 +67,6 @@ public abstract class AbstractScraper implements Scraper {
      */
     private Login login = null;
 
-    private String sessionId = "";
-
     private static final String MULTIMEDIA_REPLACEMENT_TEXT = "[IMAGE/VIDEO/EMOJI only]";
 
     /**
@@ -80,6 +77,16 @@ public abstract class AbstractScraper implements Scraper {
      * Checks if there is any more text after the quote ends, one space is appended hence it checks for another character after.
      */
     private final Pattern notEmptyAfterQuotePattern = Pattern.compile("Quote: '[\\S\\s]*?'..");
+
+    /**
+     * Some sites are not quite compatible with the typical Prefix and Suffix used for navigating pages as they require .html at the end of the URL or they redirect you,
+     * When this value is true it will append the entered url adding the .html after any suffix
+     */
+    private boolean requiresHTMLExtension = false;
+
+    public void setRequiresHTMLExtension(boolean requiresHTMLExtension) {
+        this.requiresHTMLExtension = requiresHTMLExtension;
+    }
 
     void setQuotePattern(String quotePatternRegex) {
         this.quotePattern = Pattern.compile(quotePatternRegex);
@@ -146,7 +153,7 @@ public abstract class AbstractScraper implements Scraper {
         if (login != null)
             login();
 
-        double threadLength = getLongPageCount(threadUrl);
+        double threadLength = getLongPageCount(threadUrl + ((requiresHTMLExtension) ? ".html" : ""));
 
         double currentPageCount = 1;
 
@@ -160,7 +167,8 @@ public abstract class AbstractScraper implements Scraper {
                 System.out.println("Thread: " + threadUrl + " - Current thread: " + (int) currentPageCount + "/" + (int) threadLength
                         + " (" + (int) (((currentPageCount / threadLength) * 100)) + "%)" + ". Total: " + Main.cumulativePageCount);
 
-            forumPosts.addAll(retrievePostsForPage(threadUrl + pageUrlPrefix + pagePathVariableIterator + pageUrlSuffix));
+            forumPosts.addAll(retrievePostsForPage(threadUrl + pageUrlPrefix + pagePathVariableIterator + pageUrlSuffix
+                    + ((requiresHTMLExtension) ? ".html" : "")));
             currentPageCount++;
             Main.cumulativePageCount++;
         }
