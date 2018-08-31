@@ -167,8 +167,8 @@ public abstract class AbstractScraper implements Scraper {
                 System.out.println("Thread: " + threadUrl + " - Current thread: " + (int) currentPageCount + "/" + (int) threadLength
                         + " (" + (int) (((currentPageCount / threadLength) * 100)) + "%)" + ". Total: " + Main.cumulativePageCount);
 
-            forumPosts.addAll(retrievePostsForPage(threadUrl + pageUrlPrefix + pagePathVariableIterator + pageUrlSuffix
-                    + ((requiresHTMLExtension) ? ".html" : "")));
+            forumPosts.addAll(retrievePostsForPage(threadUrl + pageUrlPrefix + pagePathVariableIterator + pageUrlSuffix));
+
             currentPageCount++;
             Main.cumulativePageCount++;
         }

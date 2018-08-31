@@ -136,14 +136,16 @@ public class ScraperFactory {
                     addPostsToMap(ForumType.ARSENAL_GOONERS_WORLD, GoonersWorldScraper.class, threadUrl);
                 else if (threadUrl.contains("www.mumsnet.com"))
                     addPostsToMap(ForumType.MUMS_NET, MumsNetScraper.class, threadUrl);
-                else if(threadUrl.contains("www.netmums.com"))
+                else if(threadUrl.contains("www.netmums.com")) {
                     //Threads must end with .html but in order to navigate pages a page index needs to change before i, a suffix of .html has been added so it is not necessary on the base url
                     addPostsToMap(ForumType.NET_MUMS, NetMumsScraper.class, threadUrl.replace(".html", ""));
+                }
                 else
                     System.err.println("Site: \"" + threadUrl + "\" could not be found, if this is blank please remove any trailing spaces or semi-colons after the last thread link");
 
             } catch(Exception e) {
-                System.err.println(threadUrl + " produced the following error:" +e +"\n\n\nContinuing scraping of remaining threads.");
+                e.printStackTrace();
+                System.err.println(threadUrl + " produced the following error:" +e +"\nContinuing scraping of remaining threads.");
             }
         }
 
