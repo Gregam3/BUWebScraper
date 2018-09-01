@@ -7,7 +7,7 @@ package com.bu.webscraping.scrapers;
 public class GoonersWorldScraper extends AbstractScraper {
     public GoonersWorldScraper() {
         setPostPattern("class=\"username-coloured\">([\\S\\s]*?)</a>[\\S\\s]*? » ([\\S\\s]*?)</p>[\\S\\s]*?<div class=\"content\">([\\S\\s]*?) <dl class=\"postprofile\"");
-        setQuotePattern("<blockquote.*>([\\S\\s]*?)</blockquote>([^<blockquote].*)");
+        setQuotePattern("<blockquote.*>([\\S\\s]*?)</blockquote>([^<blockquote]*)");
         setForumSizePattern("<dd class=\"posts\">[\\S\\s]*?([0-9]+)[\\S\\s]*?<dfn>Posts</dfn>");
 
         setPageUrlPrefix("&start=");

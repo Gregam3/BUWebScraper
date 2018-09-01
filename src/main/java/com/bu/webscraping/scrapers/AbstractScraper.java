@@ -174,7 +174,7 @@ public abstract class AbstractScraper implements Scraper {
                 if (currentPageCount <= threadLength)
                     //Casting purely for text formatting
                     System.out.println("Thread: " + getFormedPageUrl(threadUrl, pageNumber) + " - Current thread: " + (int) currentPageCount + "/" + (int) threadLength
-                            + " (" + (int) (((currentPageCount / threadLength) * 100)) + "%)" + ". Total: " + Main.cumulativePageCount);
+                            + " (" + (int) (((currentPageCount / threadLength) * 100)) + "%)" + " - Total: " + Main.cumulativePageCount);
 
                 forumPosts.addAll(retrievePostsForPage(threadUrl + pageUrlPrefix + pageNumber + pageUrlSuffix));
 
@@ -182,12 +182,10 @@ public abstract class AbstractScraper implements Scraper {
                 Main.cumulativePageCount++;
 
             } catch (Exception e) {
-
-
                 System.err.println("Error: " + getFormedPageUrl(threadUrl, pageNumber) +
                         " produced the following error:" + e + ". Continuing scraping of remaining pages.");
 
-                //Not pageNumber++ to indicate the next page is needed as the pageP
+                //Not pageNumber++ to indicate the next page is needed as page start index has not yet been 0 (may change later)
                 forumPosts.addAll(scrapePostsForThread(threadUrl, threadLength, pageNumber));
 
                 //To stop the current loop, so when the loop resumes at the next iterator it does not cascade back to finish this loop
@@ -208,7 +206,8 @@ public abstract class AbstractScraper implements Scraper {
 
         String rawHtml;
 
-        Connection pageConnection = Jsoup.connect(threadPageUrl).userAgent("Mozilla");
+        Connection pageConnection =
+                Jsoup.connect(threadPageUrl).userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6");
 
         rawHtml = (login != null) ?
                 pageConnection.cookies(
