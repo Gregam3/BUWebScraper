@@ -7,9 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27bc57a4-2650-4e92-804f-d4a091bcbe2c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/ScraperFactory.class" afterPath="$PROJECT_DIR$/target/classes/com/bu/webscraping/ScraperFactory.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/AbstractScraper.class" afterPath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/AbstractScraper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/MumsNetScraper.class" afterPath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/MumsNetScraper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/GoonersWorldScraper.class" afterPath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/GoonersWorldScraper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/LFCRedsScraper.class" afterPath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/LFCRedsScraper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/RedAndWhiteScraper.class" afterPath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/RedAndWhiteScraper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/WestBromScraper.class" afterPath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/WestBromScraper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/ScraperFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/ScraperFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java" afterPath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/GoonersWorldScraper.java" afterPath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/GoonersWorldScraper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/LFCRedsScraper.java" afterPath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/LFCRedsScraper.java" />
@@ -31,21 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="threads.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="threads.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/threads.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="609" lean-forward="false" selection-start-line="0" selection-start-column="609" selection-end-line="0" selection-end-column="609" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SocketInputStream.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/net/SocketInputStream.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="93" column="23" lean-forward="false" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
+              <caret line="0" column="132" lean-forward="false" selection-start-line="0" selection-start-column="132" selection-end-line="0" selection-end-column="132" />
               <folding />
             </state>
           </provider>
@@ -54,8 +49,30 @@
       <file leaf-file-name="ScraperFactory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/ScraperFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="164" column="62" lean-forward="false" selection-start-line="164" selection-start-column="62" selection-end-line="164" selection-end-column="62" />
+            <state relative-caret-position="1031">
+              <caret line="157" column="0" lean-forward="false" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WestHamOnlineScraper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/WestHamOnlineScraper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="43" column="43" lean-forward="true" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResultWriter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/result/ResultWriter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="61" column="58" lean-forward="false" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -65,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/out/artifacts/SportForumScraper_jar/threads.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="1464" lean-forward="false" selection-start-line="0" selection-start-column="1311" selection-end-line="0" selection-end-column="1464" />
+              <caret line="0" column="92" lean-forward="true" selection-start-line="0" selection-start-column="92" selection-end-line="0" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -74,23 +91,9 @@
       <file leaf-file-name="Scraper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/Scraper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+            <state relative-caret-position="187">
+              <caret line="14" column="63" lean-forward="false" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractScraper.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="186" column="23" lean-forward="false" selection-start-line="186" selection-start-column="23" selection-end-line="186" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3648#3649#0" expanded="true" />
-                <element signature="e#3698#3699#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -98,28 +101,32 @@
       <file leaf-file-name="posts.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/posts.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="531" column="130" lean-forward="false" selection-start-line="531" selection-start-column="130" selection-end-line="531" selection-end-column="130" />
+            <state relative-caret-position="-102">
+              <caret line="710" column="0" lean-forward="false" selection-start-line="710" selection-start-column="0" selection-end-line="710" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MumsNetScraper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/MumsNetScraper.java">
+      <file leaf-file-name="AbstractScraper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-              <folding />
+            <state relative-caret-position="561">
+              <caret line="218" column="59" lean-forward="true" selection-start-line="218" selection-start-column="59" selection-end-line="218" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3666#3667#0" expanded="true" />
+                <element signature="e#3716#3717#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NetMumsScraper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/NetMumsScraper.java">
+      <file leaf-file-name="DualStackPlainSocketImpl.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/net/DualStackPlainSocketImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+            <state relative-caret-position="208">
+              <caret line="274" column="23" lean-forward="false" selection-start-line="274" selection-start-column="23" selection-end-line="274" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -137,13 +144,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Press</find>
-      <find>Pre</find>
-      <find>commas</find>
-      <find>comma</find>
-      <find>semi-colo</find>
-      <find>Quote</find>
-      <find>oatcakefanzine</find>
       <find>argent</find>
       <find>Pages scra</find>
       <find>Quote:</find>
@@ -167,6 +167,13 @@
       <find>PS of course</find>
       <find>current thread</find>
       <find>system.out</find>
+      <find>retrievePostsForThread</find>
+      <find>retrievePosts</find>
+      <find>Contin</find>
+      <find>Total</find>
+      <find>Total:</find>
+      <find>JSOu</find>
+      <find>useragent</find>
     </findStrings>
     <replaceStrings>
       <replace>forumUrl</replace>
@@ -201,7 +208,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bu/forum/Club.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bu/forum/Forum.java" />
         <option value="$PROJECT_DIR$/results.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/Scraper.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/com/bu/result/ResultGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/CPFCScraper.java" />
@@ -236,12 +242,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/NetmumsScraper.java" />
         <option value="$PROJECT_DIR$/out/artifacts/SportForumScraper_jar/threads.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/NetMumsScraper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bu/webscraping/ScraperFactory.java" />
-        <option value="$PROJECT_DIR$/posts.txt" />
-        <option value="$PROJECT_DIR$/threads.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/MumsNetScraper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/Scraper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bu/webscraping/ScraperFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/WestHamOnlineScraper.java" />
+        <option value="$PROJECT_DIR$/posts.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java" />
+        <option value="$PROJECT_DIR$/threads.txt" />
       </list>
     </option>
   </component>
@@ -526,12 +533,12 @@
       <workItem from="1535719998030" duration="459000" />
       <workItem from="1535720473068" duration="2699000" />
       <workItem from="1535735213016" duration="1535000" />
-      <workItem from="1535793825432" duration="1598000" />
+      <workItem from="1535793825432" duration="12331000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219963000" />
+    <option name="totallyTimeSpent" value="230696000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2796" y="78" width="1936" height="1096" extended-state="6" />
@@ -578,15 +585,22 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/bu/Main.java</url>
+          <line>23</line>
+          <properties />
+          <option name="timeStamp" value="311" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="310" />
+      <option name="time" value="315" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -824,26 +838,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="20" column="55" lean-forward="false" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/RedAndWhiteScraper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/result/ResultWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="44" column="47" lean-forward="false" selection-start-line="44" selection-start-column="47" selection-end-line="44" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -871,66 +870,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/Scraper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/net/SocketInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="93" column="23" lean-forward="false" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/posts.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="531" column="130" lean-forward="false" selection-start-line="531" selection-start-column="130" selection-end-line="531" selection-end-column="130" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/SportForumScraper_jar/threads.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1464" lean-forward="false" selection-start-line="0" selection-start-column="1311" selection-end-line="0" selection-end-column="1464" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/threads.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="609" lean-forward="false" selection-start-line="0" selection-start-column="609" selection-end-line="0" selection-end-column="609" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/ScraperFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="164" column="62" lean-forward="false" selection-start-line="164" selection-start-column="62" selection-end-line="164" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/NetMumsScraper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/WestHamOnlineScraper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="34" column="53" lean-forward="false" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+          <caret line="12" column="34" lean-forward="false" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -938,8 +881,82 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/MumsNetScraper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/Scraper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="63" lean-forward="false" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/net/DualStackPlainSocketImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="274" column="23" lean-forward="false" selection-start-line="274" selection-start-column="23" selection-end-line="274" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/SportForumScraper_jar/threads.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="92" lean-forward="true" selection-start-line="0" selection-start-column="92" selection-end-line="0" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/net/SocketInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="93" column="23" lean-forward="false" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/posts.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="710" column="0" lean-forward="false" selection-start-line="710" selection-start-column="0" selection-end-line="710" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/WestHamOnlineScraper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="43" column="43" lean-forward="true" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/result/ResultWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="61" column="58" lean-forward="false" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/ScraperFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1031">
+          <caret line="157" column="0" lean-forward="false" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -953,13 +970,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="186" column="23" lean-forward="false" selection-start-line="186" selection-start-column="23" selection-end-line="186" selection-end-column="23" />
+        <state relative-caret-position="561">
+          <caret line="218" column="59" lean-forward="true" selection-start-line="218" selection-start-column="59" selection-end-line="218" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3648#3649#0" expanded="true" />
-            <element signature="e#3698#3699#0" expanded="true" />
+            <element signature="e#3666#3667#0" expanded="true" />
+            <element signature="e#3716#3717#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/threads.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="132" lean-forward="false" selection-start-line="0" selection-start-column="132" selection-end-line="0" selection-end-column="132" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -13,7 +13,7 @@ public class GoonersWorldScraper extends AbstractScraper {
         setPageUrlPrefix("&start=");
 
         setPageIncrement(15);
-        setPagePathVariableStart(0);
+        setPageStartIndex(0);
         setLastPagePatternLong("Page <strong>1</strong> of <strong>([0-9]+)</strong>");
 
         setPostGroupIndexes(new int[]{3,1,2});

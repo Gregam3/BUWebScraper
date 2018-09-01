@@ -9,6 +9,7 @@ import org.jsoup.Jsoup;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -52,7 +53,7 @@ public abstract class AbstractScraper implements Scraper {
     /**
      * Many of the afore mentioned PHP pages start at 0 rather than 1
      */
-    int pagePathVariableStart = 1;
+    int pageStartIndex = 1;
 
     /**
      * Used to direct the matcher to the correct group,
@@ -116,8 +117,8 @@ public abstract class AbstractScraper implements Scraper {
         this.pageIncrement = pageIncrement;
     }
 
-    void setPagePathVariableStart(int pagePathVariableStart) {
-        this.pagePathVariableStart = pagePathVariableStart;
+    void setPageStartIndex(int pageStartIndex) {
+        this.pageStartIndex = pageStartIndex;
     }
 
     public void setPageUrlSuffix(String pageUrlSuffix) {
@@ -148,32 +149,53 @@ public abstract class AbstractScraper implements Scraper {
     }
 
     public List<ForumPost> retrievePostsForThread(String threadUrl) throws IOException {
-        List<ForumPost> forumPosts = new LinkedList<>();
-
         if (login != null)
             login();
 
-        double threadLength = getLongPageCount(threadUrl + ((requiresHTMLExtension) ? ".html" : ""));
+        int threadLength = getLongPageCount(threadUrl + ((requiresHTMLExtension) ? ".html" : ""));
 
-        double currentPageCount = 1;
+        List<ForumPost> forumPosts = scrapePostsForThread(threadUrl, threadLength, 0);
 
-        for (int pageNumber = pagePathVariableStart;
+        Main.siteNumber++;
+        return forumPosts;
+    }
+
+    private List<ForumPost> scrapePostsForThread(String threadUrl, int threadLength, int startIndex) {
+        List<ForumPost> forumPosts = new LinkedList<>();
+
+        double currentPageCount = startIndex + 1;
+
+        for (int pageNumber = pageStartIndex + (startIndex * pageIncrement);
             //threadLength * by increment because some path variables use post number rather than page number
              pageNumber <= (threadLength * pageIncrement);
              pageNumber += pageIncrement) {
 
-            if (currentPageCount <= threadLength)
-                //Casting purely for text formatting
-                System.out.println("Thread: " + getFormedPageUrl(threadUrl, pageNumber) + " - Current thread: " + (int) currentPageCount + "/" + (int) threadLength
-                        + " (" + (int) (((currentPageCount / threadLength) * 100)) + "%)" + ". Total: " + Main.cumulativePageCount);
+            try {
+                if (currentPageCount <= threadLength)
+                    //Casting purely for text formatting
+                    System.out.println("Thread: " + getFormedPageUrl(threadUrl, pageNumber) + " - Current thread: " + (int) currentPageCount + "/" + (int) threadLength
+                            + " (" + (int) (((currentPageCount / threadLength) * 100)) + "%)" + ". Total: " + Main.cumulativePageCount);
 
-            forumPosts.addAll(retrievePostsForPage(threadUrl + pageUrlPrefix + pageNumber + pageUrlSuffix));
+                forumPosts.addAll(retrievePostsForPage(threadUrl + pageUrlPrefix + pageNumber + pageUrlSuffix));
 
-            currentPageCount++;
-            Main.cumulativePageCount++;
+                currentPageCount++;
+                Main.cumulativePageCount++;
+
+            } catch (Exception e) {
+
+
+                System.err.println("Error: " + getFormedPageUrl(threadUrl, pageNumber) +
+                        " produced the following error:" + e + ". Continuing scraping of remaining pages.");
+
+                //Not pageNumber++ to indicate the next page is needed as the pageP
+                forumPosts.addAll(scrapePostsForThread(threadUrl, threadLength, pageNumber));
+
+                //To stop the current loop, so when the loop resumes at the next iterator it does not cascade back to finish this loop
+                pageNumber = (threadLength * pageIncrement) + 1;
+            }
         }
 
-        Main.siteNumber++;
+
         return forumPosts;
     }
 
@@ -186,9 +208,13 @@ public abstract class AbstractScraper implements Scraper {
 
         String rawHtml;
 
-        rawHtml = (login != null) ? Jsoup.connect(threadPageUrl)
-                .cookies(login.getCookies()).get().toString() :
-                Jsoup.connect(threadPageUrl).get().toString();
+        Connection pageConnection = Jsoup.connect(threadPageUrl).userAgent("Mozilla");
+
+        rawHtml = (login != null) ?
+                pageConnection.cookies(
+                        login.getCookies()
+                ).get().toString() :
+                pageConnection.get().toString();
 
         Matcher postMatcher = postPattern.matcher(rawHtml);
 
