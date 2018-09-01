@@ -6,7 +6,7 @@ package com.bu.webscraping.scrapers;
  */
 public class LFCRedsScraper extends AbstractScraper {
     public LFCRedsScraper() {
-        this.pagePathVariableIncrement = 40;
+        this.pageIncrement = 40;
         this.pagePathVariableStart = 0;
 
         setPostPattern("title=\"View the profile of ([\\S\\s]*?)\"[\\S\\s]*?</a>: ([A-Z][a-z]{2} [0-9]+, [0-9]{4} [0-9]{2}:[0-9]{2}:[0-9]{2} [am|pm]+)[\\S\\s]*?<div class=\"post\">([\\S\\s]*?)<div class=\"moderatorbar");

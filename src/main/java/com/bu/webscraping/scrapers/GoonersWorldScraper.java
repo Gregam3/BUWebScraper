@@ -1,7 +1,5 @@
 package com.bu.webscraping.scrapers;
 
-import com.bu.webscraping.ScraperFactory;
-
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
@@ -14,7 +12,7 @@ public class GoonersWorldScraper extends AbstractScraper {
 
         setPageUrlPrefix("&start=");
 
-        setPagePathVariableIncrement(15);
+        setPageIncrement(15);
         setPagePathVariableStart(0);
         setLastPagePatternLong("Page <strong>1</strong> of <strong>([0-9]+)</strong>");
 

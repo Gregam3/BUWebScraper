@@ -47,7 +47,7 @@ public abstract class AbstractScraper implements Scraper {
     /**
      * Custom increment as many PHP pages use the path variable to declare how many posts are shown e.g. "40"
      */
-    int pagePathVariableIncrement = 1;
+    int pageIncrement = 1;
 
     /**
      * Many of the afore mentioned PHP pages start at 0 rather than 1
@@ -112,8 +112,8 @@ public abstract class AbstractScraper implements Scraper {
         this.pageUrlPrefix = pageUrlPrefix;
     }
 
-    void setPagePathVariableIncrement(int pagePathVariableIncrement) {
-        this.pagePathVariableIncrement = pagePathVariableIncrement;
+    void setPageIncrement(int pageIncrement) {
+        this.pageIncrement = pageIncrement;
     }
 
     void setPagePathVariableStart(int pagePathVariableStart) {
@@ -157,17 +157,17 @@ public abstract class AbstractScraper implements Scraper {
 
         double currentPageCount = 1;
 
-        for (int pagePathVariableIterator = pagePathVariableStart;
+        for (int pageNumber = pagePathVariableStart;
             //threadLength * by increment because some path variables use post number rather than page number
-             pagePathVariableIterator <= (threadLength * pagePathVariableIncrement);
-             pagePathVariableIterator += pagePathVariableIncrement) {
+             pageNumber <= (threadLength * pageIncrement);
+             pageNumber += pageIncrement) {
 
             if (currentPageCount <= threadLength)
                 //Casting purely for text formatting
-                System.out.println("Thread: " + threadUrl + " - Current thread: " + (int) currentPageCount + "/" + (int) threadLength
+                System.out.println("Thread: " + getFormedPageUrl(threadUrl, pageNumber) + " - Current thread: " + (int) currentPageCount + "/" + (int) threadLength
                         + " (" + (int) (((currentPageCount / threadLength) * 100)) + "%)" + ". Total: " + Main.cumulativePageCount);
 
-            forumPosts.addAll(retrievePostsForPage(threadUrl + pageUrlPrefix + pagePathVariableIterator + pageUrlSuffix));
+            forumPosts.addAll(retrievePostsForPage(threadUrl + pageUrlPrefix + pageNumber + pageUrlSuffix));
 
             currentPageCount++;
             Main.cumulativePageCount++;
@@ -175,6 +175,10 @@ public abstract class AbstractScraper implements Scraper {
 
         Main.siteNumber++;
         return forumPosts;
+    }
+
+    private String getFormedPageUrl(String threadUrl, int iterator) {
+        return threadUrl + pageUrlPrefix + iterator + pageUrlSuffix;
     }
 
     public List<ForumPost> retrievePostsForPage(String threadPageUrl) throws IOException {
