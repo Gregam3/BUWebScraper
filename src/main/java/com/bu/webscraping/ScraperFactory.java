@@ -68,6 +68,8 @@ public class ScraperFactory {
                 addThreadSizeToMap(ForumType.SWANSEA_CITY_FANS_NETWORK, FansNetworkScraper.class, forumUrl);
             else if (forumUrl.contains("www.goonersworld.co.uk"))
                 addThreadSizeToMap(ForumType.ARSENAL_GOONERS_WORLD, GoonersWorldScraper.class, forumUrl);
+            else if (forumUrl.contains("forums.liverpoolfc.com"))
+                addThreadSizeToMap(ForumType.LIVERPOOL_FC, LiverpoolFCScraper.class, forumUrl);
             else
                 System.err.println("Site: \"" + forumUrl + "\" could not be found, if this is blank please remove any trailing spaces or semi-colons after the last thread link");
         }
@@ -135,10 +137,12 @@ public class ScraperFactory {
                 addPostsToMap(ForumType.ARSENAL_GOONERS_WORLD, GoonersWorldScraper.class, threadUrl);
             else if (threadUrl.contains("www.mumsnet.com"))
                 addPostsToMap(ForumType.MUMS_NET, MumsNetScraper.class, threadUrl);
-            else if (threadUrl.contains("www.netmums.com")) {
+            else if (threadUrl.contains("www.netmums.com"))
                 //Threads must end with .html but in order to navigate pages a page index needs to change before i, a suffix of .html has been added so it is not necessary on the base url
                 addPostsToMap(ForumType.NET_MUMS, NetMumsScraper.class, threadUrl.replace(".html", ""));
-            } else
+            else if (threadUrl.contains("forums.liverpoolfc.com"))
+                addPostsToMap(ForumType.LIVERPOOL_FC, LiverpoolFCScraper.class, threadUrl);
+            else
                 System.err.println("Site: \"" + threadUrl + "\" could not be found, if this is blank please remove any trailing spaces or semi-colons after the last thread link");
 
         }
