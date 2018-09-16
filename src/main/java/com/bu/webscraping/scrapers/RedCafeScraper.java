@@ -1,5 +1,7 @@
 package com.bu.webscraping.scrapers;
 
+import com.bu.forum.ForumType;
+
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
@@ -14,5 +16,7 @@ public class RedCafeScraper extends AbstractScraper {
 
         setQuotePattern("<blockquote class=\"quoteContainer\">([\\S\\s]*?)<div class=\"quoteExpand\">" +
                 "[\\S\\s]*?</blockquote>([\\S\\s]*)");
+
+        setForumType(ForumType.MANCHESTER_UNITED_RED_CAFE);
     }
 }

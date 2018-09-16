@@ -1,5 +1,7 @@
 package com.bu.webscraping.scrapers;
 
+import com.bu.forum.ForumType;
+
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
@@ -17,5 +19,7 @@ public class SpursCommunityScraper extends AbstractScraper {
 
         setQuotePattern("<div class=\"bbCodeBlock-expandContent\">([\\S\\s]*?)</div>" +
                 "[\\S\\s]*?</a>([\\S\\s]*?) <div class=\"js-selectToQuoteEnd\">");
+
+        setForumType(ForumType.TOTTENHAM_HOTSPURS_SPURS_COMMUNITY);
     }
 }

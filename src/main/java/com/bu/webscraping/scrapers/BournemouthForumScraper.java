@@ -1,5 +1,7 @@
 package com.bu.webscraping.scrapers;
 
+import com.bu.forum.ForumType;
+
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
@@ -16,5 +18,7 @@ public class BournemouthForumScraper extends AbstractScraper {
 
         setQuotePattern("<div class=\"bbCodeBlock-content\"> ([\\S\\s]*?)<div class=\"bbCodeBlock-expandLink\">" +
                 "[\\S\\s]*</a>([\\S\\s]*)");
+
+        setForumType(ForumType.BOURNEMOUTH_BOURNEMOUTH_FORUM);
     }
 }

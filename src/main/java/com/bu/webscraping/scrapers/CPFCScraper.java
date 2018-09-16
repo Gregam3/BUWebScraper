@@ -1,5 +1,7 @@
 package com.bu.webscraping.scrapers;
 
+import com.bu.forum.ForumType;
+
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
@@ -12,5 +14,7 @@ public class CPFCScraper extends AbstractScraper {
         setPageUrlPrefix("&page=2");
 
         setForumSizePattern("<td class=\"alt2\">([0-9,]+)</td>");
+
+        setForumType(ForumType.CRYSTAL_PALACE_CPFC);
     }
 }

@@ -2,6 +2,7 @@ package com.bu.webscraping.scrapers;
 
 import com.bu.Main;
 import com.bu.forum.ForumPost;
+import com.bu.forum.ForumType;
 import org.jsoup.Jsoup;
 
 import java.io.IOException;
@@ -19,6 +20,8 @@ public class WestHamOnlineScraper extends AbstractScraper {
                 "[\\S\\s]*?bgcolor=\"#FFFFFF\" valign=\"top\">[\\S\\s]*?<div class=\"mediumtext\">([\\S\\s]*?)</div> </td> ");
         setLastPagePatternLong("Page ([0-9]+) -[\\S\\s]*?<a ");
         setPostGroupIndexes(new int[]{3, 1, 2});
+
+        setForumType(ForumType.WEST_HAM_WEST_HAM_ONLINE);
     }
 
     @Override

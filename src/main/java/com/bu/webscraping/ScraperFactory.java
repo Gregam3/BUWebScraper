@@ -5,10 +5,7 @@ import com.bu.forum.ForumPost;
 import com.bu.webscraping.scrapers.*;
 
 import java.io.*;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author Greg Mitten (i7676925)
@@ -18,6 +15,34 @@ public class ScraperFactory {
     private static Map<Class, Scraper> scrapers = new LinkedHashMap<>();
     private static Map<ForumType, List<ForumPost>> postMap = new LinkedHashMap<>();
     private static Map<ForumType, Long> threadSizeMap = new LinkedHashMap<>();
+    private static Map<String, Class> urlToClassMap = new HashMap<>();
+
+    public static void populateUrlToClassMap() {
+        urlToClassMap.put("www.redandwhitekop.com", RedAndWhiteScraper.class);
+        urlToClassMap.put("forum.talkchelsea.net", TalkChelseaScraper.class);
+        urlToClassMap.put("forums.bluemoon-mcfc.co.uk", BlueMoonMCFCScraper.class);
+        urlToClassMap.put("arsenal-mania.com", ArsenalManiaScraper.class);
+        urlToClassMap.put("www.cpfc.org", CPFCScraper.class);
+        urlToClassMap.put("www.foxestalk.co.uk", FoxesTalkScraper.class);
+        urlToClassMap.put("www.grandoldteam.com", GrandOldTeamScraper.class);
+        urlToClassMap.put("bournemouth-forum.vitalfootball.co.uk", BournemouthForumScraper.class);
+        urlToClassMap.put("boards.footymad.net", FootyMadScraper.class);
+        urlToClassMap.put("lfcreds.com", LFCRedsScraper.class);
+        urlToClassMap.put("www.redcafe.net", RedCafeScraper.class);
+        urlToClassMap.put("www.spurscommunity.co.uk", SpursCommunityScraper.class);
+        urlToClassMap.put("www.toontastic.net", ToontasticScraper.class);
+        urlToClassMap.put("westbrom.com", WestBromScraper.class);
+        urlToClassMap.put("oatcakefanzine.proboards.com", OatcakeFanzineScraper.class);
+        urlToClassMap.put("www.holmesdale.net", HolmesDaleScraper.class);
+        urlToClassMap.put("www.saintsweb.co.uk", SaintsWebScraper.class);
+        urlToClassMap.put("wfcforums.com", WFCForumsScraper.class);
+        urlToClassMap.put("www.fansnetwork.co.uk", FansNetworkScraper.class);
+        urlToClassMap.put("www.goonersworld.co.uk", GoonersWorldScraper.class);
+        urlToClassMap.put("forums.liverpoolfc.com", LiverpoolFCScraper.class);
+        urlToClassMap.put("www.mumsnet.com", MumsNetScraper.class);
+        urlToClassMap.put("www.netmums.com", NetMumsScraper.class);
+        urlToClassMap.put("www.westhamonline.net", WestHamOnlineScraper.class);
+    }
 
     public static Map<ForumType, Long> retrieveForumSizes() throws IOException, IllegalAccessException, InstantiationException {
         String[] forumUrls = getURLs("forums.txt");
@@ -25,62 +50,29 @@ public class ScraperFactory {
         if (forumUrls == null)
             return null;
 
+        String currentUrl = null;
+
         for (String forumUrl : forumUrls) {
-            if (forumUrl.contains("www.redandwhitekop.com"))
-                addThreadSizeToMap(ForumType.LIVERPOOL_RED_AND_WHITE, RedAndWhiteScraper.class, forumUrl);
-            else if (forumUrl.contains("forum.talkchelsea.net"))
-                addThreadSizeToMap(ForumType.CHELSEA_TALK_CHELSEA, TalkChelseaScraper.class, forumUrl);
-            else if (forumUrl.contains("forums.bluemoon-mcfc.co.uk"))
-                addThreadSizeToMap(ForumType.MAN_CITY_BLUE_MOON_MCFC, BlueMoonMCFCScraper.class, forumUrl);
-            else if (forumUrl.contains("arsenal-mania.com"))
-                addThreadSizeToMap(ForumType.ARSENAL_ARSENAL_MANIA, ArsenalManiaScraper.class, forumUrl);
-            else if (forumUrl.contains("www.cpfc.org"))
-                addThreadSizeToMap(ForumType.CRYSTAL_PALACE_CPFC, CPFCScraper.class, forumUrl);
-            else if (forumUrl.contains("www.foxestalk.co.uk"))
-                addThreadSizeToMap(ForumType.LEICESTER_CITY_FOXES_TALK, FoxesTalkScraper.class, forumUrl);
-            else if (forumUrl.contains("www.grandoldteam.com"))
-                addThreadSizeToMap(ForumType.EVERTON_GRAND_OLD_TEAM, GrandOldTeamScraper.class, forumUrl);
-            else if (forumUrl.contains("bournemouth-forum.vitalfootball.co.uk"))
-                addThreadSizeToMap(ForumType.BOURNEMOUTH_BOURNEMOUTH_FORUM, BournemouthForumScraper.class, forumUrl);
-            else if (forumUrl.contains("boards.footymad.net"))
-                addThreadSizeToMap(ForumType.BURNLEY_FOOTY_MAD, FootyMadScraper.class, forumUrl);
-            else if (forumUrl.contains("lfcreds.com"))
-                addThreadSizeToMap(ForumType.LIVERPOOL_LFC_REDS, LFCRedsScraper.class, forumUrl);
-            else if (forumUrl.contains("www.redcafe.net"))
-                System.err.println("www.redcafe.net is not compatible with the forum size functionality, as such it will be omitted.");
-            else if (forumUrl.contains("www.spurscommunity.co.uk"))
-                addThreadSizeToMap(ForumType.TOTTENHAM_HOTSPURS_SPURS_COMMUNITY, SpursCommunityScraper.class, forumUrl);
-            else if (forumUrl.contains("www.toontastic.net"))
-                addThreadSizeToMap(ForumType.NEWCASTLE_TOONTASTIC, ToontasticScraper.class, forumUrl);
-            else if (forumUrl.contains("westbrom.com"))
-                addThreadSizeToMap(ForumType.WEST_BROMICH_ALBION_WEST_BROM, WestBromScraper.class, forumUrl);
-            else if (forumUrl.contains("www.westhamonline.net"))
-                throw new AssertionError("www.westhamonline.net is not compatible with forum size functionality, please remove it from forums.txt.");
-            else if (forumUrl.contains("oatcakefanzine.proboards.com"))
-                addThreadSizeToMap(ForumType.STOKE_CITY_OAKCAKE_FANZINE, OatcakeFanzineScraper.class, forumUrl);
-            else if (forumUrl.contains("www.holmesdale.net"))
-                addThreadSizeToMap(ForumType.CRYSTAL_PALACE_HOLMES_DALES, HolmesDaleScraper.class, forumUrl);
-            else if (forumUrl.contains("www.saintsweb.co.uk"))
-                addThreadSizeToMap(ForumType.SOUTHAMPTON_SAINTS_WEBB, SaintsWebScraper.class, forumUrl);
-            else if (forumUrl.contains("wfcforums.com"))
-                addThreadSizeToMap(ForumType.WATFORD_WFC_FORUMS, WFCForumsScraper.class, forumUrl);
-            else if (forumUrl.contains("www.fansnetwork.co.uk"))
-                addThreadSizeToMap(ForumType.SWANSEA_CITY_FANS_NETWORK, FansNetworkScraper.class, forumUrl);
-            else if (forumUrl.contains("www.goonersworld.co.uk"))
-                addThreadSizeToMap(ForumType.ARSENAL_GOONERS_WORLD, GoonersWorldScraper.class, forumUrl);
-            else if (forumUrl.contains("forums.liverpoolfc.com"))
-                addThreadSizeToMap(ForumType.LIVERPOOL_FC, LiverpoolFCScraper.class, forumUrl);
-            else
+            for (String url : urlToClassMap.keySet())
+                if (forumUrl.contains(url) && !forumUrl.contains("redcafe.net") && !forumUrl.contains("westhamonline.net")) {
+                    currentUrl = url;
+                    addThreadSizeToMap(urlToClassMap.get(url), forumUrl);
+                    break;
+                }
+
+            if (currentUrl == null)
                 System.err.println("Site: \"" + forumUrl + "\" could not be found, if this is blank please remove any trailing spaces or semi-colons after the last thread link");
+
+            currentUrl = null;
         }
 
         return threadSizeMap;
     }
 
-    private static void addThreadSizeToMap(ForumType forumType, Class<?> scraperClass, String forumUrl) throws InstantiationException, IllegalAccessException, IOException {
+    private static void addThreadSizeToMap(Class<?> scraperClass, String forumUrl) throws InstantiationException, IllegalAccessException, IOException {
         Scraper scraper = getScraper(scraperClass);
 
-        threadSizeMap.put(forumType, scraper.retrieveForumSize(forumUrl));
+        threadSizeMap.put(scraper.getForumType(), scraper.retrieveForumSize(forumUrl));
     }
 
     public static Map<ForumType, List<ForumPost>> retrievePosts() throws IOException, InstantiationException, IllegalAccessException {
@@ -89,75 +81,36 @@ public class ScraperFactory {
         if (threadUrls == null)
             return null;
 
+        String currentUrl = null;
+
         for (String threadUrl : threadUrls) {
             if (threadUrl.charAt(threadUrl.length() - 1) == '/')
                 threadUrl = threadUrl.substring(0, threadUrl.length() - 1);
 
-            if (threadUrl.contains("www.redandwhitekop.com"))
-                addPostsToMap(ForumType.LIVERPOOL_RED_AND_WHITE, RedAndWhiteScraper.class, threadUrl);
-            else if (threadUrl.contains("forum.talkchelsea.net"))
-                addPostsToMap(ForumType.CHELSEA_TALK_CHELSEA, TalkChelseaScraper.class, threadUrl);
-            else if (threadUrl.contains("forums.bluemoon-mcfc.co.uk"))
-                addPostsToMap(ForumType.MAN_CITY_BLUE_MOON_MCFC, BlueMoonMCFCScraper.class, threadUrl);
-            else if (threadUrl.contains("arsenal-mania.com"))
-                addPostsToMap(ForumType.ARSENAL_ARSENAL_MANIA, ArsenalManiaScraper.class, threadUrl);
-            else if (threadUrl.contains("www.cpfc.org"))
-                addPostsToMap(ForumType.CRYSTAL_PALACE_CPFC, CPFCScraper.class, threadUrl);
-            else if (threadUrl.contains("www.foxestalk.co.uk"))
-                addPostsToMap(ForumType.LEICESTER_CITY_FOXES_TALK, FoxesTalkScraper.class, threadUrl);
-            else if (threadUrl.contains("www.grandoldteam.com"))
-                addPostsToMap(ForumType.EVERTON_GRAND_OLD_TEAM, GrandOldTeamScraper.class, threadUrl);
-            else if (threadUrl.contains("bournemouth-forum.vitalfootball.co.uk"))
-                addPostsToMap(ForumType.BOURNEMOUTH_BOURNEMOUTH_FORUM, BournemouthForumScraper.class, threadUrl);
-            else if (threadUrl.contains("boards.footymad.net"))
-                addPostsToMap(ForumType.BURNLEY_FOOTY_MAD, FootyMadScraper.class, threadUrl);
-            else if (threadUrl.contains("lfcreds.com"))
-                addPostsToMap(ForumType.LIVERPOOL_LFC_REDS, LFCRedsScraper.class, threadUrl);
-            else if (threadUrl.contains("www.redcafe.net"))
-                addPostsToMap(ForumType.MANCHESTER_UNITED_RED_CAFE, RedCafeScraper.class, threadUrl);
-            else if (threadUrl.contains("www.spurscommunity.co.uk"))
-                addPostsToMap(ForumType.TOTTENHAM_HOTSPURS_SPURS_COMMUNITY, SpursCommunityScraper.class, threadUrl);
-            else if (threadUrl.contains("www.toontastic.net"))
-                addPostsToMap(ForumType.NEWCASTLE_TOONTASTIC, ToontasticScraper.class, threadUrl);
-            else if (threadUrl.contains("westbrom.com"))
-                addPostsToMap(ForumType.WEST_BROMICH_ALBION_WEST_BROM, WestBromScraper.class, threadUrl);
-            else if (threadUrl.contains("www.westhamonline.net"))
-                addPostsToMap(ForumType.WEST_HAM_WEST_HAM_ONLINE, WestHamOnlineScraper.class, threadUrl);
-            else if (threadUrl.contains("oatcakefanzine.proboards.com"))
-                addPostsToMap(ForumType.STOKE_CITY_OAKCAKE_FANZINE, OatcakeFanzineScraper.class, threadUrl);
-            else if (threadUrl.contains("www.holmesdale.net"))
-                addPostsToMap(ForumType.CRYSTAL_PALACE_HOLMES_DALES, HolmesDaleScraper.class, threadUrl);
-            else if (threadUrl.contains("www.saintsweb.co.uk"))
-                addPostsToMap(ForumType.SOUTHAMPTON_SAINTS_WEBB, SaintsWebScraper.class, threadUrl);
-            else if (threadUrl.contains("wfcforums.com"))
-                addPostsToMap(ForumType.WATFORD_WFC_FORUMS, WFCForumsScraper.class, threadUrl);
-            else if (threadUrl.contains("www.fansnetwork.co.uk"))
-                addPostsToMap(ForumType.SWANSEA_CITY_FANS_NETWORK, FansNetworkScraper.class, threadUrl);
-            else if (threadUrl.contains("www.goonersworld.co.uk"))
-                addPostsToMap(ForumType.ARSENAL_GOONERS_WORLD, GoonersWorldScraper.class, threadUrl);
-            else if (threadUrl.contains("www.mumsnet.com"))
-                addPostsToMap(ForumType.MUMS_NET, MumsNetScraper.class, threadUrl);
-            else if (threadUrl.contains("www.netmums.com"))
-                //Threads must end with .html but in order to navigate pages a page index needs to change before i, a suffix of .html has been added so it is not necessary on the base url
-                addPostsToMap(ForumType.NET_MUMS, NetMumsScraper.class, threadUrl.replace(".html", ""));
-            else if (threadUrl.contains("forums.liverpoolfc.com"))
-                addPostsToMap(ForumType.LIVERPOOL_FC, LiverpoolFCScraper.class, threadUrl);
-            else
+            for (String url : urlToClassMap.keySet())
+                if (threadUrl.contains(url)) {
+                    currentUrl = url;
+                    addPostsToMap(urlToClassMap.get(url), threadUrl);
+                    break;
+                }
+
+            if (currentUrl == null)
                 System.err.println("Site: \"" + threadUrl + "\" could not be found, if this is blank please remove any trailing spaces or semi-colons after the last thread link");
 
+            currentUrl = null;
         }
 
         return postMap;
     }
 
-    private static void addPostsToMap(ForumType forumType, Class<?> scraperClass, String threadUrl) throws IllegalAccessException, InstantiationException, IOException {
+    private static void addPostsToMap(Class<?> scraperClass, String threadUrl) throws IllegalAccessException, InstantiationException, IOException {
         Scraper scraper = getScraper(scraperClass);
 
         List<ForumPost> forumPosts = scraper.retrievePostsForThread(threadUrl);
 
-        postMap.computeIfAbsent(forumType, k -> new LinkedList<>());
+        postMap.computeIfAbsent(scraper.getForumType(), k -> new LinkedList<>());
 
-        postMap.get(forumType).addAll(forumPosts);
+        postMap.get(scraper.getForumType()).addAll(forumPosts);
     }
 
     private static String[] getURLs(String fileName) throws IOException {

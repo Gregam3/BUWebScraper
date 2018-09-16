@@ -1,5 +1,7 @@
 package com.bu.webscraping.scrapers;
 
+import com.bu.forum.ForumType;
+
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
@@ -15,5 +17,7 @@ public class HolmesDaleScraper extends AbstractScraper {
         setForumSizePattern("<td width=\"7%\" class=\"c\">([0-9,]+)</td> ");
 
         setQuotePattern("<div class=\"quote\">([\\S\\s]*?)</div>([\\S\\s]*)");
+
+        setForumType(ForumType.CRYSTAL_PALACE_HOLMES_DALES);
     }
 }

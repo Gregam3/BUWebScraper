@@ -1,5 +1,7 @@
 package com.bu.webscraping.scrapers;
 
+import com.bu.forum.ForumType;
+
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
@@ -17,5 +19,7 @@ public class GoonersWorldScraper extends AbstractScraper {
         setLastPagePatternLong("Page <strong>1</strong> of <strong>([0-9]+)</strong>");
 
         setPostGroupIndexes(new int[]{3,1,2});
+
+        setForumType(ForumType.ARSENAL_GOONERS_WORLD);
     }
 }

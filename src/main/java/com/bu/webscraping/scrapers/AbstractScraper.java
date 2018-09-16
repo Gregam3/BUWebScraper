@@ -2,6 +2,7 @@ package com.bu.webscraping.scrapers;
 
 import com.bu.Main;
 import com.bu.forum.ForumPost;
+import com.bu.forum.ForumType;
 import com.bu.webscraping.Login;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
@@ -85,7 +86,17 @@ public abstract class AbstractScraper implements Scraper {
      */
     private boolean requiresHTMLExtension = false;
 
-    public void setRequiresHTMLExtension(boolean requiresHTMLExtension) {
+    private ForumType forumType;
+
+    public ForumType getForumType() {
+        return forumType;
+    }
+
+    public void setForumType(ForumType forumType) {
+        this.forumType = forumType;
+    }
+
+    void setRequiresHTMLExtension(boolean requiresHTMLExtension) {
         this.requiresHTMLExtension = requiresHTMLExtension;
     }
 

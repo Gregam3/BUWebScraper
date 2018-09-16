@@ -16,6 +16,7 @@ public class Main {
         ResultWriter resultWriter = new ResultWriter();
 
         try {
+            ScraperFactory.populateUrlToClassMap();
             resultWriter.writePostsToCSV(ScraperFactory.retrievePosts());
             resultWriter.writeForumSizeToTxt(ScraperFactory.retrieveForumSizes());
             System.out.println("\n Double tap enter key to exit, results are saved to posts.txt and forum-sizes.txt respectively.");

@@ -1,5 +1,7 @@
 package com.bu.webscraping.scrapers;
 
+import com.bu.forum.ForumType;
+
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
@@ -16,5 +18,8 @@ public class SaintsWebScraper extends AbstractScraper {
         setForumSizePattern("<li>Posts: ([0-9,]+)</li> ");
 
         setQuotePattern("<div class=\"message\">([\\S\\s]*?)</div>([\\S\\s]*)");
+
+
+        setForumType(ForumType.SOUTHAMPTON_SAINTS_WEBB);
     }
 }

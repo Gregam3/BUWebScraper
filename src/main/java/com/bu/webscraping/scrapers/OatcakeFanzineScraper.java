@@ -1,5 +1,7 @@
 package com.bu.webscraping.scrapers;
 
+import com.bu.forum.ForumType;
+
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
@@ -18,5 +20,7 @@ public class OatcakeFanzineScraper extends AbstractScraper {
         setForumSizePattern("<td class=\"posts\">([0-9,]+)</td> ");
 
         setQuotePattern("<div class=\"quote_header\">([\\S\\s]*?)<div class=\"quote_clear\">([\\S\\s]*)");
+
+        setForumType(ForumType.STOKE_CITY_OAKCAKE_FANZINE);
     }
 }

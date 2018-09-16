@@ -1,5 +1,7 @@
 package com.bu.webscraping.scrapers;
 
+import com.bu.forum.ForumType;
+
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
@@ -16,5 +18,7 @@ public class TalkChelseaScraper extends AbstractScraper {
         setForumSizePattern("3px;\">[\\S\\s]*?([0-9,]+)");
 
         setQuotePattern("<div class=\"ipsQuote_contents\">([\\S\\s]*?)</div>([\\S\\s]*)");
+
+        setForumType(ForumType.CHELSEA_TALK_CHELSEA);
     }
 }

@@ -1,5 +1,7 @@
 package com.bu.webscraping.scrapers;
 
+import com.bu.forum.ForumType;
+
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
@@ -19,5 +21,7 @@ public class WestBromScraper extends AbstractScraper {
         setForumSizePattern("<td class=\"stats windowbg\"> <p>([0-9]+) Posts <br> [0-9]+ Topics </p> </td> ");
 
         setQuotePattern("<blockquote class=\"bbc_standard_quote\">([\\S\\s]*?)</blockquote>([\\S\\s]*)");
+
+        setForumType(ForumType.WEST_BROMICH_ALBION_WEST_BROM);
     }
 }

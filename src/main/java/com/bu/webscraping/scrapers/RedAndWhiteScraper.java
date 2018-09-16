@@ -1,5 +1,7 @@
 package com.bu.webscraping.scrapers;
 
+import com.bu.forum.ForumType;
+
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
@@ -14,5 +16,7 @@ public class RedAndWhiteScraper extends AbstractScraper {
         setPostGroupIndexes(new int[] {3,1,2});
 
         setForumSizePattern("<td class=\"stats windowbg\"> <p>([0-9,]+) Posts <br>");
+
+        setForumType(ForumType.LIVERPOOL_RED_AND_WHITE);
     }
 }

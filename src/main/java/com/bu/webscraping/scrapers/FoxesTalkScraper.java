@@ -1,5 +1,7 @@
 package com.bu.webscraping.scrapers;
 
+import com.bu.forum.ForumType;
+
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
@@ -13,5 +15,7 @@ public class FoxesTalkScraper extends AbstractScraper {
         setForumSizePattern("<dt class=\"ipsDataItem_stats_number\">[\\S\\s]*?([0-9,]+)[\\S\\s]*?</dt>");
 
         setQuotePattern("<blockquote data-ipsquote=.*>([\\S\\s]*?)</blockquote>([\\S\\s]*)");
+
+        setForumType(ForumType.LEICESTER_CITY_FOXES_TALK);
     }
 }

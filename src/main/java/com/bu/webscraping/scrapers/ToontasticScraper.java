@@ -1,5 +1,7 @@
 package com.bu.webscraping.scrapers;
 
+import com.bu.forum.ForumType;
+
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
@@ -16,5 +18,7 @@ public class ToontasticScraper extends AbstractScraper {
 
         setQuotePattern("<div class=\"ipsQuote_contents\">([\\S\\s]*?)</div>" +
                 "[\\S\\s]*?</blockquote>([\\S\\s]*)");
+
+        setForumType(ForumType.NEWCASTLE_TOONTASTIC);
     }
 }

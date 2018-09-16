@@ -1,5 +1,7 @@
 package com.bu.webscraping.scrapers;
 
+import com.bu.forum.ForumType;
+
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
@@ -16,5 +18,7 @@ public class FansNetworkScraper extends AbstractScraper {
         setForumSizePattern("white;\">ALL posts</a>&nbsp;\\(([0-9]+)\\)");
 
         setQuotePattern("<td valign=\"top\"><br>([\\S\\s]*?)</td>([\\S\\s]*)");
+
+        setForumType(ForumType.SWANSEA_CITY_FANS_NETWORK);
     }
 }

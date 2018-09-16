@@ -1,5 +1,6 @@
 package com.bu.webscraping.scrapers;
 
+import com.bu.forum.ForumType;
 import com.bu.webscraping.Login;
 
 /**
@@ -30,5 +31,8 @@ public class GrandOldTeamScraper extends AbstractScraper {
 //        login.addCookie("xf_user", "");
 
         setLogin(login);
+
+
+        setForumType(ForumType.EVERTON_GRAND_OLD_TEAM);
     }
 }
