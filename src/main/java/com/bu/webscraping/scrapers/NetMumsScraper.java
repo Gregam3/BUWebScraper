@@ -1,5 +1,7 @@
 package com.bu.webscraping.scrapers;
 
+import com.bu.forum.ForumType;
+
 /**
  * @author Greg Mitten (i7676925)
  * gregoryamitten@gmail.com
@@ -14,5 +16,7 @@ public class NetMumsScraper extends AbstractScraper {
         setPageUrlSuffix(".html");
         setPostGroupIndexes(new int[]{3,2,1});
         setRequiresHTMLExtension(true);
+
+        setForumType(ForumType.NET_MUMS);
     }
 }
