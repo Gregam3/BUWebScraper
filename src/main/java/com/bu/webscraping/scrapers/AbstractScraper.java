@@ -101,7 +101,7 @@ public abstract class AbstractScraper implements Scraper {
     }
 
     void setQuotePattern(String quotePatternRegex) {
-        this.quotePattern = Pattern.compile(quotePatternRegex);
+        this.quotePattern = Pattern.compile("([\\S\\s]*)" + quotePatternRegex);
     }
 
     public void setForumSizePattern(String forumSizeRegex) {
@@ -145,18 +145,23 @@ public abstract class AbstractScraper implements Scraper {
     }
 
     public long retrieveForumSize(String forumUrl) throws IOException {
-        long totalPostCount = 0;
+        try {
+            long totalPostCount = 0;
 
-        String rawHtml = Jsoup.connect(forumUrl).get().toString();
+            String rawHtml = Jsoup.connect(forumUrl).get().toString();
 
-        Matcher forumSizeMatcher = forumSizePattern.matcher(rawHtml);
+            Matcher forumSizeMatcher = forumSizePattern.matcher(rawHtml);
 
-        while (forumSizeMatcher.find())
-            totalPostCount += Long.valueOf(forumSizeMatcher.group(1).replace(",", ""));
+            while (forumSizeMatcher.find())
+                totalPostCount += Long.valueOf(forumSizeMatcher.group(1).replace(",", ""));
 
-        System.out.println("Retrieved forum size for:" + forumUrl + " it had " + totalPostCount + " posts, written to forum-sizes.txt.");
+            System.out.println("Retrieved forum size for:" + forumUrl + " it had " + totalPostCount + " posts, written to forum-sizes.txt.");
+            return totalPostCount;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
 
-        return totalPostCount;
     }
 
     public List<ForumPost> retrievePostsForThread(String threadUrl) throws IOException {

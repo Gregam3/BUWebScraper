@@ -21,7 +21,7 @@ public class GrandOldTeamScraper extends AbstractScraper {
 
         setForumSizePattern("Messages[\\S\\s]*?</dt>[\\S\\s]*?<dd>[\\S\\s]*?([0-9,]+)");
 
-        setQuotePattern("([\\S\\s]*)<div class=\"bbCodeBlock-expandContent\">([\\S\\s]*?)<div class=\"bbCodeBlock-expandLink\">" +
+        setQuotePattern("<div class=\"bbCodeBlock-expandContent\">([\\S\\s]*?)<div class=\"bbCodeBlock-expandLink\">" +
                 "[\\S\\s]*?</a>([\\S\\s]*)");
 
         //Setting up login details and the necessary cookies

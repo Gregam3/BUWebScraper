@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27bc57a4-2650-4e92-804f-d4a091bcbe2c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SportForumScraper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SportForumScraper.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/GrandOldTeamScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/GrandOldTeamScraper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/threads.txt" beforeDir="false" afterPath="$PROJECT_DIR$/threads.txt" afterDir="false" />
@@ -156,38 +154,42 @@
     <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1920" height="311" key="GridCell.Tab.0.bottom" timestamp="1587806116139">
+    <state x="1047" y="286" key="#xdebugger.evaluate" timestamp="1587807579780">
       <screen x="329" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="311" key="GridCell.Tab.0.bottom/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587806116139" />
-    <state width="1920" height="311" key="GridCell.Tab.0.center" timestamp="1587806116139">
+    <state x="1047" y="286" key="#xdebugger.evaluate/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587807579780" />
+    <state width="1920" height="317" key="GridCell.Tab.0.bottom" timestamp="1587808160124">
       <screen x="329" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="311" key="GridCell.Tab.0.center/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587806116139" />
-    <state width="1920" height="311" key="GridCell.Tab.0.left" timestamp="1587806116139">
+    <state width="1920" height="317" key="GridCell.Tab.0.bottom/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587808160124" />
+    <state width="1920" height="317" key="GridCell.Tab.0.center" timestamp="1587808160124">
       <screen x="329" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="311" key="GridCell.Tab.0.left/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587806116139" />
-    <state width="1920" height="311" key="GridCell.Tab.0.right" timestamp="1587806116139">
+    <state width="1920" height="317" key="GridCell.Tab.0.center/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587808160124" />
+    <state width="1920" height="317" key="GridCell.Tab.0.left" timestamp="1587808160124">
       <screen x="329" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="311" key="GridCell.Tab.0.right/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587806116139" />
-    <state width="1920" height="311" key="GridCell.Tab.1.bottom" timestamp="1587806119267">
+    <state width="1920" height="317" key="GridCell.Tab.0.left/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587808160124" />
+    <state width="1920" height="317" key="GridCell.Tab.0.right" timestamp="1587808160124">
       <screen x="329" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="311" key="GridCell.Tab.1.bottom/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587806119267" />
-    <state width="1920" height="311" key="GridCell.Tab.1.center" timestamp="1587806119266">
+    <state width="1920" height="317" key="GridCell.Tab.0.right/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587808160124" />
+    <state width="1920" height="317" key="GridCell.Tab.1.bottom" timestamp="1587808159976">
       <screen x="329" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="311" key="GridCell.Tab.1.center/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587806119266" />
-    <state width="1920" height="311" key="GridCell.Tab.1.left" timestamp="1587806119266">
+    <state width="1920" height="317" key="GridCell.Tab.1.bottom/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587808159976" />
+    <state width="1920" height="317" key="GridCell.Tab.1.center" timestamp="1587808159976">
       <screen x="329" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="311" key="GridCell.Tab.1.left/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587806119266" />
-    <state width="1920" height="311" key="GridCell.Tab.1.right" timestamp="1587806119266">
+    <state width="1920" height="317" key="GridCell.Tab.1.center/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587808159976" />
+    <state width="1920" height="317" key="GridCell.Tab.1.left" timestamp="1587808159976">
       <screen x="329" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="311" key="GridCell.Tab.1.right/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587806119266" />
+    <state width="1920" height="317" key="GridCell.Tab.1.left/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587808159976" />
+    <state width="1920" height="317" key="GridCell.Tab.1.right" timestamp="1587808159976">
+      <screen x="329" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1920" height="317" key="GridCell.Tab.1.right/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587808159976" />
     <state x="815" y="175" width="1024" height="843" key="SettingsEditor" timestamp="1587805389327">
       <screen x="329" y="0" width="1920" height="1080" />
     </state>
@@ -196,33 +198,17 @@
       <screen x="329" y="0" width="1920" height="1080" />
     </state>
     <state x="1018" y="275" width="540" height="524" key="StructurePopup/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587806550425" />
-    <state width="960" height="540" key="XDebugger.FullValuePopup" timestamp="1587806211643">
+    <state width="960" height="540" key="XDebugger.FullValuePopup" timestamp="1587807618980">
       <screen x="329" y="0" width="1920" height="1080" />
     </state>
-    <state width="960" height="540" key="XDebugger.FullValuePopup/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587806211643" />
+    <state width="960" height="540" key="XDebugger.FullValuePopup/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587807618980" />
     <state x="953" y="247" key="run.anything.popup" timestamp="1587806489564">
       <screen x="329" y="0" width="1920" height="1080" />
     </state>
     <state x="953" y="247" key="run.anything.popup/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587806489564" />
-    <state x="952" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1587806583033">
+    <state x="952" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1587807358442">
       <screen x="329" y="0" width="1920" height="1080" />
     </state>
-    <state x="952" y="239" width="672" height="678" key="search.everywhere.popup/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587806583033" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java</url>
-          <line>297</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java</url>
-          <line>276</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="952" y="239" width="672" height="678" key="search.everywhere.popup/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587807358442" />
   </component>
 </project>
