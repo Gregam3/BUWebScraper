@@ -21,17 +21,14 @@ public class GrandOldTeamScraper extends AbstractScraper {
 
         setForumSizePattern("Messages[\\S\\s]*?</dt>[\\S\\s]*?<dd>[\\S\\s]*?([0-9,]+)");
 
-        setQuotePattern("<div class=\"bbCodeBlock-expandContent\">([\\S\\s]*?)<div class=\"bbCodeBlock-expandLink\">" +
+        setQuotePattern("([\\S\\s]*)<div class=\"bbCodeBlock-expandContent\">([\\S\\s]*?)<div class=\"bbCodeBlock-expandLink\">" +
                 "[\\S\\s]*?</a>([\\S\\s]*)");
 
         //Setting up login details and the necessary cookies
         Login login = new Login("onerous3@gmail.com", "password", "https://www.grandoldteam.com/forum/login/login");
 
         login.addCookie("xf_session", "");
-//        login.addCookie("xf_user", "");
-
         setLogin(login);
-
 
         setForumType(ForumType.EVERTON_GRAND_OLD_TEAM);
     }

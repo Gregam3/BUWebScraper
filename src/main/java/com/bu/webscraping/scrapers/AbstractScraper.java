@@ -267,18 +267,23 @@ public abstract class AbstractScraper implements Scraper {
         System.out.println();
     }
 
+    private final static int PRE_QUOTE_GROUP = 1;
+    private final static int QUOTE_GROUP = 2;
+    private final static int POST_QUOTE_GROUP = 3;
+
     private String formatContent(String rawContentHtml) {
         Matcher quoteMatcher = quotePattern.matcher(rawContentHtml);
 
         StringBuilder postWithQuotesBuilder = new StringBuilder();
 
-        while (quoteMatcher.find())
+        while (quoteMatcher.find()) {
+            String quoteContent = (Jsoup.parse(quoteMatcher.group(QUOTE_GROUP)).text().isEmpty()) ? MULTIMEDIA_REPLACEMENT_TEXT : quoteMatcher.group(1);
+
             postWithQuotesBuilder
-                    .append("Quote: '")
-                    .append((Jsoup.parse(quoteMatcher.group(1)).text().isEmpty()) ? MULTIMEDIA_REPLACEMENT_TEXT : quoteMatcher.group(1))
-                    .append("'")
-                    .append(quoteMatcher.group(2))
-                    .append(" ");
+                    .append(quoteMatcher.group(PRE_QUOTE_GROUP)).append(" ")
+                    .append("Quote: '").append(quoteContent).append("'")
+                    .append(quoteMatcher.group(POST_QUOTE_GROUP)).append(" ");
+        }
 
         String content = Jsoup.parse(
                 (postWithQuotesBuilder.toString().isEmpty()) ?
