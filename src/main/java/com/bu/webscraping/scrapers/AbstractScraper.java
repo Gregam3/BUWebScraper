@@ -72,7 +72,7 @@ public abstract class AbstractScraper implements Scraper {
     private static final String MULTIMEDIA_REPLACEMENT_TEXT = "[IMAGE/VIDEO/EMOJI only]";
 
     /**
-     * Functionally Unmatchable Pattern
+     * Functionally Unmatchable Pattern.
      */
     private Pattern quotePattern = Pattern.compile("\\^{4000}");
     /**
@@ -275,6 +275,8 @@ public abstract class AbstractScraper implements Scraper {
     private final static int PRE_QUOTE_GROUP = 1;
     private final static int QUOTE_GROUP = 2;
     private final static int POST_QUOTE_GROUP = 3;
+    private final static String QUOTE_START = "Quote: [";
+    private final static String QUOTE_END = "]: Quote end|";
 
     private String formatContent(String rawContentHtml) {
         Matcher quoteMatcher = quotePattern.matcher(rawContentHtml);
@@ -286,7 +288,7 @@ public abstract class AbstractScraper implements Scraper {
 
             postWithQuotesBuilder
                     .append(quoteMatcher.group(PRE_QUOTE_GROUP)).append(" ")
-                    .append("Quote: '").append(quoteContent).append("'")
+                    .append(QUOTE_START).append(quoteContent).append(QUOTE_END)
                     .append(quoteMatcher.group(POST_QUOTE_GROUP)).append(" ");
         }
 
@@ -297,7 +299,7 @@ public abstract class AbstractScraper implements Scraper {
 
         Matcher notEmptyAfterQuoteMatcher = notEmptyAfterQuotePattern.matcher(content);
 
-        if (content.contains("Quote: '") && !notEmptyAfterQuoteMatcher.find())
+        if (content.contains(QUOTE_START) && !notEmptyAfterQuoteMatcher.find())
             content += MULTIMEDIA_REPLACEMENT_TEXT;
 
         return content.replace("â€™", "'").replace("\"\"", "\"");

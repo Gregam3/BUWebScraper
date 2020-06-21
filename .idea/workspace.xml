@@ -8,9 +8,47 @@
   <component name="ChangeListManager">
     <list default="true" id="27bc57a4-2650-4e92-804f-d4a091bcbe2c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SportForumScraper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SportForumScraper.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/GrandOldTeamScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/GrandOldTeamScraper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/threads.txt" beforeDir="false" afterPath="$PROJECT_DIR$/threads.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SportForumScraper-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SportForumScraper-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/forum/ForumPost.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/forum/ForumType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/result/ResultWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/Login.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/ScraperFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/AbstractScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/ArsenalManiaScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/BlueMoonMCFCScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/BournemouthForumScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/CPFCScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/FansNetworkScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/FootyMadScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/FoxesTalkScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/GoonersWorldScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/GrandOldTeamScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/HolmesDaleScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/LFCRedsScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/LiverpoolFCScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/MumsNetScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/NetMumsScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/OatcakeFanzineScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/RedAndWhiteScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/RedCafeScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/SaintsWebScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/Scraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/SpursCommunityScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/TalkChelseaScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/ToontasticScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/WFCForumsScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/WestBromScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/WestHamOnlineScraper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,12 +69,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="ProjectId" id="1b1geXMk8Kae5a1xUs79Knce0jT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -46,16 +78,21 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/forum-sizes.txt&#10;C:/Users/i7676925/SportForumScraper/out/artifacts/SportForumScraper_jar/threads.txt&#10;C:/Users/i7676925/SportForumScraper/posts.txt&#10;C:/Users/i7676925/SportForumScraper/forums.txt&#10;C:/Users/i7676925/SportForumScraper/out/artifacts/SportForumScraper_jar/help/README.txt&#10;C:/Users/i7676925/SportForumScraper/results.txt" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\i7676925\SportForumScraper\out\artifacts\SportForumScraper_jar" />
       <recent name="C:\Users\i7676925\SportForumScraper\src\main\resources" />
@@ -141,59 +178,73 @@
       <workItem from="1536263525022" duration="164000" />
       <workItem from="1537083992063" duration="11582000" />
       <workItem from="1537185370787" duration="1985000" />
+      <workItem from="1592731150741" duration="964000" />
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="252613000" />
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1055" y="388" width="525" height="413" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1587809524156">
+      <screen x="329" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1055" y="388" width="525" height="413" key="#com.intellij.ide.util.TreeClassChooserDialog/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587809524156" />
     <state x="1047" y="286" key="#xdebugger.evaluate" timestamp="1587807579780">
       <screen x="329" y="0" width="1920" height="1080" />
     </state>
     <state x="1047" y="286" key="#xdebugger.evaluate/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587807579780" />
-    <state width="1920" height="317" key="GridCell.Tab.0.bottom" timestamp="1587808160124">
+    <state x="1050" y="298" key="FileChooserDialogImpl" timestamp="1587816357007">
       <screen x="329" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="317" key="GridCell.Tab.0.bottom/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587808160124" />
-    <state width="1920" height="317" key="GridCell.Tab.0.center" timestamp="1587808160124">
+    <state x="1050" y="298" key="FileChooserDialogImpl/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587816357007" />
+    <state width="1920" height="404" key="GridCell.Tab.0.bottom" timestamp="1592731972108">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1920" height="318" key="GridCell.Tab.0.bottom/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587816357021" />
+    <state width="1920" height="404" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1592731972108" />
+    <state width="1920" height="404" key="GridCell.Tab.0.center" timestamp="1592731972106">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1920" height="318" key="GridCell.Tab.0.center/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587816357021" />
+    <state width="1920" height="404" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1592731972106" />
+    <state width="1920" height="404" key="GridCell.Tab.0.left" timestamp="1592731972106">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1920" height="318" key="GridCell.Tab.0.left/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587816357021" />
+    <state width="1920" height="404" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1592731972106" />
+    <state width="1920" height="404" key="GridCell.Tab.0.right" timestamp="1592731972107">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1920" height="318" key="GridCell.Tab.0.right/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587816357021" />
+    <state width="1920" height="404" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1592731972107" />
+    <state width="1920" height="404" key="GridCell.Tab.1.bottom" timestamp="1592731971909">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1920" height="317" key="GridCell.Tab.1.bottom/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587816357018" />
+    <state width="1920" height="404" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1592731971909" />
+    <state width="1920" height="404" key="GridCell.Tab.1.center" timestamp="1592731971909">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1920" height="317" key="GridCell.Tab.1.center/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587816357018" />
+    <state width="1920" height="404" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1592731971909" />
+    <state width="1920" height="404" key="GridCell.Tab.1.left" timestamp="1592731971909">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1920" height="317" key="GridCell.Tab.1.left/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587816357018" />
+    <state width="1920" height="404" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1592731971909" />
+    <state width="1920" height="404" key="GridCell.Tab.1.right" timestamp="1592731971909">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1920" height="317" key="GridCell.Tab.1.right/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587816357018" />
+    <state width="1920" height="404" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1592731971909" />
+    <state x="815" y="175" width="1024" height="843" key="SettingsEditor" timestamp="1587809527441">
       <screen x="329" y="0" width="1920" height="1080" />
     </state>
-    <state width="1920" height="317" key="GridCell.Tab.0.center/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587808160124" />
-    <state width="1920" height="317" key="GridCell.Tab.0.left" timestamp="1587808160124">
-      <screen x="329" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1920" height="317" key="GridCell.Tab.0.left/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587808160124" />
-    <state width="1920" height="317" key="GridCell.Tab.0.right" timestamp="1587808160124">
-      <screen x="329" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1920" height="317" key="GridCell.Tab.0.right/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587808160124" />
-    <state width="1920" height="317" key="GridCell.Tab.1.bottom" timestamp="1587808159976">
-      <screen x="329" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1920" height="317" key="GridCell.Tab.1.bottom/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587808159976" />
-    <state width="1920" height="317" key="GridCell.Tab.1.center" timestamp="1587808159976">
-      <screen x="329" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1920" height="317" key="GridCell.Tab.1.center/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587808159976" />
-    <state width="1920" height="317" key="GridCell.Tab.1.left" timestamp="1587808159976">
-      <screen x="329" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1920" height="317" key="GridCell.Tab.1.left/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587808159976" />
-    <state width="1920" height="317" key="GridCell.Tab.1.right" timestamp="1587808159976">
-      <screen x="329" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1920" height="317" key="GridCell.Tab.1.right/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587808159976" />
-    <state x="815" y="175" width="1024" height="843" key="SettingsEditor" timestamp="1587805389327">
-      <screen x="329" y="0" width="1920" height="1080" />
-    </state>
-    <state x="815" y="175" width="1024" height="843" key="SettingsEditor/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587805389327" />
+    <state x="815" y="175" width="1024" height="843" key="SettingsEditor/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587809527441" />
     <state x="1018" y="275" width="540" height="524" key="StructurePopup" timestamp="1587806550425">
       <screen x="329" y="0" width="1920" height="1080" />
     </state>
@@ -202,13 +253,22 @@
       <screen x="329" y="0" width="1920" height="1080" />
     </state>
     <state width="960" height="540" key="XDebugger.FullValuePopup/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587807618980" />
+    <state x="693" y="277" width="524" height="495" key="extract.method.dialog" timestamp="1592731932233">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="693" y="277" width="524" height="495" key="extract.method.dialog/0.27.1920.1053@0.27.1920.1053" timestamp="1592731932233" />
+    <state x="642" y="270" width="635" height="512" key="find.popup" timestamp="1592731171208">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="642" y="270" width="635" height="512" key="find.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1592731171208" />
     <state x="953" y="247" key="run.anything.popup" timestamp="1587806489564">
       <screen x="329" y="0" width="1920" height="1080" />
     </state>
     <state x="953" y="247" key="run.anything.popup/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587806489564" />
-    <state x="952" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1587807358442">
-      <screen x="329" y="0" width="1920" height="1080" />
+    <state x="623" y="260" width="672" height="662" key="search.everywhere.popup" timestamp="1592731925020">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="952" y="239" width="672" height="678" key="search.everywhere.popup/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587807358442" />
+    <state x="952" y="239" width="672" height="678" key="search.everywhere.popup/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587816352616" />
+    <state x="623" y="260" width="672" height="662" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1592731925020" />
   </component>
 </project>
