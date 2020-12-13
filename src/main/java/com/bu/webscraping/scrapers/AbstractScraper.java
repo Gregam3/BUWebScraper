@@ -266,8 +266,13 @@ public abstract class AbstractScraper implements Scraper {
                 .method(Connection.Method.POST)
                 .execute();
 
-        for (String cookieName : login.getCookies().keySet())
-            login.getCookies().put(cookieName, response.cookie(cookieName));
+        for (String cookieName : login.getCookies().keySet()) {
+            String cookieValue = response.cookie(cookieName);
+
+            if(cookieValue != null) {
+                login.getCookies().put(cookieName, cookieValue);
+            }
+        }
 
         System.out.println();
     }

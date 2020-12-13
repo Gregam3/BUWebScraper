@@ -25,7 +25,7 @@ public class GrandOldTeamScraper extends AbstractScraper {
                 "[\\S\\s]*?</a>([\\S\\s]*)");
 
         //Setting up login details and the necessary cookies
-        Login login = new Login("onerous3@gmail.com", "password", "https://www.grandoldteam.com/forum/login/login");
+        Login login = new Login("onerous3@gmail.com", "password", "http://www.grandoldteam.com/forum/login/login");
 
         login.addCookie("xf_session", "");
         setLogin(login);

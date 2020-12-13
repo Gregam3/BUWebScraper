@@ -8,47 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="27bc57a4-2650-4e92-804f-d4a091bcbe2c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SportForumScraper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SportForumScraper.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SportForumScraper-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SportForumScraper-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/forum/ForumPost.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/forum/ForumType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/result/ResultWriter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/Login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/ScraperFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/AbstractScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/ArsenalManiaScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/BlueMoonMCFCScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/BournemouthForumScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/CPFCScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/FansNetworkScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/FootyMadScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/FoxesTalkScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/GoonersWorldScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/GrandOldTeamScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/HolmesDaleScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/LFCRedsScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/LiverpoolFCScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/MumsNetScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/NetMumsScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/OatcakeFanzineScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/RedAndWhiteScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/RedCafeScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/SaintsWebScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/Scraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/SpursCommunityScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/TalkChelseaScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/ToontasticScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/WFCForumsScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/WestBromScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bu/webscraping/scrapers/WestHamOnlineScraper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/GrandOldTeamScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/GrandOldTeamScraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/threads.txt" beforeDir="false" afterPath="$PROJECT_DIR$/threads.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,90 +147,82 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1055" y="388" width="525" height="413" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1587809524156">
-      <screen x="329" y="0" width="1920" height="1080" />
+    <state x="100" y="72" width="2360" height="1268" key="DiffContextDialog" timestamp="1607871616926">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
-    <state x="1055" y="388" width="525" height="413" key="#com.intellij.ide.util.TreeClassChooserDialog/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587809524156" />
-    <state x="1047" y="286" key="#xdebugger.evaluate" timestamp="1587807579780">
-      <screen x="329" y="0" width="1920" height="1080" />
+    <state x="100" y="72" width="2360" height="1268" key="DiffContextDialog/288.1440.1920.1080/0.32.2560.1408@0.32.2560.1408" timestamp="1607871616926" />
+    <state width="2560" height="555" key="GridCell.Tab.0.bottom" timestamp="1607867889086">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
-    <state x="1047" y="286" key="#xdebugger.evaluate/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587807579780" />
-    <state x="1050" y="298" key="FileChooserDialogImpl" timestamp="1587816357007">
-      <screen x="329" y="0" width="1920" height="1080" />
+    <state width="2560" height="555" key="GridCell.Tab.0.bottom/288.1440.1920.1080/0.32.2560.1408@0.32.2560.1408" timestamp="1607867889086" />
+    <state width="2560" height="555" key="GridCell.Tab.0.center" timestamp="1607867889085">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
-    <state x="1050" y="298" key="FileChooserDialogImpl/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587816357007" />
-    <state width="1920" height="404" key="GridCell.Tab.0.bottom" timestamp="1592731972108">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="2560" height="555" key="GridCell.Tab.0.center/288.1440.1920.1080/0.32.2560.1408@0.32.2560.1408" timestamp="1607867889085" />
+    <state width="2560" height="555" key="GridCell.Tab.0.left" timestamp="1607867889085">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
-    <state width="1920" height="318" key="GridCell.Tab.0.bottom/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587816357021" />
-    <state width="1920" height="404" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1592731972108" />
-    <state width="1920" height="404" key="GridCell.Tab.0.center" timestamp="1592731972106">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="2560" height="555" key="GridCell.Tab.0.left/288.1440.1920.1080/0.32.2560.1408@0.32.2560.1408" timestamp="1607867889085" />
+    <state width="2560" height="555" key="GridCell.Tab.0.right" timestamp="1607867889086">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
-    <state width="1920" height="318" key="GridCell.Tab.0.center/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587816357021" />
-    <state width="1920" height="404" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1592731972106" />
-    <state width="1920" height="404" key="GridCell.Tab.0.left" timestamp="1592731972106">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="2560" height="555" key="GridCell.Tab.0.right/288.1440.1920.1080/0.32.2560.1408@0.32.2560.1408" timestamp="1607867889086" />
+    <state width="2560" height="555" key="GridCell.Tab.1.bottom" timestamp="1607867889086">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
-    <state width="1920" height="318" key="GridCell.Tab.0.left/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587816357021" />
-    <state width="1920" height="404" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1592731972106" />
-    <state width="1920" height="404" key="GridCell.Tab.0.right" timestamp="1592731972107">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="2560" height="555" key="GridCell.Tab.1.bottom/288.1440.1920.1080/0.32.2560.1408@0.32.2560.1408" timestamp="1607867889086" />
+    <state width="2560" height="555" key="GridCell.Tab.1.center" timestamp="1607867889086">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
-    <state width="1920" height="318" key="GridCell.Tab.0.right/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587816357021" />
-    <state width="1920" height="404" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1592731972107" />
-    <state width="1920" height="404" key="GridCell.Tab.1.bottom" timestamp="1592731971909">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="2560" height="555" key="GridCell.Tab.1.center/288.1440.1920.1080/0.32.2560.1408@0.32.2560.1408" timestamp="1607867889086" />
+    <state width="2560" height="555" key="GridCell.Tab.1.left" timestamp="1607867889086">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
-    <state width="1920" height="317" key="GridCell.Tab.1.bottom/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587816357018" />
-    <state width="1920" height="404" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1592731971909" />
-    <state width="1920" height="404" key="GridCell.Tab.1.center" timestamp="1592731971909">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="2560" height="555" key="GridCell.Tab.1.left/288.1440.1920.1080/0.32.2560.1408@0.32.2560.1408" timestamp="1607867889086" />
+    <state width="2560" height="555" key="GridCell.Tab.1.right" timestamp="1607867889086">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
-    <state width="1920" height="317" key="GridCell.Tab.1.center/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587816357018" />
-    <state width="1920" height="404" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1592731971909" />
-    <state width="1920" height="404" key="GridCell.Tab.1.left" timestamp="1592731971909">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="2560" height="555" key="GridCell.Tab.1.right/288.1440.1920.1080/0.32.2560.1408@0.32.2560.1408" timestamp="1607867889086" />
+    <state x="100" y="72" width="2360" height="1268" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1607868360387">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
-    <state width="1920" height="317" key="GridCell.Tab.1.left/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587816357018" />
-    <state width="1920" height="404" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1592731971909" />
-    <state width="1920" height="404" key="GridCell.Tab.1.right" timestamp="1592731971909">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="100" y="72" width="2360" height="1268" key="com.intellij.history.integration.ui.views.FileHistoryDialog/288.1440.1920.1080/0.32.2560.1408@0.32.2560.1408" timestamp="1607868360387" />
+    <state x="100" y="72" width="2360" height="1268" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1607871727531">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
-    <state width="1920" height="317" key="GridCell.Tab.1.right/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587816357018" />
-    <state width="1920" height="404" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1592731971909" />
-    <state x="815" y="175" width="1024" height="843" key="SettingsEditor" timestamp="1587809527441">
-      <screen x="329" y="0" width="1920" height="1080" />
+    <state x="100" y="72" width="2360" height="1268" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/288.1440.1920.1080/0.32.2560.1408@0.32.2560.1408" timestamp="1607871727531" />
+    <state x="750" y="228" width="1050" height="953" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1607871725811">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
-    <state x="815" y="175" width="1024" height="843" key="SettingsEditor/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587809527441" />
-    <state x="1018" y="275" width="540" height="524" key="StructurePopup" timestamp="1587806550425">
-      <screen x="329" y="0" width="1920" height="1080" />
+    <state x="750" y="228" width="1050" height="953" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/288.1440.1920.1080/0.32.2560.1408@0.32.2560.1408" timestamp="1607871725811" />
+    <state x="882" y="357" width="797" height="698" key="find.popup" timestamp="1607869869127">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
-    <state x="1018" y="275" width="540" height="524" key="StructurePopup/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587806550425" />
-    <state width="960" height="540" key="XDebugger.FullValuePopup" timestamp="1587807618980">
-      <screen x="329" y="0" width="1920" height="1080" />
+    <state x="882" y="357" width="797" height="698" key="find.popup/288.1440.1920.1080/0.32.2560.1408@0.32.2560.1408" timestamp="1607869869127" />
+    <state x="838" y="175" width="884" height="1032" key="search.everywhere.popup" timestamp="1607871632831">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
-    <state width="960" height="540" key="XDebugger.FullValuePopup/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587807618980" />
-    <state x="693" y="277" width="524" height="495" key="extract.method.dialog" timestamp="1592731932233">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="693" y="277" width="524" height="495" key="extract.method.dialog/0.27.1920.1053@0.27.1920.1053" timestamp="1592731932233" />
-    <state x="642" y="270" width="635" height="512" key="find.popup" timestamp="1592731171208">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="642" y="270" width="635" height="512" key="find.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1592731171208" />
-    <state x="953" y="247" key="run.anything.popup" timestamp="1587806489564">
-      <screen x="329" y="0" width="1920" height="1080" />
-    </state>
-    <state x="953" y="247" key="run.anything.popup/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587806489564" />
-    <state x="623" y="260" width="672" height="662" key="search.everywhere.popup" timestamp="1592731925020">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="952" y="239" width="672" height="678" key="search.everywhere.popup/0.1080.1920.1080/329.0.1920.1080@329.0.1920.1080" timestamp="1587816352616" />
-    <state x="623" y="260" width="672" height="662" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1592731925020" />
+    <state x="838" y="175" width="884" height="1032" key="search.everywhere.popup/288.1440.1920.1080/0.32.2560.1408@0.32.2560.1408" timestamp="1607871632831" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="this.getLogin().getCookies().entrySet()" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
