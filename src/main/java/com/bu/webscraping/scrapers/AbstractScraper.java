@@ -4,6 +4,7 @@ import com.bu.Main;
 import com.bu.forum.ForumPost;
 import com.bu.forum.ForumType;
 import com.bu.webscraping.Login;
+import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 
@@ -165,8 +166,7 @@ public abstract class AbstractScraper implements Scraper {
     }
 
     public List<ForumPost> retrievePostsForThread(String threadUrl) throws IOException {
-        if (login != null)
-            login();
+        if (login != null) login();
 
         int threadLength = getLongPageCount(threadUrl + ((requiresHTMLExtension) ? ".html" : ""));
 
@@ -230,6 +230,8 @@ public abstract class AbstractScraper implements Scraper {
                         login.getCookies()
                 ).get().toString() :
                 pageConnection.get().toString();
+
+        rawHtml = StringUtils.substringBetween(rawHtml, "<div id=\"posts", "<div class=\"thread_links");
 
         Matcher postMatcher = postPattern.matcher(rawHtml);
 
