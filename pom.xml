@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>groupId</groupId>
-    <artifactId>SportForumScraper</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <artifactId>BUForumScraper</artifactId>
+    <version>1.2-SNAPSHOT</version>
 
     <dependencies>
         <dependency>

@@ -10,10 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27bc57a4-2650-4e92-804f-d4a091bcbe2c" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/release/BUForumScraper-1.2-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/release/threads.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/MumsNetScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/MumsNetScraper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/threads.txt" beforeDir="false" afterPath="$PROJECT_DIR$/threads.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SportForumScraper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SportForumScraper.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bash.exe.stackdump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +69,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/forum-sizes.txt&#10;C:/Users/i7676925/SportForumScraper/out/artifacts/SportForumScraper_jar/threads.txt&#10;C:/Users/i7676925/SportForumScraper/posts.txt&#10;C:/Users/i7676925/SportForumScraper/forums.txt&#10;C:/Users/i7676925/SportForumScraper/out/artifacts/SportForumScraper_jar/help/README.txt&#10;C:/Users/i7676925/SportForumScraper/results.txt" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/release" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -73,12 +78,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/release" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="C:\Users\i7676925\SportForumScraper\out\artifacts\SportForumScraper_jar" />
       <recent name="C:\Users\i7676925\SportForumScraper\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/release" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
   <component name="RunManager">
@@ -164,7 +172,8 @@
       <workItem from="1537185370787" duration="1985000" />
       <workItem from="1592731150741" duration="964000" />
       <workItem from="1607873864958" duration="57000" />
-      <workItem from="1616929650716" duration="2309000" />
+      <workItem from="1616929650716" duration="4899000" />
+      <workItem from="1616935526715" duration="853000" />
     </task>
     <servers />
   </component>
@@ -191,11 +200,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java</url>
           <line>293</line>
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bu/webscraping/scrapers/AbstractScraper.java</url>
-          <line>240</line>
-          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
